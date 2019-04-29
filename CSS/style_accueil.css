@@ -1,0 +1,138 @@
+#wrapper {
+	width:980px;
+	margin: 0 auto 0 auto;
+}
+
+#main {
+	float:left;
+	width:75%;
+	margin: 0 0 50px 0;
+}
+
+#sidebar {
+	float:left;
+	width:22%;
+	margin-left:1%;
+	margin-top:1em;
+}
+
+footer {
+	clear:both;
+}
+
+#wrapper>nav {
+	padding:1em;
+	border:1px dashed #444;
+	margin-top:1em;
+}
+
+nav ul li {
+	display:inline-block;
+}
+
+article {
+	border:1px dashed #444;
+	margin:1em;
+	padding:1em;
+	background:#fff;
+}
+
+article h2 {
+	margin-top: 1em;
+}
+
+article header, article footer {
+	border:1px dashed #ccc;
+	padding:1em;
+	background:#ddd;
+}
+
+aside {
+	border:1px dashed #444;
+}
+
+article aside {
+	background:#fff;
+	margin:1em 3em;
+	padding:0.5em;
+	border:1px dashed #ccc;
+}
+
+/* Marquage spécifique */
+
+article, footer, header, aside, nav {
+	position:relative;
+}
+
+span.elem {
+	background:#c00;
+	color:white;
+	position:absolute;
+	top:0;
+	left:0;
+	margin:0;
+	padding:0.5em;
+	z-index:100;
+	opacity:0.5;
+}
+
+#hautheader {
+  height: 50px;
+  background-color: orange;
+}
+
+#basheader {
+  height: 50px;
+  background-image:url(Back.jpg);
+  background-position:50% 50%;
+}
+/*test */
+
+body{
+background: beige;
+}
+
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:9%;
+}
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: orange;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: orange;
+    border: 1px solid orange;
+}
