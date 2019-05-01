@@ -4,18 +4,19 @@ background-position:50% 50%;
 }
 
 #container{
-    width:400px;
+    width:350px;
     margin:0 auto;
     margin-top:9%;
 }
 
 form {
     width:100%;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 35px;
+    border: 1px solid grey;
+    background: white;
+    box-shadow: 1px 1px 1px black;
 }
+
 #container h1{
     width: 38%;
     margin: 0 auto;
