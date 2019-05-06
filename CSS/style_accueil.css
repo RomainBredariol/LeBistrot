@@ -1,5 +1,5 @@
 #wrapper {
-	width:980px;
+	width:1080px;
 	margin: 0 auto 0 auto;
 }
 
@@ -18,12 +18,9 @@
 
 footer {
 	clear:both;
-}
-
-#wrapper>nav {
-	padding:1em;
-	border:1px dashed #444;
-	margin-top:1em;
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid black;
 }
 
 nav ul li {
@@ -76,20 +73,23 @@ span.elem {
 	opacity:0.5;
 }
 
-#hautheader {
-  height: 50px;
-  background-color: orange;
+#header {
+	box-shadow: inset 0 0 1em grey, 0 0 2em grey;
+	border-radius: 5px 5px 5px 5px;
+
 }
 
-#basheader {
-  height: 50px;
-  background-image:url(Back.jpg);
-  background-position:50% 50%;
+#hautheader {
+	border: 1px solid black;
+	height: 44px;
+	background: linear-gradient(0.25turn, #F5890B, orange);
+	border-radius: 5px 5px 0px 0px;
+
 }
-/*test */
 
 body{
-background: beige;
+	background-color: beige;
+	margin: 8px;
 }
 
 #container{
@@ -111,6 +111,19 @@ form {
     padding-bottom: 10px;
 }
 
+#btnConnexion {
+	margin: auto;
+	float: right;
+	background-color: white;
+	color: #F5890B;
+	border-radius: 0px 5px 0px 0px;
+}
+
+#btnConnexion:hover {
+	background-color: grey;
+	color: #F5890B;
+}
+
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -123,7 +136,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 input[type=submit] {
-    background-color: orange;
+    background-color: #F5890B;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -131,8 +144,53 @@ input[type=submit] {
     cursor: pointer;
     width: auto;
 }
+
 input[type=submit]:hover {
     background-color: white;
-    color: orange;
-    border: 1px solid orange;
+    color: #F5890B;
 }
+
+#sitenav a:link {
+ 	padding-left: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+#sitenav a:hover {
+  color: #F5890B;
+}
+
+#sitenav {
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 0px 0px 5px 5px;
+	border: 1px solid black;
+	height: 45px;
+}
+
+#favicon {
+	float: left;
+	padding: 1px;
+	height: 40px;
+	width: 40px;
+}
+
+#titre {
+	display: inline;
+	padding-left: 35px;
+}
+
+/* footer */
+
+#btnContacter {
+	float: right;
+	margin-right: 10px;
+		}
+
+#btnConditions{
+	margin-left: 10px;
+}
+/*#wrapper>nav {
+	padding:1em;
+	border:1px dashed #444;
+	margin-top:1em;
+} */
