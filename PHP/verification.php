@@ -9,12 +9,16 @@
   $adresse = $_POST['adresse'];
   $cp = $_POST['cp'];
   $ville = $_POST['ville'];
-  $pro = 'T';
+  $profes = $_POST['profes'];
   
-  if($password = $password_confirm)
+  if($password == $password_confirm)//ne fonctionne pas
      {
-      include("connexion.php");
+      include("connexionbd.php");
       connexion_bd();
-      $insert = pg_query("INSERT INTO utilisateur VALUES ($email, $prenom, $nom, $pro, $cp, $adresse, $password, $datenaissance, $ville)");
+      $insert = pg_query("INSERT INTO utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) VALUES ('$email', '$prenom', '$nom', '$profes', '$cp', '$adresse', '$password', '$datenaissance', '$ville')");
      }
+  else
+  {
+	  //mauvais mot de passe
+  }
 ?>
