@@ -1,0 +1,95 @@
+<!doctype html>
+
+<form lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../CSS/style_accueil.css" type="text/css" />
+        <title>Partag'Zic</title>
+    </head>
+
+    <body>
+    <!-- php associe -->
+    <form action="/PHP/publier.php" method="POST">
+        <!-- Header -->
+        <header id="header">
+            <!--	<span class="elem">header</span> -->
+            <div id="hautheader">
+                <img src="..//IMAGES/favicon.png" id="favicon" />
+                <a href="view_connexion.html">
+                    <input type="button" id='btnConnexion' value='CONNEXION'>
+                </a>
+                <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
+            </div>
+
+            <div>
+                <!-- nav principale -->
+                <nav id="sitenav">
+                    <div class="container">
+                        <ul class="links">
+                            <li><a href="/" class ="active">ACCUEIL</a></li>
+                            <li><a href="/docs/Community">RECHERCHE</a></li>
+                            <li><a href="/HTML/view_profil">PROFIL</a></li>
+                            <li><a href="/HTML/view_publier.html">PUBLIER</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+        <div id="wrapper">
+            <!-- Main -->
+            <section id="main">
+
+                <article>
+                    <span class="elem">article</span>
+                    <header>
+                        <span class="elem">header</span>
+                        <input type="text" placeholder="Nom Critique"/>
+                        <p id="date">Date de publication</p>
+                        <p id="auteur">auteur</p>
+                    </header>
+
+                    <p>Contenu de la critique </p>
+
+                    <aside>
+                        <span class="elem">aside</span>
+                        <p>Espace commentaire</p>
+                    </aside>
+
+                    <footer>
+                        <span class="elem">footer</span>
+                        <input type="submit" id='btnCommenter' value='Commenter'>
+                        <input type="submit" id='btnNoter' value='Noter'>
+                    </footer>
+                </article>
+            </section>
+
+            <!-- sidebar -->
+            <aside id="sidebar">
+                <span class="elem">aside</span>
+
+                <h3>Statistiques du site</h3>
+
+                <h3>Nous suivre sur les réseaux</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Snapchet</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </nav>
+
+            </aside>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div>
+                <input type="submit" id='btnContacter' value='Contact'>
+                <input type="submit" id='btnConditions' value='Nos conditions'></div>
+        </footer>
+    </form>
+    </body>
+</form>
+</html>
