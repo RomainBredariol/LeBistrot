@@ -1,6 +1,6 @@
 <!doctype html>
+<html lang="fr">
 
-	<form lang="fr">
 		<head>
 				<meta charset="utf-8">
 				<link rel="stylesheet" href="../CSS/style_accueil.css" type="text/css" />
@@ -8,15 +8,13 @@
 		</head>
 
 		<body>
-		<!-- php associe -->
-				<form action="/PHP/accueil.php" method="POST">
-				<!-- Header -->
+
+		<!-- Header -->
 				<header id="header">
+					<!--	<span class="elem">header</span> -->
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						<a href="view_connexion.html">
-							<input type="button" id='btnConnexion' value='CONNEXION'>
-						</a>
+						<input type="submit" id='btnConnexion' value='DECONNEXION'>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
 					</div>
 
@@ -25,12 +23,14 @@
 						<nav id="sitenav">
 	 			     <div class="container">
 	 			       <ul class="links">
-								 <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
-								 <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
-								 <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+	 			           <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
+	 			           <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
+	 			           <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+	 			           <li><a href="../HTML/view_profil.html">PROFIL</a></li>
 	 			       </ul>
 	 			     </div>
  			     </nav>
+					</div>
 				</header>
 
 		<div id="wrapper">
@@ -86,7 +86,6 @@
 						<input type="submit" id='btnContacter' value='Contact'>
 						<input type="submit" id='btnConditions' value='Nos conditions'></div>
 					</footer>
-				</form>
+
 		</body>
-</form>
 </html>

@@ -1,14 +1,3 @@
-#wrapper {
-	width:1080px;
-	margin: 0 auto 0 auto;
-}
-
-#main {
-	float:left;
-	width:75%;
-	margin: 0 0 50px 0;
-}
-
 #sidebar {
 	float:left;
 	width:22%;
@@ -16,16 +5,7 @@
 	margin-top:1em;
 }
 
-footer {
-	clear:both;
-	background: linear-gradient(0.25turn, #F8E9D9, white);
-	border-radius: 5px 5px 5px 5px;
-	border: 1px solid black;
-}
-
-nav ul li {
-	display:inline-block;
-}
+/*article*/
 
 article {
 	border:1px dashed #444;
@@ -55,6 +35,115 @@ article aside {
 	border:1px dashed #ccc;
 }
 
+/* HEADER */
+
+#header {
+	box-shadow: inset 0 0 1em grey, 0 0 2em grey;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#hautheader {
+	border: 1px solid black;
+	height: 44px;
+	background: linear-gradient(0.25turn, #F5890B, orange);
+	border-radius: 5px 5px 0px 0px;
+}
+
+/*NAV*/
+
+#sitenav {
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 0px 0px 5px 5px;
+	border: 1px solid black;
+	height: 45px;
+}
+
+#sitenav a:link {
+ 	padding-left: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+#sitenav a:hover {
+  color: #F5890B;
+}
+
+nav ul li {
+	display:inline-block;
+}
+
+#favicon {
+	float: left;
+	padding: 1px;
+	height: 40px;
+	width: 40px;
+}
+
+#titre {
+	display: inline;
+	padding-left: 35px;
+}
+
+#btnConnexion {
+	margin: auto;
+	float: right;
+	background-color: white;
+	color: #F5890B;
+	border-radius: 0px 5px 0px 0px;
+}
+
+#btnConnexion:hover {
+	background-color: grey;
+	color: #F5890B;
+}
+
+/*CORPS*/
+
+body{
+	background-color: #FCFAF3;
+	margin: 8px;
+}
+
+#wrapper {
+	width:1080px;
+	margin: 0 auto 0 auto;
+}
+
+#main {
+	float:left;
+	width:75%;
+	margin: 0 0 50px 0;
+}
+
+/* footer */
+
+#footer{
+	clear:both;
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#commentaire{
+	width: 500px;;
+
+}
+
+#btnCommenter {
+	float: right;
+}
+
+/* Bordered form */
+
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
 /* Marquage spécifique */
 
 article, footer, header, aside, nav {
@@ -73,58 +162,13 @@ span.elem {
 	opacity:0.5;
 }
 
-#header {
-	box-shadow: inset 0 0 1em grey, 0 0 2em grey;
-	border-radius: 5px 5px 5px 5px;
-
-}
-
-#hautheader {
-	border: 1px solid black;
-	height: 44px;
-	background: linear-gradient(0.25turn, #F5890B, orange);
-	border-radius: 5px 5px 0px 0px;
-
-}
-
-body{
-	background-color: beige;
-	margin: 8px;
-}
-
-#container{
-    width:400px;
-    margin:0 auto;
-    margin-top:9%;
-}
-/* Bordered form */
-form {
-    width:100%;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
 #container h1{
     width: 38%;
     margin: 0 auto;
     padding-bottom: 10px;
 }
 
-#btnConnexion {
-	margin: auto;
-	float: right;
-	background-color: white;
-	color: #F5890B;
-	border-radius: 0px 5px 0px 0px;
-}
-
-#btnConnexion:hover {
-	background-color: grey;
-	color: #F5890B;
-}
-
-/* Full-width inputs */
+/* Design inputs */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -149,48 +193,3 @@ input[type=submit]:hover {
     background-color: white;
     color: #F5890B;
 }
-
-#sitenav a:link {
- 	padding-left: 30px;
-  color: black;
-  text-decoration: none;
-}
-
-#sitenav a:hover {
-  color: #F5890B;
-}
-
-#sitenav {
-	background: linear-gradient(0.25turn, #F8E9D9, white);
-	border-radius: 0px 0px 5px 5px;
-	border: 1px solid black;
-	height: 45px;
-}
-
-#favicon {
-	float: left;
-	padding: 1px;
-	height: 40px;
-	width: 40px;
-}
-
-#titre {
-	display: inline;
-	padding-left: 35px;
-}
-
-/* footer */
-
-#btnContacter {
-	float: right;
-	margin-right: 10px;
-		}
-
-#btnConditions{
-	margin-left: 10px;
-}
-/*#wrapper>nav {
-	padding:1em;
-	border:1px dashed #444;
-	margin-top:1em;
-} */

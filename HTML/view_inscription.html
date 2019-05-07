@@ -9,6 +9,28 @@
     </head>
 
     <body>
+      <header id="header">
+        <!--	<span class="elem">header</span> -->
+        <div id="hautheader">
+          <img src="..//IMAGES/favicon.png" id="favicon" />
+          <input type="submit" id='btnConnexion' value='CONNEXION'>
+          <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
+        </div>
+
+        <div>
+          <!-- nav principale -->
+          <nav id="sitenav">
+           <div class="container">
+             <ul class="links">
+                 <li><a href="/" class ="active">ACCUEIL</a></li>
+                 <li><a href="/docs/Community">RECHERCHE</a></li>
+                 <li><a href="/docs/WPD/Contributors_Guide/">PROFIL</a></li>
+                 <li><a href="/docs/WPD/Contributors_Guide/">PUBLIER</a></li>
+             </ul>
+           </div>
+         </nav>
+      </header>
+
         <div id="container">
             <!-- zone de connexion -->
             <form action="verification.php" method="POST">
@@ -22,8 +44,18 @@
                 <input type="password" placeholder="Confirmer le mot de passe" name="password_confirm" required>
                 <b>E-mail</b>
                 <input type="email" placeholder="Entrer votre email" name="email" required>
+                <b>Nom</b>
+                <input type="text" placeholder="Entrer votre nom" name="nom" required>
+                <b>Nom</b>
+                <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
                 <b>Age</b>
-                <input type="Age" placeholder="Entrer votre age" name="age" required>
+                <input type="date" placeholder="Entrer votre date de naissance" name="datenaissance" required>
+                <b>Adresse</b>
+                <input type="Adresse" placeholder="Entrer votre adresse" name="adresse" required>
+                <b>Code Postal</b>
+                <input type="CP" placeholder="Entrer votre code postal" name="cp" required>
+                <b>Ville</b>
+                <input type="text" placeholder="Entrer votre ville" name="ville" required>
                 <b>Choisissez vos styles<br></b>
                 <b>Rock</b>
                 <input type="checkbox" id="cBox" value="rock">
