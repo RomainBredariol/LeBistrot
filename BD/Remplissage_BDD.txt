@@ -1,0 +1,177 @@
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('toto@tata.fr', 'Vincent', 'Lacroix', FALSE, '34789', '3, Rue de la Corniche', 'ViVi34', '1987-03-19', 'Montpelier');
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('jean@lassalle.fr', 'Jean', 'Lassalle', FALSE, '64570', '6, Rue des compatriotes', 'JeJe64', '1955-05-03', 'Lourdios-Ichères');
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('herve@dupont.fr', 'Hervé', 'Dupont', FALSE, '86510', '65, Rue des fleurs', 'HeHe75', '1970-06-30', 'Brux');
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('caroline@chirac.fr', 'Caroline', 'Chirac', FALSE, '21400', '4, Rue Victor Hugo', 'CaCa21', '1956-12-03', 'Aisey sur Seine');
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('alban@maurel.fr', 'Alban', 'Maurel', FALSE, '94140', '54, Rue du port', 'AlAl94', '1995-11-21', 'Alfortville');
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('fiona@courtial.fr', 'Fiona', 'Courtial', FALSE, '85410', '6, Boulevard Voltaire', 'FiFi85', '1963-06-25', 'Thouarsais Bouildroux');
+insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('jacques-solange@noel.fr', 'Jacques-Solange', 'Noel', FALSE, '63850', '23, Place du fort', 'JaJa63', '1943-08-12', 'La Godivelle');
+
+INSERT INTO categorie values ('Jazz');
+INSERT INTO categorie VALUES ('Classique');
+INSERT INTO categorie VALUES ('Rap');
+INSERT INTO categorie VALUES ('Métal');
+INSERT INTO categorie VALUES ('Blues');
+INSERT INTO categorie VALUES ('Hard Rock');
+INSERT INTO categorie VALUES ('Pop');
+INSERT INTO Categorie VALUES ('Variété française');
+
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('01', '1985-06-15', '01', 'Appetite for Destruction');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('01', '1991-09-17', '02', 'Use Your Illusion I');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('01', '1991-09-17', '03', 'Use Your Illusion II');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('02', '1975-04-03', '04', 'Amoureux de Paname');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('03', '2018-02-02', '05', 'Hit Sale');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('04', '1962-03-19', '06', 'Bob Dylan');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('05', '1983-02-23', '07', 'Europe');
+INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('06', '1974-07-01', '08', '461 Ocean Boulevard');
+
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('01', 'Guns n Roses', '1985-05-03', 'Guns n Roses est un groupe de HardRock américain originaire de Los Angeles, formé en 1985');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('02', 'Renaud', '1952-05-11', 'Renaud Séchan, est un auteur-compositeur-interprète français');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('03', 'Therapie Taxi', '2017-01-01', 'Therapie Taxi est un groupe français mélangeant plusieurs genres musicaux comme la pop, le rock et le rap.');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('04', 'Bob Dylan', '1941-05-24', 'Bob Dylan est le nom de scène principal de Robert Allen Zimmerman, auteur-compositeur-interprète, musicien, peintre et poète américain, né le 24 mai 1941 à Duluth, dans le Minnesota. Il est l''une des figures majeures de la musique populaire occidentale.');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('05', 'Europe', '1978-01-01', 'Europe est un groupe de rock suédois, originaire de Upplands Väsby, à Stockholm. Depuis sa formation, Europe compte onze albums studio, plusieurs albums live, et de nombreuses compilations best-of.');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('06', 'Eric Clapton', '1945-03-30', 'Eric Clapton, né le 30 mars 1945 à Ripley, près de Guildford1, est un musicien britannique, guitariste, chanteur et compositeur blues rock.');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('01', 'Welcome to the Jungle', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('02', 'It''s so Easy', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('03', 'Nightrain', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('04', 'Out Ta Get Me', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('05', 'Mr. Brownstone', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('06', 'Paradise City', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('07', 'My Michelle', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('08', 'Think About You', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('09', 'Sweet Child O'' Mine', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('10', 'You''re Crazy', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('11', 'Anything Goes', '1987-07-21', 'Hard Rock', '01');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('12', 'Rocket Queen', '1987-07-21', 'Hard Rock', '01');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('13', 'Hit Sale', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('14', 'J''en ai marre', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('15', 'Cadence', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('16', 'Malboro Bled', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('17', 'Coma Idyllique', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('18', 'PVP', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('19', 'Transatlantique', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('20', 'Salop(e)', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('21', 'La proue', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('22', 'Superstar', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('23', 'Crystal Memphis', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('24', 'Cri des loups', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('25', 'Zarba', '2018-02-02', 'Pop', '05');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('26', 'Anti Hit Sale', '2018-02-02', 'Pop', '05');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('27', 'Amoureux de Paname', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('28', 'Société, tu m''auras pas !', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('29', 'Petite fille des sombres rues', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('30', 'La Java sans joie', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('31', 'Gueule d''aminche', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('32', 'La Coupole', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('33', 'Hexagone', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('34', 'Écoutez-moi les gavroches', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('35', 'Rita', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('36', 'Camarade bourgeois', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('37', 'Le Gringalet', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('38', 'La Menthe à l''eau', '1975-04-03', 'Variété française', '04');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('39', 'Greta', '1975-04-03', 'Variété française', '04');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('40', 'Motherless Children', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('41', 'Give Me Strength', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('42', 'Willie and the Hand Jive', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('43', 'Get Ready', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('44', 'I Shot the Sheriff', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('45', 'I Can''t Hold Out', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('46', 'Let It Grow', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('47', 'Steady Rollin'' Man', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('48', 'Mainline Florida', '1974-07-01', 'Blues', '06');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('49', 'Right Next Door to Hell', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('50', 'Dust N'' Bones', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('51', 'Live and Let Die', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('52', 'Don''t Cry', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('53', 'Perfect Crime', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('54', 'You Ain''t the First', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('55', 'Bad Obsession', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('56', 'Back off Bitch', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('57', 'Double Talkin'' Jive', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('58', 'November Rain', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('59', 'The Garden', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('60', 'Garden of Eden', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('61', 'Don''t Damn Me', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('62', 'Bad Apples', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('63', 'Dead Horse', '1991-09-17', 'Hard Rock', '02');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('64', 'Coma', '1991-09-17', 'Hard Rock', '02');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('65', 'Civil War', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('66', '14 Years', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('67', 'Yesterdays', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('68', 'Knockin'' on Heaven''s Door', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('69', 'Get in the Ring', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('70', 'Shotgun Blues', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('71', 'Breakdown', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('72', 'Pretty Tied Up', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('73', 'Locomotive', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('74', 'So Fine', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('75', 'Estranged', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('76', 'You Could Be Mine', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('77', 'Don''t Cry', '1991-09-17', 'Hard Rock', '03');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('78', 'My World', '1991-09-17', 'Hard Rock', '03');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('79', 'You''re No Good', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('80', 'Talkin'' New York', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('81', 'In My Time of Dyin''', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('82', 'Man of Constant Sorrow', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('83', 'Fixin'' to Die', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('84', 'Pretty Peggy-O', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('85', 'Highway 51', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('86', 'Gospel Plow', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('87', 'Baby Let Me Follow You Down', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('88', 'House of the Risin'' Sun', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('89', 'Freight Train Blues', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('90', 'Song to Woody', '1962-03-19', 'Pop', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('91', 'See That My Grave Is Kept Clean', '1962-03-19', 'Pop', '06');
+
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('92', 'In the Future to Come', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('93', 'Farewell', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('94', 'Seven Doors Hotel', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('95', 'The King Will Return', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('96', 'Boyazont', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('97', 'Children of This Time', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('98', 'Words of Wisdom', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('99', 'Paradize Bay', '1983-02-23', 'Métal', '07');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('100', 'Memories', '1983-02-23', 'Métal', '07');
+
+insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('01', 'Critique sur Appetite for Destruction', 'Je trouve que c''est album est le plus beau de tous les temps, je pourrais l''écouter en boucle jusqu''à la fin de mes jours', '2019-05-04', TRUE, '01', NULL, 'toto@tata.fr');
+insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('02', 'Critique sur Sweet Child o'' Mine', 'Cette chanson est la meilleure de l''album', '2019-05-04', TRUE, '01', '09', 'toto@tata.fr');
+insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('03', 'Critique sur l''album Hit Sale', 'Cette album est un peu bizarre mais j''adore ça !!!', '2019-05-09', TRUE, '05', NULL, 'herve@dupont.fr');
+insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('04', 'Critique sur I Shot the Sheriff', 'Cette chanson n''est pas une reprise de Bob Marley ?', '2019-05-09', TRUE, NULL, '44', 'jacques-solange@noel.fr');
+insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('05', 'Critique sur l''album Bob Dylan', 'Cet album me rappelle ma jeunesse !! Je me sens tout chose !', '2019-05-09', TRUE, '06', NULL, 'jean@lassalle.fr');
+
+Insert into composer (id_artiste, id_musique) Values ('01', '01'), ('01', '02'), ('01', '03'), ('01', '04'), ('01', '05'), ('01', '06'), ('01', '07'), ('01', '08'), ('01', '09'), ('01', '10'), ('01', '11'), ('01', '12');
+Insert into composer (id_artiste, id_musique) Values ('03', '13'), ('03', '14'), ('03', '15'), ('03', '16'), ('03', '17'), ('03', '18'), ('03', '19'), ('03', '20'), ('03', '21'), ('03', '22'), ('03', '23'), ('03', '24'), ('03', '25'), ('03', '26');
+Insert into composer (id_artiste, id_musique) Values ('02', '27'), ('02', '28'), ('02', '29'), ('02', '30'), ('02', '31'), ('02', '32'), ('02', '33'), ('02', '34'), ('02', '35'), ('02', '36'), ('02', '37'), ('02', '38'), ('02', '39');
+Insert into composer (id_artiste, id_musique) Values ('06', '40'), ('06', '41'), ('06', '42'), ('06', '43'), ('06', '44'), ('06', '45'), ('06', '46'), ('06', '47'), ('06', '48');
+Insert into composer (id_artiste, id_musique) Values ('01', '49'), ('01', '50'), ('01', '51'), ('01', '52'), ('01', '53'), ('01', '54'), ('01', '55'), ('01', '56'), ('01', '57'), ('01', '58'), ('01', '59'), ('01', '60'), ('01', '61'), ('01', '62'), ('01', '63'), ('01', '64');
+Insert into composer (id_artiste, id_musique) Values ('01', '65'), ('01', '66'), ('01', '67'), ('01', '68'), ('01', '69'), ('01', '70'), ('01', '71'), ('01', '72'), ('01', '73'), ('01', '74'), ('01', '75'), ('01', '76'), ('01', '77'), ('01', '78');
+Insert into composer (id_artiste, id_musique) Values ('04', '79'), ('04', '80'), ('04', '81'), ('04', '82'), ('04', '83'), ('04', '84'), ('04', '85'), ('04', '86'), ('04', '87'), ('04', '88'), ('04', '89'), ('04', '90'), ('04', '91');
+Insert into composer (id_artiste, id_musique) Values ('05', '92'), ('05', '93'), ('05', '94'), ('05', '95'), ('05', '96'), ('05', '97'), ('05', '98'), ('05', '99'), ('05', '100');
+
+INSERT INTO ecrire (id_album, id_artiste) values ('01', '01'), ('02', '01'), ('03', '01'), ('04', '02'), ('05', '03'), ('06', '04'), ('07', '05'), ('08', '06');
+
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('01', 'jean@lassalle.fr', 'Hard Rock');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('02', 'toto@tata.fr', 'Classique');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('03', 'jean@lassalle.fr', 'Métal');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('04', 'alban@maurel.fr', 'Blues');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('05', 'caroline@chirac.fr', 'Variété française');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('06', 'fiona@courtial.fr', 'Pop');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('07', 'herve@dupont.fr', 'Hard Rock');
+INSERT INTO aimer (id_aimer, mail, nom_categorie) Values ('08', 'jacques-solange@noel.fr', 'Jazz');
+
+INSERT into noter (id_critique, id_note, mail, note) values ('01', '01', 'jean@lassalle.fr', '20');
+INSERT into noter (id_critique, id_note, mail, note) values ('02', '02', 'jean@lassalle.fr', '18');
+INSERT into noter (id_critique, id_note, mail, note) values ('03', '03', 'fiona@courtial.fr', '15');
+INSERT into noter (id_critique, id_note, mail, note) values ('05', '04', 'jacques-solange@noel.fr', '06');
+INSERT into noter (id_critique, id_note, mail, note) values ('04', '05', 'caroline@chirac.fr', '17');
+
+
+INSERT Into commenter ( mail, id_commentaire, id_critique, contenu, date_commentaire) VALUES ('jean@lassalle.fr', '01', '01', 'Cette critique est bonne, je suis tout à fait d''accord', '2019-05-06');
+
+

@@ -1,0 +1,94 @@
+Requetes a faire :
+
+Sélectionner les infos d'un album avec son titre
+Select * from album where nom = 'nom de l'album';
+
+Sélectionner les infos d'une chanson avec son titre
+Select * from titre_musical Where nom_musique = 'nom de la musique';
+
+Sélectionner les titres qui font partie de l'album
+select * from titre_musical where id_album = (
+    SELECt id_album from album where nom = 'titre de l'album');
+
+Sélectionner le nom de l'album de la chanson
+Select nom from album Where id_album = (Select id_album from titre_musical Where nom_musique = 'nom de la musique');
+Sélectiionner toutes les infos de l'album
+Select * from album Where id_album = (Select id_album from titre_musical Where nom_musique = 'nom de la musique');
+
+Sélectionner le nom de l'auteur de la chanson
+Select nom_artiste From artiste where id_artiste =  (
+    select id_artiste from composer where id_musique  = (
+        Select id_musique from titre_musical where nom_musique = 'Nom de la musique')) 
+Sélectionner les infos de l'auteur de la chanson
+Select * From artiste where id_artiste =  (
+    select id_artiste from composer where id_musique  = (
+        Select id_musique from titre_musical where nom_musique = 'nom de la musique')) 
+
+Sélectionner le nom de l'auteur d'un album
+Select nom_artiste from artiste where id_artiste = 
+    (Select id_artiste from ecrire where id_album = 
+        (select id_album from album where nom = 'nom de l'album'));
+Sélectionner les infos de l'auteur d'un album
+Select * from artiste where id_artiste = 
+    (Select id_artiste from ecrire where id_album = 
+        (select id_album from album where nom = 'nom de l'album'));
+
+Sélectionner la date de naissance d'un auteur avec son nom
+Select date_naissance_artiste from  artiste where nom_artiste =  'nom de l'artiste'
+
+Sélectionner la date de réalisation de la chanson avec son nom
+Select date_musique from titre_musical where nom_musique = 'nom de la musique'
+
+Sélectionner la date de réalisation de l'album
+Select date_de_sortie from album where nom = 'nom de l'album'
+
+Sélectionner le nom de l'utilisateur qui a écrit la critique
+Select nom, prenom from utilisateur where mail = (
+    select mail from critique where titre = 'nom de la critique' );
+
+Sélectionner l'album qui est concerné par la critique
+Select nom from album where id_album = (
+    select id_album from critique where titre = 'nom de la critique' );
+
+Sélectionner la chanson visée par une critique
+select nom_musique from titre_musical where id_musique = (
+    select id_musique from critique where titre = 'titre de la critique');
+
+Sélectionner le nom de l'auteur du commentaire visant une critique
+Select nom, prenom from utilisateur where mail = (
+    select mail from commenter where id_critique = 'id de la critique');
+
+Sélectionner le titre de la critique visée par un commentaire
+Select titre from critique where id_critique = (
+    select id_critique from commenter where id_commentaire = 'id du commentaire');
+
+Sélectionner la note donnée à une critique
+Select note from noter where id_critique = (
+    Select id_critique from critique where id_note = 'id de la note');
+
+Sélectionner le titre de la critique visée par une note
+Select titre from critique where id_critique = (
+    select id_critique from noter where id_note = 'id de la note');
+
+Sélectionner l'auteur de la note d'une critique
+select nom, prenom from utilisateur where mail =(
+    Select mail from noter where id_note = 'id de la note');
+
+Sélectionner la categorie aimée par un utilisateur
+select nom_categorie from aimer where mail = 'mail de l'utilisateur';
+
+Sélectionner la categorie à laquelle correspond un titre 
+select nom_categorie from titre_musical where id_musique = 'id de la musique';
+
+Sélectionner la categorie à laquelle appartient un album
+select distinct nom_categorie, from titre_musical where id_album = 'id de l'album';
+
+
+
+
+
+
+
+
+
+

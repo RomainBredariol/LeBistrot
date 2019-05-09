@@ -1,0 +1,81 @@
+
+CREATE TABLE utilisateur(
+   mail varchar(50) PRIMARY KEY,
+   prenom VARCHAR(50),
+   nom VARCHAR(50),
+   professionnel BOOLEAN,
+   Cp VARCHAR(50),
+   adresse VARCHAR(50),
+   mdp VARCHAR(50),
+   date_de_naissance DATE,
+   Ville VARCHAR(50)
+);
+
+CREATE TABLE categorie(
+   nom_categorie varchar(50) PRIMARY KEY
+);
+
+CREATE TABLE album(
+   id_album INTEGER PRIMARY KEY,
+   date_de_sortie DATE,
+   nom VARCHAR(50),
+   id_artiste INTEGER REFERENCES artiste(id_artiste) NOT NULL
+);
+
+CREATE TABLE artiste(
+   id_artiste integer PRIMARY KEY,
+   nom_artiste VARCHAR(50),
+   date_naissance_artiste DATE,
+   bio TEXT
+);
+
+CREATE TABLE titre_musical(
+   id_musique INTEGER PRIMARY KEY,
+   nom_musique VARCHAR(50),
+   date_musique DATE,
+   nom_categorie VARCHAR(50) REFERENCES categorie(nom_categorie) NOT NULL,
+   id_album INT REFERENCES album(id_album)
+);
+
+CREATE TABLE critique(
+   id_critique INTEGER PRIMARY KEY,
+   titre VARCHAR(50),
+   corps TEXT,
+   date_publication DATE,
+   valide BOOLEAN,
+   id_album INT REFERENCES album(id_album),
+   id_musique INT REFERENCES titre_musical(id_musique),
+   mail VARCHAR(50) REFERENCES utilisateur(mail) NOT NULL
+);
+
+CREATE TABLE composer(
+   id_musique INT REFERENCES titre_musical(id_musique) NOT NULL,
+   id_artiste INT REFERENCES artiste(id_artiste) NOT NULL,
+   PRIMARY KEY(id_musique, id_artiste)
+); 
+
+CREATE TABLE ecrire(
+   id_album INT REFERENCES album(id_album) NOT NULL,
+   id_artiste INT REFERENCES artiste(id_artiste) NOT NULL,
+   PRIMARY KEY(id_album, id_artiste)
+);
+
+CREATE TABLE aimer(
+   id_aimer INTEGER NOT NULL CONSTRAINT pk_aimer PRIMARY KEY,
+   mail VARCHAR(50) REFERENCES utilisateur(mail) NOT NULL,
+   nom_categorie VARCHAR(50) REFERENCES categorie(nom_categorie) NOT NULL);
+
+CREATE TABLE noter(
+   id_note INTEGER NOT NULL CONSTRAINT pk_noter PRIMARY KEY,
+   mail VARCHAR(50) REFERENCES utilisateur(mail) NOT NULL,
+   id_critique INT REFERENCES critique(id_critique) NOT NULL,
+   note INT
+);
+
+CREATE TABLE commenter(
+   id_commentaire INTEGER NOT NULL CONSTRAINT pk_commenter PRIMARY KEY,
+   mail VARCHAR(50) REFERENCES utilisateur(mail) NOT NULL,
+   id_critique INT REFERENCES critique(id_critique) NOT NULL,
+   contenu TEXT,
+   date_commentaire DATE
+);
