@@ -15,6 +15,13 @@ INSERT INTO categorie VALUES ('Hard Rock');
 INSERT INTO categorie VALUES ('Pop');
 INSERT INTO Categorie VALUES ('Variété française');
 
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('01', 'Guns n Roses', '1985-05-03', 'Guns n Roses est un groupe de HardRock américain originaire de Los Angeles, formé en 1985');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('02', 'Renaud', '1952-05-11', 'Renaud Séchan, est un auteur-compositeur-interprète français');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('03', 'Therapie Taxi', '2017-01-01', 'Therapie Taxi est un groupe français mélangeant plusieurs genres musicaux comme la pop, le rock et le rap.');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('04', 'Bob Dylan', '1941-05-24', 'Bob Dylan est le nom de scène principal de Robert Allen Zimmerman, auteur-compositeur-interprète, musicien, peintre et poète américain, né le 24 mai 1941 à Duluth, dans le Minnesota. Il est l''une des figures majeures de la musique populaire occidentale.');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('05', 'Europe', '1978-01-01', 'Europe est un groupe de rock suédois, originaire de Upplands Väsby, à Stockholm. Depuis sa formation, Europe compte onze albums studio, plusieurs albums live, et de nombreuses compilations best-of.');
+INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('06', 'Eric Clapton', '1945-03-30', 'Eric Clapton, né le 30 mars 1945 à Ripley, près de Guildford1, est un musicien britannique, guitariste, chanteur et compositeur blues rock.');
+
 INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('01', '1985-06-15', '01', 'Appetite for Destruction');
 INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('01', '1991-09-17', '02', 'Use Your Illusion I');
 INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('01', '1991-09-17', '03', 'Use Your Illusion II');
@@ -23,13 +30,6 @@ INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('03', '2018
 INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('04', '1962-03-19', '06', 'Bob Dylan');
 INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('05', '1983-02-23', '07', 'Europe');
 INSERT INTO album (id_artiste, date_de_sortie, id_album, nom)Values ('06', '1974-07-01', '08', '461 Ocean Boulevard');
-
-INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('01', 'Guns n Roses', '1985-05-03', 'Guns n Roses est un groupe de HardRock américain originaire de Los Angeles, formé en 1985');
-INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('02', 'Renaud', '1952-05-11', 'Renaud Séchan, est un auteur-compositeur-interprète français');
-INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('03', 'Therapie Taxi', '2017-01-01', 'Therapie Taxi est un groupe français mélangeant plusieurs genres musicaux comme la pop, le rock et le rap.');
-INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('04', 'Bob Dylan', '1941-05-24', 'Bob Dylan est le nom de scène principal de Robert Allen Zimmerman, auteur-compositeur-interprète, musicien, peintre et poète américain, né le 24 mai 1941 à Duluth, dans le Minnesota. Il est l''une des figures majeures de la musique populaire occidentale.');
-INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('05', 'Europe', '1978-01-01', 'Europe est un groupe de rock suédois, originaire de Upplands Väsby, à Stockholm. Depuis sa formation, Europe compte onze albums studio, plusieurs albums live, et de nombreuses compilations best-of.');
-INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('06', 'Eric Clapton', '1945-03-30', 'Eric Clapton, né le 30 mars 1945 à Ripley, près de Guildford1, est un musicien britannique, guitariste, chanteur et compositeur blues rock.');
 
 INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('01', 'Welcome to the Jungle', '1987-07-21', 'Hard Rock', '01');
 INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('02', 'It''s so Easy', '1987-07-21', 'Hard Rock', '01');

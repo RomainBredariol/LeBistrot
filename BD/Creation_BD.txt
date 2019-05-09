@@ -15,18 +15,18 @@ CREATE TABLE categorie(
    nom_categorie varchar(50) PRIMARY KEY
 );
 
-CREATE TABLE album(
-   id_album INTEGER PRIMARY KEY,
-   date_de_sortie DATE,
-   nom VARCHAR(50),
-   id_artiste INTEGER REFERENCES artiste(id_artiste) NOT NULL
-);
-
 CREATE TABLE artiste(
    id_artiste integer PRIMARY KEY,
    nom_artiste VARCHAR(50),
    date_naissance_artiste DATE,
    bio TEXT
+);
+
+CREATE TABLE album(
+   id_album INTEGER PRIMARY KEY,
+   date_de_sortie DATE,
+   nom VARCHAR(50),
+   id_artiste INTEGER REFERENCES artiste(id_artiste) NOT NULL
 );
 
 CREATE TABLE titre_musical(
