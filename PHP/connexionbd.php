@@ -16,7 +16,7 @@ function close_bd()
     pg_close();
 }
 
-//include("connexion.php");
+//include("connexionbd.php");
 		//connexion_bd();
 		
 ?>

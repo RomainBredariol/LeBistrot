@@ -9,9 +9,9 @@
   $adresse = $_POST['adresse'];
   $cp = $_POST['cp'];
   $ville = $_POST['ville'];
-  $profes = $_POST['profes'];
+  $profes = 'TRUE';
   
-  if($password == $password_confirm)//ne fonctionne pas
+  if($password == $password_confirm)
      {
       include("connexionbd.php");
       connexion_bd();
@@ -19,6 +19,6 @@
      }
   else
   {
-	  //mauvais mot de passe
+	  echo "Les mots de passes ne correspondent pas";//mauvais mot de passe
   }
 ?>
