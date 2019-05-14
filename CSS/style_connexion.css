@@ -1,3 +1,67 @@
+/* HEADER */
+
+#header {
+	box-shadow: inset 0 0 1em grey, 0 0 2em grey;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid black;
+}
+
+#hautheader {
+	height: 44px;
+	background: linear-gradient(0.25turn, #F5890B, orange);
+	border-radius: 5px 5px 0px 0px;
+}
+
+#favicon {
+	float: left;
+	padding: 1px;
+	height: 40px;
+	width: 40px;
+}
+
+#titre {
+	display: inline;
+	padding-left: 35px;
+}
+
+#btnInscription {
+	margin: auto;
+	float: right;
+	background-color: white;
+	color: #F5890B;
+	border-radius: 0px 5px 0px 0px;
+}
+
+#btnInscription:hover {
+	background-color: grey;
+	color: #F5890B;
+}
+
+/*NAV*/
+
+#sitenav {
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 0px 0px 5px 5px;
+	border-top: 1px solid black;
+	height: 45px;
+}
+
+#sitenav a:link {
+    padding-left: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+#sitenav a:hover {
+  color: #F5890B;
+}
+
+nav ul li {
+	display:inline-block;
+}
+
+/* BODY */
+
 body{
 background-image:url(../IMAGES/Back.jpg);
 background-position:50% 50%;
@@ -23,7 +87,6 @@ form {
     padding-bottom: 10px;
 }
 
-
 #wrapper {
 	width:1080px;
 	margin: 0 auto 0 auto;
@@ -32,32 +95,6 @@ form {
 #main {
 	float:left;
 	width:75%;
-	margin: 0 0 50px 0;
-}
-
-
-nav ul li {
-	display:inline-block;
-}
-
-
-#header {
-	box-shadow: inset 0 0 1em grey, 0 0 2em grey;
-	border-radius: 5px 5px 5px 5px;
-
-}
-
-#hautheader {
-	border: 1px solid black;
-	height: 44px;
-	background: linear-gradient(0.25turn, #F5890B, orange);
-	border-radius: 5px 5px 0px 0px;
-
-}
-
-body{
-	background-color: beige;
-	margin: 8px;
 }
 
 #container{
@@ -79,21 +116,8 @@ form {
     padding-bottom: 10px;
 }
 
-#btnInscription {
-	margin: auto;
-	float: right;
-	background-color: white;
-	color: #F5890B;
-	border-radius: 0px 5px 0px 0px;
-}
-
-#btnInscription:hover {
-	background-color: grey;
-	color: #F5890B;
-}
-
-
 /* Full-width inputs */
+
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -119,35 +143,6 @@ input[type=submit]:hover {
     color: #F5890B;
 }
 
-#sitenav a:link {
- 	padding-left: 30px;
-  color: black;
-  text-decoration: none;
-}
-
-#sitenav a:hover {
-  color: #F5890B;
-}
-
-#sitenav {
-	background: linear-gradient(0.25turn, #F8E9D9, white);
-	border-radius: 0px 0px 5px 5px;
-	border: 1px solid black;
-	height: 45px;
-}
-
-#favicon {
-	float: left;
-	padding: 1px;
-	height: 40px;
-	width: 40px;
-}
-
-#titre {
-	display: inline;
-	padding-left: 35px;
-}
-
 /* footer */
 
 #footer{
@@ -156,4 +151,10 @@ input[type=submit]:hover {
 	border-radius: 5px 5px 5px 5px;
 	border: 1px solid black;
 	text-align: center;
+}
+
+
+#test {
+    margin: auto;
+
 }

@@ -3,7 +3,7 @@
 
 		<head>
 				<meta charset="utf-8">
-				<link rel="stylesheet" href="../CSS/style_accueil.css" type="text/css" />
+				<link rel="stylesheet" href="../CSS/style_rechercher.css" type="text/css" />
 				<title>Partag'Zic</title>
 		</head>
 
@@ -11,7 +11,6 @@
 
 		<!-- Header -->
 				<header id="header">
-					<!--	<span class="elem">header</span> -->
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
 						<input type="submit" id='btnConnexion' value='CONNEXION'>
@@ -19,26 +18,32 @@
 					</div>
 
 					<div>
-						<!-- nav principale -->
+						<!-- nav  -->
 						<nav id="sitenav">
 	 			     <div class="container">
 	 			       <ul class="links">
-	 			           <li><a href="/" class ="active">ACCUEIL</a></li>
-	 			           <li><a href="/docs/Community">RECHERCHE</a></li>
-	 			           <li><a href="/docs/WPD/Contributors_Guide/">PUBLIER</a></li>
+	 			           <li><a href="../HTML/view_accueil_connecte.html" class ="active">ACCUEIL</a></li>
+	 			           <li><a href="../HTML/view_rechercher_connecte.html">RECHERCHER</a></li>
+	 			           <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
 	 			       </ul>
 	 			     </div>
  			     </nav>
+					</div>
 				</header>
 
 		<div id="wrapper">
 			<!-- Main -->
 			<section id="main">
+<div id="form">
+				<div id="divRecherche">
+					<b>RECHERCHE</b>
+					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="textRecherche">
+					<input type="button" id="boutonRechercher" value="RECHERCHER">
+				</div>
+</div>
 
 				<article>
-					<span class="elem">article</span>
 					<header>
-						<span class="elem">header</span>
 						<h2>Nom CRITIQUE</h2>
 						<p>Date de publication, auteur</p>
 					</header>
@@ -46,27 +51,28 @@
 					<p>Contenu de la critique </p>
 
 					<aside>
-						<span class="elem">aside</span>
 						<p>Espace commentaire</p>
 					</aside>
 
-					<footer>
-						<span class="elem">footer</span>
-						<input type="text" placeholder="Ecrivez votre commentaire puis validez" name="commentaire">
-					 	<input type="submit" id='btnCommenter' value='Commenter'>
-						<input type="text" placeholder="Entrer une note entre 1 et 5" name="note">
-						<input type="submit" id='btnNoter' value='Noter'>
-					</footer>
+
 				</article>
 			</section>
 
 			<!-- sidebar -->
 			<aside id="sidebar">
-				<span class="elem">aside</span>
-
+				<h3>Recherche rapide </h3>
+				<hr />
+				<div>
+					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
+					<button>RECHERCHER</button>
+				</div>
+				<br>
 				<h3>Statistiques du site</h3>
-
+				<hr />
+				<p> Il y a eu X visites sur le site</p>
+				<br>
 				<h3>Nous suivre sur les réseaux</h3>
+				<hr />
 				<nav>
 					<ul>
 						<li><a href="#">Facebook</a></li>

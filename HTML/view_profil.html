@@ -14,7 +14,7 @@
 					<!--	<span class="elem">header</span> -->
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						<input type="submit" id='btnConnexion' value='CONNEXION'>
+						<input type="submit" id='btnDeconnexion' value='DECONNEXION'>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
 					</div>
 
@@ -26,6 +26,7 @@
 	 			           <li><a href="/" class ="active">ACCUEIL</a></li>
 	 			           <li><a href="/docs/Community">RECHERCHER</a></li>
 	 			           <li><a href="/docs/WPD/Contributors_Guide/">PUBLIER</a></li>
+									 <li><a href="../HTML/view_profil.html">PROFIL</a></li>
 	 			       </ul>
 	 			     </div>
  			     </nav>
@@ -33,57 +34,28 @@
 				<div id="wrapper">
 					<!-- Main -->
 					<form action="modificationProfil.php" method="POST">
-						<b>Nom d'utilisateur</b>
+						<p>Nom d'utilisateur</p>
 						<input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
-						<b>Nouveau mot de passe</b>
+						<p>Nouveau mot de passe</p>
 						<input type="password" placeholder="Entrer le nouveau mot de passe" name="password" required>
-						<b>Confirmation du nouveau mot de passe</b>
+						<p>Confirmation du nouveau mot de passe</p>
 						<input type="password" placeholder="Confirmer le nouveau mot de passe" name="password_confirm" required>
-						<b>E-mail</b>
+						<p>E-mail</p>
 						<input type="email" placeholder="Entrer votre email" name="email" required>
-						<b>Age</b>
-						<input type="Age" placeholder="Entrer votre age" name="age" required>
-						<b>Vos styles<br></b>
-						<b>Rock</b>
-						<input type="checkbox" id="cBox" value="rock">
-						<b>Electro</b>
-						<input type="checkbox" id="cBox" value="Electro">
-						<b>Pop</b>
-						<input type="checkbox" id="cBox" value="Pop">
-						<b>Hip-Hop</b>
-						<input type="checkbox" id="cBox" value="Hip-Hop">
-						<b>Jazz</b>
-						<input type="checkbox" id="cBox" value="Jazz">
-						<b>Classique</b>
-						<input type="checkbox" id="cBox" value="Classique">
-						<b>Métal</b>
-						<input type="checkbox" id="cBox" value="Métal">
-						<b>Punk</b>
-						<input type="checkbox" id="cBox" value="Punk">
-						<b>Techno</b>
-						<input type="checkbox" id="cBox" value="Techno">
+						<p>Age</p>
+						<input type="text" placeholder="Entrer votre age" name="age" required>
+						<p>Vos styles<br></p>
+						<select multiple size = 3 id=select>
+							<option value="Classique">Classique</option>
+							<option value="Rock">Rock</option>
+							<option value="Pop">Pop</option>
+							<option value="Techno">Techno</option>
+						</select>
+						<p>Saissiez votre mot de passe actuel</p>
 						<input type="password" placeholder="Saisez le mot de passe actuel et validez pour accepter les changements" required>
 						<input type="submit" id='submit' value='ACCEPTER LES MODIFICATIONS' >
 				</form>
 			</div>
-
-			<!-- sidebar -->
-			<aside id="sidebar">
-				<span class="elem">aside</span>
-
-				<h3>Statistiques du site</h3>
-
-				<h3>Nous suivre sur les réseaux</h3>
-				<nav>
-					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Snapchat</a></li>
-						<li><a href="#">Instagram</a></li>
-					</ul>
-				</nav>
-
-			</aside>
-		</div>
 
 					<!-- footer -->
 					<footer id="footer">
