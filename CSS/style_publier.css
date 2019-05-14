@@ -1,0 +1,249 @@
+#fieldtype {
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
+}
+select {
+	margin-left: 10px;
+}
+#sidebar {
+	padding: 8px;
+	position: fixed;
+	right : 45px;
+	width:22%;
+	margin-left:1%;
+	margin-top:1em;
+	border: 1px solid #f1f1f1;
+	background: #fff;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-radius: 5px;
+}
+
+/*article*/
+
+article {
+	border: 1px solid #f1f1f1;
+	border-radius: 5px;
+	margin:1em;
+	padding:1em;
+	background:#fff;
+}
+
+article h2 {
+	margin-top: 1em;
+}
+
+article header, article footer {
+	border:1px dashed #ccc;
+	padding:1em;
+	background:#ddd;
+	display: inline-block;
+}
+
+aside {
+	border:1px dashed #444;
+}
+
+article aside {
+	background:#fff;
+	margin:1em 3em;
+	padding:0.5em;
+	border:1px dashed #ccc;
+}
+
+/* HEADER */
+
+#header {
+	box-shadow: inset 0 0 1em grey, 0 0 2em grey;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid black;
+}
+
+
+#hautheader {
+
+	height: 44px;
+	background: linear-gradient(0.25turn, #F5890B, orange);
+	border-radius: 5px 5px 0px 0px;
+}
+
+/*NAV*/
+
+#sitenav {
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 0px 0px 5px 5px;
+	border-top: 1px solid black;
+	height: 45px;
+}
+
+#sitenav a:link {
+ 	padding-left: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+#sitenav a:hover {
+  color: #F5890B;
+}
+
+nav ul li {
+	display:inline-block;
+}
+
+#favicon {
+	float: left;
+	padding: 1px;
+	height: 40px;
+	width: 40px;
+}
+
+#titre {
+	display: inline;
+	padding-left: 35px;
+}
+
+#btnConnexion {
+	margin: auto;
+	float: right;
+	background-color: white;
+	color: #F5890B;
+	border-radius: 0px 5px 0px 0px;
+}
+
+#btnConnexion:hover {
+	background-color: grey;
+	color: #F5890B;
+}
+
+/*CORPS*/
+
+body{
+	background-color: #FCFAF3;
+	margin: 8px;
+}
+
+#wrapper {
+	width:1080px;
+	margin: 0 auto 0 auto;
+}
+
+#main {
+	float:left;
+	width:75%;
+	margin: 0 0 50px 0;
+}
+
+/* footer */
+
+#footer{
+	clear:both;
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+/* Bordered form */
+
+form {
+	margin-top: 15px;
+    width:90%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#rechercheRapide{
+	width: 155px;
+	display: inline-block;
+}
+/* Marquage spécifique */
+
+article {
+	position:relative;
+}
+
+
+#container h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Design inputs */
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+#btnCommenter {
+	vertical-align: top;
+	margin-left: 30px;
+	height: 43px;
+	width: 109px;
+}
+
+#btnNoter {
+	vertical-align: top;
+	margin-left: 30px;
+	height: 43px;
+	width: 109px;
+}
+
+#areatitre {
+	 margin: 8px;
+	 width: 440px;
+	 padding: 12px;
+	 display: inline-block;
+	 border: 1px solid #ccc;
+	 box-sizing: border-box;
+	 resize: none;
+ }
+
+#areacontenu {
+	width: 663px;
+	margin-top: 8px;
+	height: 200px;
+	padding: 12px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	resize: none;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #F5890B;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #F5890B;
+}
+
+input[type=button] {
+	background-color: #F5890B;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: auto;
+}
+
+input[type=button]:hover {
+	background-color: white;
+	color: #F5890B;
+}
