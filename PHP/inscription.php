@@ -15,8 +15,9 @@
   {
       include("connexionbd.php");
       connexion_bd();
-	  $insert = pg_query("SELECT mail FROM utilisateur WHERE mail = $email");
-	  if (count($insert) > 0)
+	  $query = "SELECT mail FROM utilisateur WHERE mail = :email;";
+	  $count= count($select);
+	  if ($select > 0)
 	  {
 		  echo "Le mail existe deja";
 	  }
