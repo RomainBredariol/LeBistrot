@@ -24,7 +24,7 @@
 	 			     <div class="container">
 	 			       <ul class="links">
 	 			           <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
-	 			           <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
+	 			           <li><a href="view_rechercher_connecte.html">RECHERCHER</a></li>
 	 			           <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
 	 			           <li><a href="../HTML/view_profil.html">PROFIL</a></li>
 	 			       </ul>
@@ -38,9 +38,7 @@
 			<section id="main">
 
 				<article>
-					<span class="elem">article</span>
 					<header>
-						<span class="elem">header</span>
 						<h2>Nom CRITIQUE</h2>
 						<p>Date de publication, auteur</p>
 					</header>
@@ -48,27 +46,33 @@
 					<p>Contenu de la critique </p>
 
 					<aside>
-						<span class="elem">aside</span>
 						<p>Espace commentaire</p>
 					</aside>
 
-					<footer>
-						<span class="elem">footer</span>
-						<input type="text" placeholder="Ecrivez votre commentaire puis validez" name="commentaire">
-					 	<input type="submit" id='btnCommenter' value='Commenter'>
-						<input type="text" placeholder="Entrer une note entre 1 et 5" name="note">
-						<input type="submit" id='btnNoter' value='Noter'>
+					<footer id="commentaires">
+						<textarea placeholder="Ecrivez votre commentaire puis validez"></textarea>
+					 	<input type="button" id='btnCommenter' value='Commenter'>
+						<textarea placeholder="Entrer une note entre 1 et 5"></textarea>
+						<input type="button" id='btnNoter' value='Noter'>
 					</footer>
 				</article>
 			</section>
 
 			<!-- sidebar -->
 			<aside id="sidebar">
-				<span class="elem">aside</span>
-
+				<h3>Recherchec rapide </h3>
+				<hr />
+				<div>
+					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
+					<button>RECHERCHER</button>
+				</div>
+				<br>
 				<h3>Statistiques du site</h3>
-
+				<hr />
+				<p> Il y a eu X visites sur le site</p>
+				<br>
 				<h3>Nous suivre sur les réseaux</h3>
+					<hr />
 				<nav>
 					<ul>
 						<li><a href="#">Facebook</a></li>

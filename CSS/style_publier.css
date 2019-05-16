@@ -1,3 +1,11 @@
+#fieldtype {
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
+}
+select {
+	margin-left: 10px;
+}
 #sidebar {
 	padding: 8px;
 	position: fixed;
@@ -29,6 +37,7 @@ article header, article footer {
 	border:1px dashed #ccc;
 	padding:1em;
 	background:#ddd;
+	display: inline-block;
 }
 
 aside {
@@ -137,7 +146,8 @@ body{
 /* Bordered form */
 
 form {
-    width:100%;
+	margin-top: 15px;
+    width:90%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
@@ -186,8 +196,20 @@ input[type=text], input[type=password]{
 	width: 109px;
 }
 
-textarea {
-	width: 550px;
+#areatitre {
+	 margin: 8px;
+	 width: 440px;
+	 padding: 12px;
+	 display: inline-block;
+	 border: 1px solid #ccc;
+	 box-sizing: border-box;
+	 resize: none;
+ }
+
+#areacontenu {
+	width: 663px;
+	margin-top: 8px;
+	height: 200px;
 	padding: 12px;
 	display: inline-block;
 	border: 1px solid #ccc;

@@ -1,18 +1,13 @@
-<!doctype html>
-
-<form lang="fr">
+<html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../CSS/style_accueil.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/style_publier.css" type="text/css" />
         <title>Partag'Zic</title>
     </head>
 
     <body>
-    <!-- php associe -->
-    <form action="/PHP/publier.php" method="POST">
-        <!-- Header -->
+           <!-- Header -->
         <header id="header">
-            <!--	<span class="elem">header</span> -->
             <div id="hautheader">
                 <img src="..//IMAGES/favicon.png" id="favicon" />
                 <a href="view_connexion.html">
@@ -33,62 +28,69 @@
                     </div>
                 </nav>
             </div>
-
         </header>
 
         <div id="wrapper">
             <!-- Main -->
             <section id="main">
-
+                <!-- php associe -->
+                <form action="/PHP/publier.php" method="POST">
+                    <b> Publier une critique</b>
                 <article>
-                    <span class="elem">article</span>
                     <header>
-                        <span class="elem">header</span>
-                        <input type="text" placeholder="Nom Critique"/>
-                        <p id="date">Date de publication</p>
-                        <p id="auteur">auteur</p>
+                        <textarea maxlength="50" placeholder="Titre de votre critique" id="areatitre"></textarea>
+                        <fieldset id="fieldtype">
+                            <legend>Objet de la critique</legend>
+
+                            <input type="radio" id="titre" name="type">
+                            <label for="titre">Titre</label><br/>
+
+                            <input type="radio" id="album" name="type">
+                            <label for="album">Album</label><br/>
+
+                        </fieldset>
+
+                        <select>
+                            <option value="default">Default</option>
+                        </select>
                     </header>
 
-                    <p>Contenu de la critique </p>
-
-                    <aside>
-                        <span class="elem">aside</span>
-                        <p>Espace commentaire</p>
-                    </aside>
-
-                    <footer>
-                        <span class="elem">footer</span>
-                        <input type="submit" id='btnCommenter' value='Commenter'>
-                        <input type="submit" id='btnNoter' value='Noter'>
-                    </footer>
+                    <textarea placeholder="contenu de votre critique" id="areacontenu"></textarea>
+                    <input type="button" value="PUBLIER" id="btnPublier">
                 </article>
+                </form>
             </section>
 
             <!-- sidebar -->
             <aside id="sidebar">
-                <span class="elem">aside</span>
-
+                <h3>Recherche rapide </h3>
+                <hr />
+                <div>
+                    <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
+                    <button>RECHERCHER</button>
+                </div>
                 <h3>Statistiques du site</h3>
-
+                <hr />
+                <p> Il y a eu X visites sur le site</p>
+                <br>
                 <h3>Nous suivre sur les réseaux</h3>
+                <hr />
                 <nav>
                     <ul>
                         <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Snapchet</a></li>
+                        <li><a href="#">Snapchat</a></li>
                         <li><a href="#">Instagram</a></li>
                     </ul>
                 </nav>
-
             </aside>
         </div>
 
         <!-- footer -->
-        <footer>
-            <div>
-                <input type="submit" id='btnContacter' value='Contact'>
-                <input type="submit" id='btnConditions' value='Nos conditions'></div>
-        </footer>
-    </form>
+           <footer id="footer">
+               <div>
+                   <input type="submit" id='btnContacter' value='Contact'>
+                   <input type="submit" id='btnConditions' value='Nos conditions'></div>
+           </footer>
+
     </body>
-</form>
 </html>

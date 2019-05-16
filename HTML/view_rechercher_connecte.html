@@ -1,33 +1,31 @@
 <!doctype html>
+<html lang="fr">
 
-	<form lang="fr">
 		<head>
 				<meta charset="utf-8">
-				<link rel="stylesheet" href="../CSS/style_accueil.css" type="text/css" />
+				<link rel="stylesheet" href="../CSS/style_rechercher.css" type="text/css" />
 				<title>Partag'Zic</title>
 		</head>
 
 		<body>
-		<!-- php associe -->
-				<form action="/PHP/accueil.php" method="POST">
-				<!-- Header -->
+
+		<!-- Header -->
 				<header id="header">
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						<a href="view_connexion.html">
-							<input type="button" id='btnConnexion' value='CONNEXION'>
-						</a>
+						<input type="submit" id='btnConnexion' value='DECONNEXION'>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
 					</div>
 
 					<div>
-						<!-- nav principale -->
+						<!-- nav  -->
 						<nav id="sitenav">
 	 			     <div class="container">
 	 			       <ul class="links">
-								 <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
-								 <li><a href="view_rechercher_connecte.html">RECHERCHER</a></li>
-								 <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+	 			           <li><a href="../HTML/view_accueil_connecte.html" class ="active">ACCUEIL</a></li>
+	 			           <li><a href="../HTML/view_rechercher_connecte.html">RECHERCHER</a></li>
+	 			           <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+									 <li><a href="../HTML/view_profil.html">PROFIL</a></li>
 	 			       </ul>
 	 			     </div>
  			     </nav>
@@ -36,8 +34,15 @@
 
 		<div id="wrapper">
 			<!-- Main -->
-			<section id="main">
 
+			<section id="main">
+				<div id="form">
+					<div id="divRecherche">
+						<b>RECHERCHE</b>
+						<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="textRecherche">
+						<input type="button" id="boutonRechercher" value="RECHERCHER">
+					</div>
+				</div>
 				<article>
 					<header>
 						<h2>Nom CRITIQUE</h2>
@@ -50,6 +55,12 @@
 						<p>Espace commentaire</p>
 					</aside>
 
+					<footer id="commentaires">
+						<textarea placeholder="Ecrivez votre commentaire puis validez"></textarea>
+						<input type="button" id='btnCommenter' value='Commenter'>
+						<textarea placeholder="Entrer une note entre 1 et 5"></textarea>
+						<input type="button" id='btnNoter' value='Noter'>
+					</footer>
 				</article>
 			</section>
 
@@ -61,6 +72,7 @@
 					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
 					<button>RECHERCHER</button>
 				</div>
+				<br>
 				<h3>Statistiques du site</h3>
 				<hr />
 				<p> Il y a eu X visites sur le site</p>
@@ -84,7 +96,6 @@
 						<input type="submit" id='btnContacter' value='Contact'>
 						<input type="submit" id='btnConditions' value='Nos conditions'></div>
 					</footer>
-				</form>
+
 		</body>
-</form>
 </html>
