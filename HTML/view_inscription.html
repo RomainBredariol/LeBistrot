@@ -22,9 +22,9 @@
           <nav id="sitenav">
            <div class="container">
              <ul class="links">
-                 <li><a href="/" class ="active">ACCUEIL</a></li>
-                 <li><a href="/docs/Community">RECHERCHE</a></li>
-                 <li><a href="/docs/WPD/Contributors_Guide/">PUBLIER</a></li>
+                 <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
+                 <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
+                 <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
              </ul>
            </div>
          </nav>
@@ -36,26 +36,31 @@
             <form action="../PHP/verification.php" method="POST">
                 <h1>Inscription</h1>
 
-                <p>Nom d'utilisateur</p>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
-                <p>Mot de passe</p>
+                <b>E-mail</b>
+                <input type="email" placeholder="Entrer votre email" name="email" required><br/>
+                <b>Mot de passe</b>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
-                <p>Confirmation du mot de passe</p>
+                <b>Confirmation du mot de passe</b>
                 <input type="password" placeholder="Confirmer le mot de passe" name="password_confirm" required>
-                <p>E-mail</p>
-                <input type="email" placeholder="Entrer votre email" name="email" required>
-                <p>Nom</p>
+                <b>Nom</b>
                 <input type="text" placeholder="Entrer votre nom" name="nom" required>
-                <p>Prénom</p>
+                <b>Prenom</b>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
-                <p>Date de naissance</p>
-                <input type="text" placeholder="Entrer votre date de naissance" name="datenaissance" required>
-                <p>Adresse</p>
-                <input type="text" placeholder="Entrer votre adresse" name="adresse" required>
-                <p>Code Postal</p>
-                <input type="text" placeholder="Entrer votre code postal" name="cp" required>
-                <p>Ville</p>
+                <b>Date de naissance</b>
+                <input type="date" placeholder="Entrer votre date de naissance" name="datenaissance" required>
+				<br/>
+                <b>Adresse</b>
+                <input type="Adresse" placeholder="Entrer votre adresse" name="adresse" required>
+				<br/>
+                <b>Code Postal</b>
+                <input type="CP" placeholder="Entrer votre code postal" name="cp" required>
+				<br/>
+                <b>Ville</b>
                 <input type="text" placeholder="Entrer votre ville" name="ville" required>
+				Etes-vous un profesionnel ? :<br/>
+				<select name="prof" id="prof"> 
+				<option value="false">non</option>
+				<option value="true">oui</option>
                 <p>Choisissez vos styles<br></p>
                 <select multiple size = 2 id=select>
                   <option value="Classique">Classique</option>
