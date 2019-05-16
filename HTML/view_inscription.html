@@ -22,10 +22,10 @@
           <nav id="sitenav">
            <div class="container">
              <ul class="links">
-                 <li><a href="/" class ="active">ACCUEIL</a></li>
-                 <li><a href="/docs/Community">RECHERCHE</a></li>
-                 <li><a href="/docs/WPD/Contributors_Guide/">PROFIL</a></li>
-                 <li><a href="/docs/WPD/Contributors_Guide/">PUBLIER</a></li>
+                 <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
+				 <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li> 
+                 <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+				 <li><a href="../HTML/view_profil.html">PROFIL</a></li>
              </ul>
            </div>
          </nav>
@@ -33,30 +33,35 @@
 
         <div id="container">
             <!-- zone de connexion -->
-            <form action="../PHP/verification.php" method="POST">
+            <form action="../PHP/inscription.php" method="POST">
                 <h1>Inscription</h1>
 
-                <b>Nom d'utilisateur</b>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+                <b>E-mail</b>
+                <input type="email" placeholder="Entrer votre email" name="email" required><br/>
                 <b>Mot de passe</b>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
                 <b>Confirmation du mot de passe</b>
                 <input type="password" placeholder="Confirmer le mot de passe" name="password_confirm" required>
-                <b>E-mail</b>
-                <input type="email" placeholder="Entrer votre email" name="email" required>
                 <b>Nom</b>
                 <input type="text" placeholder="Entrer votre nom" name="nom" required>
-                <b>Nom</b>
+                <b>Prenom</b>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
-                <b>Age</b>
+                <b>Date de naissance</b>
                 <input type="date" placeholder="Entrer votre date de naissance" name="datenaissance" required>
+				<br/>
                 <b>Adresse</b>
                 <input type="Adresse" placeholder="Entrer votre adresse" name="adresse" required>
+				<br/>
                 <b>Code Postal</b>
                 <input type="CP" placeholder="Entrer votre code postal" name="cp" required>
+				<br/>
                 <b>Ville</b>
                 <input type="text" placeholder="Entrer votre ville" name="ville" required>
-                <b>Choisissez vos styles<br></b>
+				Etes-vous un profesionnel ? :<br/>
+				<select name="prof" id="prof"> 
+				<option value="false">non</option>
+				<option value="true">oui</option>
+                Choisissez vos styles
                 <b>Rock</b>
                 <input type="checkbox" id="cBox" value="rock">
                 <b>Electro</b>
@@ -76,7 +81,6 @@
                 <b>Techno</b>
                 <input type="checkbox" id="cBox" value="Techno">
                 <input type="submit" id='submit' value='Inscription' >
-
               <!-- <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];

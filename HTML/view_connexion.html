@@ -13,8 +13,6 @@
         <!--	<span class="elem">header</span> -->
         <div id="hautheader">
           <img src="..//IMAGES/favicon.png" id="favicon" />
-          <input type="submit" id='btnConnexion' value='CONNEXION'>
-
           <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
         </div>
 
@@ -23,9 +21,9 @@
           <nav id="sitenav">
            <div class="container">
              <ul class="links">
-                 <li><a href="/" class ="active">ACCUEIL</a></li>
-                 <li><a href="/docs/Community">RECHERCHER</a></li>
-                 <li><a href="/docs/WPD/Contributors_Guide/">PUBLIER</a></li>
+                    <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
+					<li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
+					<li><a href="../HTML/view_publier.html">PUBLIER</a></li>
              </ul>
            </div>
          </nav>
@@ -41,6 +39,9 @@
                 <b>Mot de passe</b>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
                 <input type="submit" id='submit' value='CONNEXION' >
+				
+				Vous n'avez pas de compte ?
+				<a href="../HTML/view_inscription.html" class ="active">S'enregistrer</a>
 
               <!-- <?php
                 if(isset($_GET['erreur'])){
