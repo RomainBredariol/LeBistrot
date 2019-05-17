@@ -1,16 +1,76 @@
 <?php
- 
-  $password = $_POST['password'];
-  $password_confirm = $_POST['password_confirm'];
-  $email = $_POST['email'];
-  $datenaissance = $_POST['datenaissance'];
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $adresse = $_POST['adresse'];
-  $cp = $_POST['cp'];
-  $ville = $_POST['ville'];
-  $profes = $_POST['prof'];
-  
+
+if(isset($_POST['password'])) {
+    $password=$_POST['password'];
+}
+else {
+    $password="";
+}
+
+if(isset($_POST['password_confirm'])) {
+    $password_confirm=$_POST['password_confirm'];
+}
+else {
+    $password_confirm="";
+}
+
+if(isset($_POST['email'])) {
+    $email=$_POST['email'];
+}
+else {
+    $email="";
+}
+
+if(isset($_POST['datenaissance'])) {
+    $datenaissance=$_POST['datenaissance'];
+}
+else {
+    $datenaissance="";
+}
+
+if(isset($_POST['nom'])) {
+    $nom=$_POST['nom'];
+}
+else {
+    $nom="";
+}
+
+if(isset($_POST['prenom'])) {
+    $prenom=$_POST['prenom'];
+}
+else {
+    $prenom="";
+}
+
+if(isset($_POST['adresse'])) {
+    $adresse=$_POST['adresse'];
+}
+else {
+    $adresse = "";
+}
+
+if(isset($_POST['cp'])) {
+    $cp=$_POST['cp'];
+}
+else {
+    $cp="";
+}
+
+if(isset($_POST['ville'])) {
+    $ville=$_POST['ville'];
+}
+else {
+    $ville="";
+}
+
+if(isset($_POST['prof'])) {
+    $profes=$_POST['prof'];
+}
+else {
+    $profes="";
+}
+
+
   if($password == $password_confirm)
   {
       include("connexionbd.php");
