@@ -22,9 +22,9 @@
 						<nav id="sitenav">
 	 			     <div class="container">
 	 			       <ul class="links">
-	 			           <li><a href="../HTML/view_accueil_connecte.html" class ="active">ACCUEIL</a></li>
-	 			           <li><a href="../HTML/view_rechercher_connecte.html">RECHERCHER</a></li>
-	 			           <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+                           <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
+                           <li><a href="view_rechercher_connecte.php">RECHERCHER</a></li>
+                           <li><a href="publier.php">PUBLIER</a></li>
 	 			       </ul>
 	 			     </div>
  			     </nav>
