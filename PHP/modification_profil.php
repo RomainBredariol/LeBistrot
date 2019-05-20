@@ -81,21 +81,52 @@ if(isset($_POST['prof'])) {
     $newProfes=$_POST['prof'];
 }
 else {
-    $newProfes="";
+    $newProfes=FALSE;
 }
-
+$email = "toto@tata.fr";
+    //$_SESSION['username']; //recupère le contenu de la variable de session
 include("connexionbd.php");
-connexion_bd();
+$dbcon = connexion_bd();
 $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'";
-$res = pg_query($dbconn, $query);
-$res = pg_fetch_row($res);
+$res = pg_query($dbcon, $query);
+$res = pg_fetch_row($res, 0);
+if($oldPassword == $res[6]) {
 
-if($oldPassword == $res[6] and ( ($newPassword == $newPassword_confirm and $newPassword != "") or $newPrenom !="" or $newProfes != $res[3] or $newEmail != $res[0] or $newDatenaissance != $res[7] or  $newVille != $res[8] or $newNom != $res[2] or $newPrenom != $res[1]  or $newAdresse != $res[6] or $newCp != $res[5]))
-{
-    $query = "UPDATE utilisateur SET  mail =  WHERE mail='{$email}'";
-    pg_query($dbconn, $query);
-}
-else
-{
-    echo "Les mots de passes ne correspondent pas";//mauvais mot de passe
-}
+    if ($newEmail !="" and $newEmail != $res[0] ){
+        $query = "UPDATE utilisateur SET  mail='{$newEmail}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    if ( $newPrenom != "" and $newPrenom != $res[1]) {
+        $query = "UPDATE utilisateur SET  prenom='{$newPrenom}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    if ( $newNom !="" and  $newNom != $res[2]){
+        $query = "UPDATE utilisateur SET  nom='{$newNom}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+   /* if ($newProfes != $res[3]) {
+        $query = "UPDATE utilisateur SET  professionnel  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }*/
+    if ($newCp != 0  and $newCp != $res[4]){
+        $query = "UPDATE utilisateur SET  cp='{$newCp}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    if ( $newAdresse != ""  and $newAdresse != $res[5]) {
+        $query = "UPDATE utilisateur SET  adresse='{$newAdresse}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    if ($newDatenaissance != "" and  $newDatenaissance != $res[7]) {
+        $query = "UPDATE utilisateur SET  date_de_naissance='{$newDatenaissance}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    if ( $newVille !="" and $newVille != $res[8]){
+        $query = "UPDATE utilisateur SET  ville='{$newVille}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    if($newPassword == $newPassword_confirm) {
+        $query = "UPDATE utilisateur SET  mdp='{$newPassword}'  WHERE mail='{$email}'";
+        pg_query($dbcon, $query);
+    }
+    //REDIRECTION PAGE PROFIL
+} else  echo "Le mot de passe est incorrect ou aucun champs n'a été modifié";//mauvais mot de passe

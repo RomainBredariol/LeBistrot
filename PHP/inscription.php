@@ -140,14 +140,15 @@ else {
         <input type="text" placeholder="Entrer votre nom" name="nom" required>
         <b>Prenom</b>
         <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
+        <br/>
         <b>Date de naissance</b>
-        <input type="date" placeholder="Entrer votre date de naissance" name="datenaissance" required>
+        <input type="text" placeholder="Entrer votre date de naissance" name="datenaissance" required>
         <br/>
         <b>Adresse</b>
-        <input type="Adresse" placeholder="Entrer votre adresse" name="adresse" required>
+        <input type="text" placeholder="Entrer votre adresse" name="adresse" required>
         <br/>
         <b>Code Postal</b>
-        <input type="CP" placeholder="Entrer votre code postal" name="cp" required>
+        <input type="text" placeholder="Entrer votre code postal" name="cp" required>
         <br/>
         <b>Ville</b>
         <input type="text" placeholder="Entrer votre ville" name="ville" required>

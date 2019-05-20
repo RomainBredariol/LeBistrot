@@ -171,3 +171,19 @@ input[type=submit]:hover {
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
+
+/* footer */
+
+#footer{
+	clear:both;
+	background: linear-gradient(0.25turn, #F8E9D9, white);
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#wrapper {
+	width:1080px;
+	margin: 0 auto 0 auto;
+}
+
