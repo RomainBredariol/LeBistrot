@@ -14,7 +14,19 @@
  				<header id="header">
  					<div id="hautheader">
  						<img src="..//IMAGES/favicon.png" id="favicon" />
- 						<input type="submit" id='btnConnexion' value='CONNEXION'>
+						
+ 						<!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
+								<?php
+								 session_start();
+								 if (isset($_SESSION['username']))
+								 {
+									echo '<a href="deconnexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+								 }
+								 else
+								 {
+									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+								 }
+								 ?>
  						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
  					</div>
 
@@ -23,9 +35,18 @@
  						<nav id="sitenav">
  	 			     <div class="container">
  	 			       <ul class="links">
- 	 			           <li><a href="../HTML/view_accueil_connecte.html" class ="active">ACCUEIL</a></li>
- 	 			           <li><a href="../HTML/view_rechercher_connecte.html">RECHERCHER</a></li>
- 	 			           <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
+								 <li><a href="rechercher.php">RECHERCHER</a></li>
+								 <li><a href="publier.php">PUBLIER</a></li>
+								 
+								 <!-- affiche le menu profil  -->
+								 <?php
+								 session_start();
+								 if (isset($_SESSION['username']))
+								 {
+									echo '<li><a href="profil.php">PROFIL</a></li>';
+								 }
+								 ?>
  	 			       </ul>
  	 			     </div>
   			     </nav>
