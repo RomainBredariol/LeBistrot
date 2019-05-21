@@ -1,9 +1,3 @@
-<?php
-function afficherCritique(){
-
-}
-  ?>
-
 
 <!doctype html>
 
@@ -42,19 +36,35 @@ function afficherCritique(){
 		<div id="wrapper">
 			<!-- Main -->
 			<section id="main">
+      </br>
+      </br>
+      </br>
         <!-- On affiche la critique avec toutes les infos correspondantes -->
+        <?php
 
+        function afficherCritique ($id){
+          if ( isset($_GET['id_critique'])){
+            // Connnexion à la base de données
+            include("connexionbd.php");
+            $connexion = connexion_bd();
+            //On récupère les 5 dernières critiques
+            $requete = pg_query($connexion,"select critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.id_critique = ".$_GET['id_critique'].";");
+            // Met toutes les reponses dans une liste
+            $liste = pg_fetch_array($requete);
+            echo "<fieldset id='fieldtype'>
+                      <legend>".$liste['titre']."</legend>
+                      <article>".$liste['corps']."</article>
+                  </fieldset>";
 
-                
+            echo "</br>Ecrit par ".$liste['prenom']." ".$liste['nom']."</br>";
 
+          }
 
+        }
 
-
-
-
-
-        afficherCritique();
-        <!-- On met un bouton pour afficher plus de critiques -->
+        afficherCritique($_GET['id_critique']);
+        ?>
+      <!-- On met un bouton pour afficher plus de critiques -->
 			</section>
 
 

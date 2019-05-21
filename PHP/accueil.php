@@ -12,7 +12,7 @@
     include("connexionbd.php");
     $connexion = connexion_bd();
     //On récupère les 5 dernières critiques
-    $requete = pg_query($connexion,"select critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail order by date_publication desc limit ".$nbreCritiques.";");
+    $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail order by date_publication desc limit ".$nbreCritiques.";");
     // Met toutes les reponses dans une liste
     $liste = pg_fetch_all($requete);
     $taille = count($liste);
@@ -20,7 +20,7 @@
     for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
       echo '
       <article>
-        <a href="">
+        <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
             <header>
               <h2>'.$liste[$cpt]['titre'].'</h2>
               <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
