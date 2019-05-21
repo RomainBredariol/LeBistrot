@@ -10,22 +10,6 @@
 		connexion_bd();
     //On selectionne les données
 		$index = pg_query("SELECT * FROM utilisateur WHERE mail='".$_POST['username']."' AND mdp='".$_POST['password']."'");
-    //si pas de résultat
-		if(pg_num_rows($index) == 0)
-		{
-			echo 'Mauvais nom d utilisateur ou mot de passe!';
-		}
- //si résultat
-		else{
-             //on créer la session
-			session_start();
-			$username = $_POST['username'];
-			$_SESSION['username'] = $_POST['username'];
-                    //on redirige
-			echo 'Vous êtes connecté en tant que :';
-			echo $username;
-			header("Location:accueil.php");
-		}
 ?>
 
 <html>
@@ -64,6 +48,35 @@
 </header>
 
 <div id="container">
+
+
+<?php
+//partie connexion
+//si pas de résultat
+		$retour = $_POST['retour'];
+		if(pg_num_rows($index) == 0)
+		{
+			if($retour == 1)
+			{
+			echo "<center><h3><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mauvais nom d'utilisateur ou mot de passe !</font></h3></center>";
+			
+			}
+		}
+ //si résultat
+		else
+		{
+             //on créer la session
+			session_start();
+			$username = $_POST['username'];
+			$_SESSION['username'] = $_POST['username'];
+                    //on redirige
+			echo 'Vous êtes connecté en tant que :';
+			echo $username;
+			header("Location:accueil.php");
+		}
+		$retour = 1;
+?>
+
     <!-- zone de connexion -->
     <form action="../PHP/connexion.php" method="POST">
         <h1>Connexion</h1>
@@ -72,6 +85,8 @@
         <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
         <b>Mot de passe</b>
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+		<!-- retour mauvais mdp -->
+		<input type="hidden" name="retour" value="1" >
         <input type="submit" id='test' value='CONNEXION' >
         Vous n'avez pas de compte ?
         <a href="inscription.php" class ="active">S'enregistrer</a>
