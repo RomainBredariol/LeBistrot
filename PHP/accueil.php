@@ -30,7 +30,7 @@
       </article>';
     }
     echo '
-      <form style="width:21%;border:1px;solid #f1f1f1;border-radius:5px;margin:1em;padding:1em;background:#fff" action="./accueil.php" method="POST">
+      <form style="width:175px;border:1px;solid #f1f1f1;border-radius:5px;margin:1em;padding:1em;background:#fff" action="./accueil.php" method="POST">
         <input type="hidden" name="nbreCritiques" value="'.$nbreCritiques.'" />
         <input type="submit" name="generer" value="Générer plus de critiques">
       </form>';
@@ -52,7 +52,7 @@
 				<header id="header">
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						
+
 						<!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
 								<?php
 								 session_start();
@@ -76,7 +76,7 @@
 								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
-								 
+
 								 <!-- affiche le menu profil  -->
 								 <?php
 								 session_start();
