@@ -66,7 +66,7 @@
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>
         <input type="submit" id='test' value='CONNEXION' >
         Vous n'avez pas de compte ?
-        <a href="../HTML/view_inscription.html" class ="active">S'enregistrer</a>
+        <a href="inscription.php" class ="active">S'enregistrer</a>
     </form>
 </div>
 
