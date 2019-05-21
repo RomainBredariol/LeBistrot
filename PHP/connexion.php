@@ -95,8 +95,8 @@
 
 <footer id="footer">
     <div>
-        <input type="submit" id='btnContacter' value='Contact'>
-        <input type="submit" id='btnConditions' value='Nos conditions'></div>
+        <button> <a href="Contact.php" class ="active">Contact</a> </button>
+        <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
 </footer>
 
 </body>

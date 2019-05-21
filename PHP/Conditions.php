@@ -54,7 +54,7 @@
 			<section id="main">
                 <form>
                     <h1> Nos conditions </h1>
-                    <hr />
+                    <hr/>
 <p>Vous pouvez avoir recours à nos services pour toutes sortes de raisons : pour rechercher et partager des données, pour communiquer avec d’autres personnes ou pour créer de nouveaux contenus.
     En partageant vos données avec nous, vous nous permettez d’augmenter la qualité de ces services – en améliorant la pertinence des annonces et des résultats qui vous sont proposés, en vous aidant à établir des contacts ou en accélérant le partage de vos données. Comme vous utilisez nos services, nous souhaitons que vous compreniez comment nous utilisons vos données et de quelles manières vous pouvez protéger votre vie privée.
     Notre politique de confidentialité explique :
@@ -69,8 +69,8 @@
 					<!-- footer -->
 					<footer id="footer">
 						<div>
-						<input type="submit" id='btnContacter' value='Contact'>
-						<input type="submit" id='btnConditions' value='Nos conditions'></div>
+                            <button> <a href="Contact.php" class ="active">Contact</a> </button>
+                            <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
 					</footer>
 		</body>
 </html>
