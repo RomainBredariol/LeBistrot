@@ -14,7 +14,7 @@
  				<header id="header">
  					<div id="hautheader">
  						<img src="..//IMAGES/favicon.png" id="favicon" />
-
+						
  						<!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
 								<?php
 								 session_start();
@@ -38,7 +38,7 @@
 								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
-
+								 
 								 <!-- affiche le menu profil  -->
 								 <?php
 								 session_start();
@@ -121,17 +121,17 @@
 
 
 
-                echo '
+                echo "
                 <article>
-                  <a href="">
-                      <header>
-                        <h2>'.$titre.'</h2>
-                        <p>'.$date.' par '.$prenom.' '.$nom.'</p>
-                      </header>
-                    </a>
-                  <p>'.$contenu.'</p>
-                </article>';
-
+                <header>
+                <h2>".$titre."</h2>
+                <p>".$date." par ".$prenom." ".$nom."</p>
+                </header>
+                <p>".$contenu."</p>
+                <aside>
+                <p>Espace commentaire</p>
+                </aside>
+                </article>";
             }
           }
 
@@ -200,8 +200,7 @@
  					<footer id="footer">
  						<div>
  						<input type="submit" id='btnContacter' value='Contact'>
- 						<input type="submit" id='btnConditions' value='Nos conditions'>
-            </div>
+ 						<input type="submit" id='btnConditions' value='Nos conditions'></div>
  					</footer>
 
  		</body>
