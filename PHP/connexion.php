@@ -1,4 +1,11 @@
 <?php
+	//verification si deja connecté
+	session_start();
+	if (isset($_SESSION['username']))
+	{
+		header("Location:accueil.php");
+	}
+								 
 		include("connexionbd.php");
 		connexion_bd();
     //On selectionne les données
@@ -36,8 +43,9 @@
     <!--	<span class="elem">header</span> -->
     <div id="hautheader">
         <img src="..//IMAGES/favicon.png" id="favicon" />
+		<a href="inscription.php">
         <input type="submit" id='btnInscription' value='INSCRIPTION'>
-
+		</a>
         <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
     </div>
 
@@ -46,9 +54,9 @@
         <nav id="sitenav">
             <div class="container">
                 <ul class="links">
-                    <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
-                    <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
-                    <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+					<li><a href="accueil.php" class ="active">ACCUEIL</a></li>
+				    <li><a href="rechercher.php">RECHERCHER</a></li>
+					<li><a href="publier.php">PUBLIER</a></li>
                 </ul>
             </div>
         </nav>

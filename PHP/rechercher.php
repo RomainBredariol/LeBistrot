@@ -24,7 +24,7 @@
 								 }
 								 else
 								 {
-									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="CONNEXION"></a>';
 								 }
 								 ?>
  						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
