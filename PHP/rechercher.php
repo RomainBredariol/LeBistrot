@@ -38,6 +38,7 @@
 								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
+								 <li><a href="Contact.php">CONTACT</a></li>
 
 								 <!-- affiche le menu profil  -->
 								 <?php
@@ -76,7 +77,11 @@
             <br>
             <h3>Statistiques du site</h3>
             <hr />
-            <p> Il y a eu X visites sur le site</p>
+            <?php
+				include("compteur.php");
+				$vue=compteur();
+				echo "<p>Il y a eu $vue visites sur le site</p>";
+				?>
             <br>
             <h3>Nous suivre sur les réseaux</h3>
             <hr />

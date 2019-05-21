@@ -35,9 +35,10 @@ echo '
 	 			     <div class="container">
 	 			       <ul class="links">
                            <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
-                           <li><a href="view_rechercher_connecte.php">RECHERCHER</a></li>
+                           <li><a href="rechercher.php">RECHERCHER</a></li>
                            <li><a href="publier.php">PUBLIER</a></li>
-	 			           <li><a href="view_profil.php">PROFIL</a></li>
+						   <li><a href="Contact.php">CONTACT</a></li>
+	 			           <li><a href="profil.php">PROFIL</a></li>
 	 			       </ul>
 	 			     </div>
  			     </nav>

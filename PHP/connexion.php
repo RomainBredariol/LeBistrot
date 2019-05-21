@@ -41,6 +41,7 @@
 					<li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 				    <li><a href="rechercher.php">RECHERCHER</a></li>
 					<li><a href="publier.php">PUBLIER</a></li>
+					<li><a href="Contact.php">CONTACT</a></li>
                 </ul>
             </div>
         </nav>

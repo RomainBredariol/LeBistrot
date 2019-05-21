@@ -124,9 +124,10 @@ else {
         <nav id="sitenav">
             <div class="container">
                 <ul class="links">
-                    <li><a href="../HTML/view_accueil.html" class ="active">ACCUEIL</a></li>
-                    <li><a href="../HTML/view_rechercher.html">RECHERCHER</a></li>
-                    <li><a href="../HTML/view_publier.html">PUBLIER</a></li>
+                    <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
+					<li><a href="rechercher.php">RECHERCHER</a></li>
+					<li><a href="publier.php">PUBLIER</a></li>
+					<li><a href="Contact.php">CONTACT</a></li>
                 </ul>
             </div>
         </nav>
