@@ -76,8 +76,18 @@ body{
 
 #main {
 	float:left;
-	width:75%;
+	width:95%;
 	margin: 0 0 50px 0;
+}
+
+textarea {
+	width: 100%;
+	height: 150px;
+	padding: 12px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	resize: none;
 }
 
 /* footer */
@@ -101,25 +111,9 @@ form {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-#rechercheRapide{
-	width: 155px;
-	display: inline-block;
-}
-/* Marquage spécifique */
-
-article {
-	position:relative;
-}
-
-
-#container h1{
-    width: 38%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
 
 /* Design inputs */
-input[type=text], input[type=password]{
+input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -128,29 +122,6 @@ input[type=text], input[type=password]{
     box-sizing: border-box;
 }
 
-
-#btnCommenter {
-	vertical-align: top;
-	margin-left: 30px;
-	height: 43px;
-	width: 109px;
-}
-
-#btnNoter {
-	vertical-align: top;
-	margin-left: 30px;
-	height: 43px;
-	width: 109px;
-}
-
-textarea {
-	width: 550px;
-	padding: 12px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-	resize: none;
-}
 
 /* Set a style for all buttons */
 input[type=submit] {

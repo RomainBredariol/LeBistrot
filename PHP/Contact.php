@@ -27,11 +27,11 @@ if (isset($_SESSION['username'])) {
             <form action="../PHP/EnvoyerContact.php" method="POST">
                         <h1>Nous contacter</h1>
                         <b>Email</b>
-                        <input type="email" placeholder="Votre E-mail" name="email"><br/> 
+                        <input type="text" placeholder="Votre E-mail" name="email"><br/> 
                         <b>Objet</b>
                         <input type="text" placeholder="Objet de votre demande" name="objet" >
-                        <b>Contenu</b>
-                        <input type="text" placeholder="Décrivez votre problème" name="requeteContact" >
+                        <b>Contenu</b><br/> 
+                        <textarea placeholder="Quel est votre problème ?" id="areacontenu"></textarea>
                         <input type="submit" id="submit" value="Envoyer">
              </form>
      ';
