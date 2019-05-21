@@ -1,5 +1,11 @@
 <?php
-
+//verification si deja connecté
+session_start();
+if (isset($_SESSION['username']))
+{
+	header("Location:accueil.php");
+}
+	
 if(isset($_POST['password'])) {
     $password=$_POST['password'];
 }
@@ -107,7 +113,9 @@ else {
     <!--	<span class="elem">header</span> -->
     <div id="hautheader">
         <img src="..//IMAGES/favicon.png" id="favicon" />
+		<a href="connexion.php">
         <input type="submit" id='btnConnexion' value='CONNEXION'>
+		</a>
         <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
     </div>
 
