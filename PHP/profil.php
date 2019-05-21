@@ -57,24 +57,21 @@ echo '
                         <b>Prenom</b>
                         <input type="text" value="'.$res[1].'" name="prenom" >
                         <b>Date de naissance</b>
-                        <input type="date" value="'.$res[7].'" name="datenaissance" >
+                        <input type="text" value="'.$res[7].'" name="datenaissance" >
                         <br/>
                         <b>Adresse</b>
-                        <input type="Adresse" value="'.$res[5].'" name="adresse" >
+                        <input type="text" value="'.$res[5].'" name="adresse" >
                         <br/>
                         <b>Code Postal</b>
-                        <input type="CP" value="'.$res[4].'" name="cp" >
+                        <input type="text" value="'.$res[4].'" name="cp" >
                         <br/>
                         <b>Ville</b>
-                        <input type="text" value="'. $res[8].'" name="ville" >
-                        
-                        
+                        <input type="text" value="'. $res[8].'" name="ville" >                        
                         <b>Mot de passe</b>
                         <input type="password" placeholder="Entrer votre ancien mot de passe" name="oldPassword" >
-                        
-                            <input type="submit" id=\'submit\' value=\'Modifier\' >
-                            </div>
+                        <input type="submit" id=\'submit\' value=\'Modifier\' >
                     </form>
+                </div>
 
 					<!-- footer -->
 					<footer id="footer">

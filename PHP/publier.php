@@ -16,8 +16,7 @@
 <header id="header">
     <div id="hautheader">
         <img src="..//IMAGES/favicon.png" id="favicon" />
-		
-        <!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
+		        <!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
 								<?php
 								 session_start();
 								 if (isset($_SESSION['username']))
