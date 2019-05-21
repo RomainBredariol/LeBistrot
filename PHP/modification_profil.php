@@ -83,6 +83,7 @@ if(isset($_POST['prof'])) {
 else {
     $newProfes=FALSE;
 }
+
 $email = "toto@tata.fr";
     //$_SESSION['username']; //recupère le contenu de la variable de session
 include("connexionbd.php");
