@@ -2,11 +2,17 @@
 
   define ("NBRE_CARACTERES","75");
   function afficherAccueil (){
+    // On récupère le parametre du nombre de critiques à afficher
+    if (isset($_POST['nbreCritiques']) && ! empty($_POST['nbreCritiques'])){
+      $nbreCritiques=$_POST['nbreCritiques'] + 5;
+    }else{
+      $nbreCritiques=5;
+    }
     // Connnexion à la base de données
     include("connexionbd.php");
     $connexion = connexion_bd();
     //On récupère les 5 dernières critiques
-    $requete = pg_query($connexion,"select critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail order by date_publication desc limit 5;");
+    $requete = pg_query($connexion,"select critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail order by date_publication desc limit ".$nbreCritiques.";");
     // Met toutes les reponses dans une liste
     $liste = pg_fetch_all($requete);
     $taille = count($liste);
@@ -23,6 +29,11 @@
         <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
       </article>';
     }
+    echo '
+      <form style="width:175px;border:1px;solid #f1f1f1;border-radius:5px;margin:1em;padding:1em;background:#fff" action="./accueil.php" method="POST">
+        <input type="hidden" name="nbreCritiques" value="'.$nbreCritiques.'" />
+        <input type="submit" name="generer" value="Générer plus de critiques">
+      </form>';
   }
   ?>
 
@@ -41,7 +52,7 @@
 				<header id="header">
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						
+
 						<!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
 								<?php
 								 session_start();
@@ -65,7 +76,7 @@
 								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
-								 
+
 								 <!-- affiche le menu profil  -->
 								 <?php
 								 session_start();
@@ -85,8 +96,7 @@
 			<section id="main">
         <!-- On met les critiques générées -->
         <?php  afficherAccueil();?>
-        <!-- On met un bouton pour afficher plus de critiques -->
-			</section>
+      </section>
 
 
 			<!-- sidebar -->
