@@ -153,7 +153,7 @@
           //Recherche par nom d'Artiste
           //On regarde si il y a des Critiques qui portent sur des albums de cet utilisateur
           //Seulement les critiques avec le champs id_album != null seront affichées ici
-          $listealb = pg_query("SELECT id_album FROM album WHERE id_artiste = (SELECT id_artiste FROM artiste WHERE nom_artiste = '".$_POST['texte']."')");
+          $listealb = pg_query("SELECT id_album FROM album WHERE id_artiste = (SELECT id_artiste FROM artiste WHERE upper(nom_artiste) = upper('".$_POST['texte']."'))");
           $nul = 0;
           //On sépare le résultat de la requête ci dessus pour traiter les lignes une par une
           for ($i=0; $i < pg_num_rows($listealb); $i++) {
@@ -172,11 +172,11 @@
           //Si le nom que l'on a rentré n'est pas un nom d'artiste
           if ($nul == 0){
             //Cette requete permet de sélectionner les critiques dont le nom d'album est recherché
-            $index = pg_query("SELECT * FROM Critique WHERE id_album = (SELECT id_album FROM album WHERE nom = '".$_POST['texte']."')");
+            $index = pg_query("SELECT * FROM Critique WHERE id_album = (SELECT id_album FROM album WHERE upper(nom) = upper('".$_POST['texte']."'))");
             //Si le nom que l'on a rentré n'est pas un nom d'album
             if (pg_num_rows($index) == 0) {
               //Cette requête permet de sélectionner les critiques dont le nom de la chanson est recherché
-              $index = pg_query("SELECT * FROM Critique WHERE id_musique = (SELECT id_musique FROM titre_musical WHERE nom_musique = '".$_POST['texte']."')");
+              $index = pg_query("SELECT * FROM Critique WHERE id_musique = (SELECT id_musique FROM titre_musical WHERE upper(nom_musique) = upper('".$_POST['texte']."'))");
               //Si le nom que l'on a rentré n'est pas un titre de musique
               if (pg_num_rows($index) == 0) {
                 //Cette requête permet de sélectionner lescritiques dont la date de publication est recherchée
