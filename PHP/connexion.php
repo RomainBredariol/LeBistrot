@@ -17,7 +17,7 @@
                     //on redirige
 			echo 'Vous êtes connecté en tant que :';
 			echo $username;
-			header("Location:administration.php");
+			header("Location:accueil.php");
 		}
 ?>
 
