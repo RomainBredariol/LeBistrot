@@ -3,8 +3,6 @@ include "connexionbd.php";
 session_start();
 $dbcon = connexion_bd();
 
-$_SESSION["username"] = "toto@tata.fr";
-
 //on recupere l'ensemble des titres de musique et d'album
 $resultat_titre = pg_query($dbcon, "SELECT nom_musique FROM titre_musical ORDER BY nom_musique;");
 $titre = pg_fetch_all($resultat_titre);
@@ -147,7 +145,7 @@ function publier($dbcon)
     <!-- Main -->
     <section id="main">
         <!-- php associe -->
-        <form action="test.php" method="POST">
+        <form action="publier.php" method="POST">
             <b> Publier une critique</b>
             <article>
                 <header>
@@ -179,7 +177,7 @@ function publier($dbcon)
                 </header>
 
                 <textarea placeholder="contenu de votre critique" id="areacontenu" name="areacontenu" required></textarea>
-                <input type="submit" value="PUBLIER" id="btnPublier">
+                <input type="submit" value="PUBLIER" name="btnPublier">
                 <?php
                     if(isset($_POST["btnPublier"])){
                         publier($dbcon);
