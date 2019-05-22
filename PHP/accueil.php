@@ -98,17 +98,20 @@
         <!-- On met les critiques générées -->
         <?php  afficherAccueil();?>
       </section>
-
-
+            			
+      			<section class = "rr">
 			<!-- sidebar -->
 			<aside id="sidebar">
 				<h3>Recherche rapide </h3>
 				<hr />
 				<div>
-					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
-					<button>RECHERCHER</button>
-				</div>
-				<h3>Statistiques du site</h3>
+          			<form name="rechercher" action="rechercher.php" method="post">
+                		<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide" name="texte">
+                		<input type="submit" id="boutonRechercher" value="RECHERCHER">
+          		</form>
+        	</div>
+	        <br>				
+		<h3>Statistiques du site</h3>
 				<hr />
 				<?php
 				include("compteur.php");
@@ -127,7 +130,7 @@
 				</nav>
 
 			</aside>
-		</div>
+			</section>
 
 					<!-- footer -->
 					<footer id="footer">

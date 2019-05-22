@@ -58,7 +58,7 @@
 
  		<div id="wrapper">
  			<!-- Main -->
- 			<section id="main">
+ 			<section id="main" class="main">
  <div id="form">
  				<div id="divRecherche">
  					<b>RECHERCHE</b>
@@ -66,34 +66,7 @@
  						<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="textRecherche" name="texte">
  						<input type="submit" id="boutonRechercher" value="RECHERCHER">
  					</form>
-          <!-- sidebar -->
-          <aside id="sidebar">
-            <h3>Recherche rapide </h3>
-            <hr />
-            <div>
-              <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
-              <button>RECHERCHER</button>
-            </div>
-            <br>
-            <h3>Statistiques du site</h3>
-            <hr />
-            <?php
-				include("compteur.php");
-				$vue=compteur();
-				echo "<p>Il y a eu $vue visites sur le site</p>";
-				?>
-            <br>
-            <h3>Nous suivre sur les réseaux</h3>
-            <hr />
-            <nav>
-              <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Snapchat</a></li>
-                <li><a href="#">Instagram</a></li>
-              </ul>
-            </nav>
-
-          </aside>
+         
         </div>
 
 
@@ -144,7 +117,7 @@
           echo '<meta charset="utf-8">';
           echo "</head>";
           //Récupération des données du formulaire de recherche
-          // $recherch = $_POST["texte"];
+          $recherch = $_POST["texte"];
           // echo "Voici votre recherche : ".$recherch;
 
           //Connexion à la base de données
@@ -153,7 +126,7 @@
           //Recherche par nom d'Artiste
           //On regarde si il y a des Critiques qui portent sur des albums de cet utilisateur
           //Seulement les critiques avec le champs id_album != null seront affichées ici
-          $listealb = pg_query("SELECT id_album FROM album WHERE id_artiste = (SELECT id_artiste FROM artiste WHERE upper(nom_artiste) = upper('".$_POST['texte']."'))");
+          $listealb = pg_query("SELECT id_album FROM album WHERE id_artiste = (SELECT id_artiste FROM artiste WHERE upper(nom_artiste) = upper('$recherch'))");
           $nul = 0;
           //On sépare le résultat de la requête ci dessus pour traiter les lignes une par une
           for ($i=0; $i < pg_num_rows($listealb); $i++) {
@@ -172,15 +145,15 @@
           //Si le nom que l'on a rentré n'est pas un nom d'artiste
           if ($nul == 0){
             //Cette requete permet de sélectionner les critiques dont le nom d'album est recherché
-            $index = pg_query("SELECT * FROM Critique WHERE id_album = (SELECT id_album FROM album WHERE upper(nom) = upper('".$_POST['texte']."'))");
+            $index = pg_query("SELECT * FROM Critique WHERE id_album = (SELECT id_album FROM album WHERE upper(nom) = upper('$recherch'))");
             //Si le nom que l'on a rentré n'est pas un nom d'album
             if (pg_num_rows($index) == 0) {
               //Cette requête permet de sélectionner les critiques dont le nom de la chanson est recherché
-              $index = pg_query("SELECT * FROM Critique WHERE id_musique = (SELECT id_musique FROM titre_musical WHERE upper(nom_musique) = upper('".$_POST['texte']."'))");
+              $index = pg_query("SELECT * FROM Critique WHERE id_musique = (SELECT id_musique FROM titre_musical WHERE upper(nom_musique) = upper('$recherch'))");
               //Si le nom que l'on a rentré n'est pas un titre de musique
               if (pg_num_rows($index) == 0) {
                 //Cette requête permet de sélectionner lescritiques dont la date de publication est recherchée
-                $index = @pg_query("SELECT * FROM Critique WHERE date_publication = '".$_POST['texte']."'");
+                $index = @pg_query("SELECT * FROM Critique WHERE date_publication = '$recherch'");
                 //Appel de la fonction d'affichage des critiques
                 @affichagecritique($index);
                 //Si la recherche ne correpond à rien
@@ -200,6 +173,38 @@
           }
 ?>
 
+          </section>
+<section class = "rr">
+          <!-- sidebar -->
+          <aside id="sidebar">
+            <h3>Recherche rapide </h3>
+            <hr />
+            <div>
+              <form name="rechercher" action="rechercher.php" method="post">
+      				      <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide" name="texte">
+      				      <input type="submit" id="boutonRechercher" value="RECHERCHER">
+              </form>
+            </div>
+            <br>
+            <h3>Statistiques du site</h3>
+            <hr />
+            <?php
+				include("compteur.php");
+				$vue=compteur();
+				echo "<p>Il y a eu $vue visites sur le site</p>";
+				?>
+            <br>
+            <h3>Nous suivre sur les réseaux</h3>
+            <hr />
+            <nav>
+              <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Snapchat</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </nav>
+
+          </aside>
           </section>
  					<!-- footer -->
  					<footer id="footer">

@@ -144,7 +144,7 @@ function publier($dbcon)
 
 <div id="wrapper">
     <!-- Main -->
-    <section id="main">
+    <section id="main" class="main">
         <!-- php associe -->
         <form action="publier.php" method="POST">
             <b> Publier une critique</b>
@@ -187,34 +187,39 @@ function publier($dbcon)
             </article>
         </form>
     </section>
-
+    
+    <section class = "rr">
     <!-- sidebar -->
     <aside id="sidebar">
-        <h3>Recherche rapide </h3>
-        <hr />
-        <div>
-            <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
-            <button>RECHERCHER</button>
-        </div>
-        <h3>Statistiques du site</h3>
-        <hr />
-        <?php
-				include("compteur.php");
-				$vue=compteur();
-				echo "<p>Il y a eu $vue visites sur le site</p>";
-				?>
-        <br>
-        <h3>Nous suivre sur les réseaux</h3>
-        <hr />
-        <nav>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Snapchat</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
-        </nav>
+      <h3>Recherche rapide </h3>
+      <hr />
+      <div>
+        <form name="rechercher" action="rechercher.php" method="post">
+              <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide" name="texte">
+              <input type="submit" id="boutonRechercher" value="RECHERCHER">
+        </form>
+      </div>
+      <br>
+      <h3>Statistiques du site</h3>
+      <hr />
+      <?php
+  include("compteur.php");
+  $vue=compteur();
+  echo "<p>Il y a eu $vue visites sur le site</p>";
+  ?>
+      <br>
+      <h3>Nous suivre sur les réseaux</h3>
+      <hr />
+      <nav>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Snapchat</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </nav>
+
     </aside>
-</div>
+    </section>
 
 <!-- footer -->
 <footer id="footer">
