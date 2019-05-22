@@ -1,8 +1,9 @@
-﻿#sidebar {
+﻿aside#sidebar {
 	padding: 8px;
 	position: fixed;
+	top: 150px;
 	right : 45px;
-	width:22%;
+	width:15%;
 	margin-left:1%;
 	margin-top:1em;
 	border: 1px solid #f1f1f1;
@@ -115,8 +116,9 @@ body{
 }
 
 #wrapper {
-	width:1080px;
-	margin: 0 auto 0 auto;
+	width:60%;
+	margin-left: 115px;
+	display: inline-block;
 }
 
 #main {

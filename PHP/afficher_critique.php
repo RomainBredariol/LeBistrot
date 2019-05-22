@@ -134,66 +134,35 @@ function afficherCommentaire($dbcon)
 
 <div id="wrapper">
     <!-- Main -->
-    <section id="main">
-        </br>
-        </br>
-        </br>
+    <section>
+        <br>
+        <br>
+        <br>
         <!-- On affiche la critique avec toutes les infos correspondantes -->
         <?php
             afficherCritique($dbcon);
         ?>
       <!-- On met un bouton pour afficher plus de critiques -->
-			</section>
-
-        <!-- Commentaires -->
-        <br><br>
-        <h2> Commentaires </h2><br>
+    </section>
+    <section>
         <?php
             $lien = "afficher_critique.php?id_critique=".$_GET["id_critique"];
-        ?>
-        <form action="<?php echo $lien; ?>" method="POST">
-            <textarea placeholder="Commentez" id="areatitre" name="areacommentaire"></textarea><br>
-            <input type="submit" name="btnCommenter" value="COMMENTER"><br><br>
-        </form>
-
-			<!-- sidebar -->
-			<aside id="sidebar">
-				<h3>Recherche rapide </h3>
-				<hr />
-				<div>
-					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
-					<button>RECHERCHER</button>
-				</div>
-				<h3>Statistiques du site</h3>
-				<hr />
-				<p> Il y a eu X visites sur le site</p>
-				<br>
-				<h3>Nous suivre sur les réseaux</h3>
-				<hr />
-				<nav>
-					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Snapchat</a></li>
-						<li><a href="#">Instagram</a></li>
-					</ul>
-				</nav>
-        <?php
-            afficherCommentaire($dbcon);
+            if (isset($_SESSION['username'])) {
+                echo '
+                    <form action="' . $lien . '" method="POST">
+                        <textarea placeholder="Commentez" id="areatitre" name="areacommentaire"></textarea><br>
+                        <input type="submit" name="btnCommenter" value="COMMENTER"><br><br>
+                    </form>';
+            }
         ?>
 
 
-					<!-- footer -->
-					<footer id="footer">
-						<div>
-                            <button> <a href="Contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
-					</footer>
-		</body>
+    <h2> Commentaires </h2><br>
 
+    <?php
+    afficherCommentaire($dbcon);
+    ?>
     </section>
-
-
-    <!-- sidebar -->
     <aside id="sidebar">
         <h3>Recherche rapide </h3>
         <hr/>
@@ -214,16 +183,9 @@ function afficherCommentaire($dbcon)
                 <li><a href="#">Instagram</a></li>
             </ul>
         </nav>
-
     </aside>
 </div>
 
-<!-- footer -->
-<footer id="footer">
-    <div>
-        <button><a href="Contact.php" class="active">Contact</a></button>
-        <button><a href="Conditions.php" class="active">Nos conditons</a></button>
-    </div>
-</footer>
+
 </body>
 </html>
