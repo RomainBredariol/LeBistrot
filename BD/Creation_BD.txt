@@ -80,3 +80,10 @@ CREATE TABLE commenter(
    contenu TEXT,
    date_commentaire DATE
 );
+
+CREATE TABLE contact(
+   id_contact INTEGER NOT NULL,
+   email VARCHAR(50) NOT NULL,
+   objet VARCHAR(50),
+   message TEXT,
+);
