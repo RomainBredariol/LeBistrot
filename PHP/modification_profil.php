@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 if(isset($_POST['password'])) {
     $newPassword=$_POST['password'];
 }
@@ -82,7 +83,7 @@ include("connexionbd.php");
 $dbcon = connexion_bd();
 $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'";
 $res = pg_query($dbcon, $query);
-$res = pg_fetch_row($res, 0);
+$res = pg_fetch_row($res);
 if($oldPassword == $res[6]) {
 
     if ($newEmail !="" and $newEmail != $res[0] ){
