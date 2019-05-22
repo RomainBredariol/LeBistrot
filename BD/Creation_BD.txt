@@ -61,9 +61,10 @@ CREATE TABLE ecrire(
 );
 
 CREATE TABLE aimer(
-   id_aimer INTEGER NOT NULL CONSTRAINT pk_aimer PRIMARY KEY,
    mail VARCHAR(50) REFERENCES utilisateur(mail) NOT NULL,
-   nom_categorie VARCHAR(50) REFERENCES categorie(nom_categorie) NOT NULL);
+   nom_categorie VARCHAR(50) REFERENCES categorie(nom_categorie) NOT NULL,
+   PRIMARY KEY(mail, nom_categorie)
+);
 
 CREATE TABLE noter(
    id_note INTEGER NOT NULL CONSTRAINT pk_noter PRIMARY KEY,
