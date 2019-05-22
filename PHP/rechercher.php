@@ -91,7 +91,7 @@
 
                 echo '
                 <article>
-                  <a href="./afficher_critique.php?id_critique='.$idcrit'">
+                  <a href="./afficher_critique.php?id_critique='.$idcrit.'">
                       <header>
                         <h2>'.$titre.'</h2>
                         <p>'.$date.' par '.$prenom.' '.$nom.'</p>
