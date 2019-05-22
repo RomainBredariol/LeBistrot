@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Valentin
- * Date: 17/05/2019
- * Time: 20:06
- */
-
 
 if(isset($_POST['password'])) {
     $newPassword=$_POST['password'];
@@ -129,4 +122,6 @@ if($oldPassword == $res[6]) {
         pg_query($dbcon, $query);
     }
     //REDIRECTION PAGE PROFIL
-} else  echo "Le mot de passe est incorrect ou aucun champs n'a été modifié";//mauvais mot de passe
+} else  echo "
+	 <center><h2><font color='red'>Le mot de passe est incorrect ou aucun champs n'a été modifié</font></h2></center>
+	 <a href='profil.html'>retourner sur votre Profil</a>;
