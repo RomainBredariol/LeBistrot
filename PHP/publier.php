@@ -2,6 +2,7 @@
 include "connexionbd.php";
 include "fonctions.php";
 session_start();
+
 if (isset($_SESSION['username']))
 	{
 	}
@@ -10,6 +11,12 @@ else
 		header("Location:connexion.php");
 	}
 $dbcon = connexion_bd();
+
+//si le bouton publier est presse
+if (isset($_POST['btnPublier'])) {
+    publier($dbcon);
+    header("Location:accueil.php");
+}
 
 //on recupere l'ensemble des titres de musique et d'album
 $resultat_titre = pg_query($dbcon, "SELECT nom_musique FROM titre_musical ORDER BY nom_musique;");
@@ -68,6 +75,7 @@ function publier($dbcon)
             //on insere dans la table la critique
             pg_query($dbcon, "INSERT INTO critique 
                 VALUES ($id_critique, '$titre', '$corps', '$date', $valide, $id_al, $id_ti, '$mail');");
+
         }
         //si le bouton titre est selectionné et que le select n'est pas a default
         elseif ($_POST["type"] == "btnTitre" && $_POST["titre"] != "Default"){
@@ -90,6 +98,7 @@ function publier($dbcon)
             //on insere dans la table la critique
             pg_query($dbcon, "INSERT INTO critique 
                 VALUES ($id_critique, '$titre', '$corps', '$date', $valide, $id_al, $id_ti, '$mail');");
+
 
         }
 
@@ -185,12 +194,8 @@ function publier($dbcon)
                 </header>
 
                 <textarea placeholder="contenu de votre critique" id="areacontenu" name="areacontenu" required></textarea>
-                <input type="submit" value="PUBLIER" name="btnPublier">
-                <?php
-                    if(isset($_POST["btnPublier"])){
-                        publier($dbcon);
-                    }
-                ?>
+                <input type="submit" name="btnPublier" value="PUBLIER">
+
             </article>
         </form>
     </section>
