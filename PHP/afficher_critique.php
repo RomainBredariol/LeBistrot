@@ -61,7 +61,7 @@ function afficherCommentaire($dbcon)
             //On récupère le contenu de la critique
             $contenu = $listecom[3];
             //Requête pour l'auteur du commentaire
-            $aut = pg_query("SELECT * FROM utilisateur WHERE mail = (SELECT mail FROM Critique WHERE id_critique = '" . $_GET['id_critique'] . "')");
+            $aut = pg_query("SELECT * FROM utilisateur WHERE mail = '".$listecom[1]."'");
             //On récupère la ligne
             $arr2 = pg_fetch_array($aut);
             //nom
