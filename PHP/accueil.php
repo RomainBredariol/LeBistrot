@@ -60,13 +60,13 @@
                 </a>
                 <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
               </header>
-          <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
-          <a href="./accueil.php?suppression='.$liste[$cpt]['id_critique'].'">
-            <input type="submit" value="Supprimer la critique">
-          </a>
-          <a href="./accueil.php?acceptation='.$liste[$cpt]['id_critique'].'">
-            <input type="submit"value="Accepter la critique">
-          </a>
+              <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
+              <a href="./accueil.php?suppression='.$liste[$cpt]['id_critique'].'">
+                <input type="submit" value="Supprimer la critique">
+              </a>
+              <a href="./accueil.php?acceptation='.$liste[$cpt]['id_critique'].'">
+                <input type="submit"value="Accepter la critique">
+              </a>
         </article>';
       }
     }else{
@@ -138,7 +138,7 @@
 								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
 								 <li><a href="contact.php">CONTACT</a></li>
-
+                                <li><a href="conditions.php">CONDITIONS</a></li>
 								 <!-- affiche le menu profil  -->
 								 <?php
 								 if (isset($_SESSION['username']))
@@ -191,13 +191,5 @@
 
 			</aside>
 			</section>
-
-					<!-- footer -->
-					<footer id="footer">
-						<div>
-                            <button> <a href="contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
-                        </div>
-					</footer>
 		</body>
 </html>

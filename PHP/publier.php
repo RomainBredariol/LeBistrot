@@ -159,6 +159,7 @@ function publier($dbcon)
 </header>
 
 <div id="wrapper">
+<br>
     <!-- Main -->
     <section id="main" class="main">
         <!-- php associe -->
@@ -232,13 +233,6 @@ function publier($dbcon)
 
     </aside>
     </section>
-
-<!-- footer -->
-<footer id="footer">
-    <div>
-        <button> <a href="contact.php" class ="active">Contact</a> </button>
-        <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
-</footer>
 
 </body>
 </html>

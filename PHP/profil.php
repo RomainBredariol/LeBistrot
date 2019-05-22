@@ -76,13 +76,6 @@ echo '
                     </form>
                 </div>
 
-					<!-- footer -->
-					<footer id="footer">
-						<div>
-						<button> <a href="Contact.php" class ="active">Contact</a> </button>
-                        <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
-                            </footer>
-
 		</body>
 </html>';
 
