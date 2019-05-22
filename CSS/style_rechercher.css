@@ -70,8 +70,8 @@ nav ul li {
 
 #main {
 	float:left;
-	width:75%;
-	margin: 0 0 50px 0;
+	width:67%;
+	margin: 25px 0 50px 0;
 }
 
 #sidebar {
@@ -134,7 +134,6 @@ body{
 }
 /* Bordered form */
 section.main {
-    margin-top: 15px;
     width:90%;
     padding: 30px;
     border: 1px solid #f1f1f1;
@@ -156,7 +155,7 @@ section.main {
 }
 
 #rechercheRapide{
-	width: 155px;
+	width: 125px;
 	display: inline-block;
 }
 
@@ -195,14 +194,13 @@ input[type=submit]:hover {
 /* footer */
 
 #footer{
+	width: 100%;
 	clear:both;
 	background: linear-gradient(0.25turn, #F8E9D9, white);
 	border-radius: 5px 5px 5px 5px;
 	border: 1px solid black;
 	text-align: center;
 }
-
-
 
 #btnCommenter {
 	vertical-align: top;
@@ -227,7 +225,7 @@ textarea {
 	resize: none;
 }
 
-
+/*
 sidebar {
 	padding: 8px;
 	position: fixed;
@@ -240,6 +238,8 @@ sidebar {
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	border-radius: 5px;
 }
+
+*/
 
 button {
 	background-color: #F5890B;

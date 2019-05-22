@@ -138,9 +138,10 @@ body{
 
 
 #rechercheRapide{
-	width: 155px;
+	width: 125px;
 	display: inline-block;
 }
+
 /* Marquage spécifique */
 
 article {

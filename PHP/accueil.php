@@ -1,6 +1,4 @@
 <?php
-  // On lance la session
-  session_start();
   // On integre les fonctions de la base de données
   include("connexionbd.php");
 
@@ -30,7 +28,14 @@
     // Connnexion à la base de données
     $connexion = connexion_bd();
     // On récupère la valeur administration du compte administrateur
-    $requete = pg_query($connexion,"select admin from utilisateur where utilisateur.mail = '".$_SESSION['username']."';");
+
+  if(isset($_SESSION['username'])) {
+          $username=$_SESSION['username'];
+      }
+      else {
+          $username="";
+      }
+    $requete = pg_query($connexion,"select admin from utilisateur where utilisateur.mail = '".$username."';");
     // Met toutes les reponses dans une liste
     $admin = pg_fetch_array($requete);
     $admin=$admin['admin'];

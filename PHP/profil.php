@@ -25,7 +25,7 @@ echo '
 					<!--	<span class="elem">header</span> -->
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						<input type="submit" id=\'btnDeconnexion\' value=\'DECONNEXION\'>
+						<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
 					</div>
 

@@ -16,7 +16,7 @@ if (isset($_SESSION['username'])) {
                         <b>Email</b><br/> 
                         <input type="text" value="' . $res[0] . '" name="email"><br/> 
                         <b>Objet</b>
-                        <input type="text" value="' . $res[6] . '" name="objet" >
+                        <input type="text" placeholder="Objet de votre demande" name="objet" >
                         <b>Contenu</b>
                         <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message"></textarea>
                         <input type="submit" id="submit" value="Envoyer">
@@ -60,11 +60,11 @@ if (isset($_SESSION['username'])) {
 								 session_start();
 								 if (isset($_SESSION['username']))
 								 {
-									echo '<a href="deconnexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+									echo '<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>';
 								 }
 								 else
 								 {
-									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="CONNEXION"></a>';
+									echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
 								 }
 								 ?>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
@@ -105,8 +105,9 @@ if (isset($_SESSION['username'])) {
 					<!-- footer -->
 					<footer id="footer">
 						<div>
-                            <button> <a href="Contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
+                            <button> <a href="contact.php" class ="active">Contact</a> </button>
+                            <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
+                        </div>
                     </footer>
 		</body>
 </html>

@@ -42,7 +42,6 @@
 
 								 <!-- affiche le menu profil  -->
 								 <?php
-								 session_start();
 								 if (isset($_SESSION['username']))
 								 {
 									echo '<li><a href="profil.php">PROFIL</a></li>';
@@ -92,7 +91,7 @@
 
                 echo '
                 <article>
-                  <a href="./afficher_critique.php?id_critique='.$idcrit.'">
+                  <a href="./afficher_critique.php?id_critique='.$idcrit'">
                       <header>
                         <h2>'.$titre.'</h2>
                         <p>'.$date.' par '.$prenom.' '.$nom.'</p>
@@ -107,8 +106,15 @@
           echo "<head>";
           echo '<meta charset="utf-8">';
           echo "</head>";
+
           //Récupération des données du formulaire de recherche
-          $recherch = $_POST["texte"];
+
+          if(isset($_POST['texte'])) {
+              $recherch=$_POST['texte'];
+          }
+          else {
+              $recherch="";
+          }
           // echo "Voici votre recherche : ".$recherch;
 
           //Connexion à la base de données
@@ -197,13 +203,15 @@
 
           </aside>
           </section>
- 					<!-- footer -->
- 					<footer id="footer">
- 						<div>
-                            <button> <a href="contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
-                        </div>
- 					</footer>
+            <!-- footer -->
+            <footer id="footer">
+                <div>
+                    <button> <a href="contact.php" class ="active">Contact</a> </button>
+                    <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
+                </div>
+            </footer>
 
  		</body>
+
  </html>
+
