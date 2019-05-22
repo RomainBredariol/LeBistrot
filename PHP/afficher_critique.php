@@ -165,11 +165,14 @@ function afficherCommentaire($dbcon)
     </section>
     <aside id="sidebar">
         <h3>Recherche rapide </h3>
-        <hr/>
+        <hr />
         <div>
-            <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
-            <button>RECHERCHER</button>
+            <form name="rechercher" action="rechercher.php" method="post">
+                <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide" name="texte">
+                <input type="image" src="../IMAGES/loupe.png" width="3%" id="boutonRechercher" value="RECHERCHER">
+            </form>
         </div>
+        <br>
         <h3>Nombre de pages visités</h3>
         <hr />
         <?php
