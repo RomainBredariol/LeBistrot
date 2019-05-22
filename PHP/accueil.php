@@ -40,29 +40,29 @@
       $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.valide = 'FALSE' order by date_publication desc limit ".$nbreCritiques.";");
       // Met toutes les reponses dans une liste
       $liste = pg_fetch_all($requete);
-      $taille = count($liste);
+      if ( is_array($liste)){
+        $taille = count($liste);
+      } else {
+        echo "</br>Aucune critique n'est à valider !";
+      }
       // On parcours et on fait un afffichage
       for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
-        if (empty($liste[$cpt]['id_critique']) && $taille == 1){
-          echo "</br>Aucune critique n'est à valider !";
-        } else {
-          echo '
-          <article>
-                <header>
-                  <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
-                    <h2>'.$liste[$cpt]['titre'].'</h2>
-                  </a>
-                  <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
-                </header>
-            <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
-            <a href="./accueil.php?suppression='.$liste[$cpt]['id_critique'].'">
-              <input type="submit" value="Supprimer la critique">
-            </a>
-            <a href="./accueil.php?acceptation='.$liste[$cpt]['id_critique'].'">
-              <input type="submit"value="Accepter la critique">
-            </a>
-          </article>';
-        }
+        echo '
+        <article>
+              <header>
+                <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
+                  <h2>'.$liste[$cpt]['titre'].'</h2>
+                </a>
+                <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
+              </header>
+          <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
+          <a href="./accueil.php?suppression='.$liste[$cpt]['id_critique'].'">
+            <input type="submit" value="Supprimer la critique">
+          </a>
+          <a href="./accueil.php?acceptation='.$liste[$cpt]['id_critique'].'">
+            <input type="submit"value="Accepter la critique">
+          </a>
+        </article>';
       }
     }else{
       //On récupère les 5 dernières critiques
