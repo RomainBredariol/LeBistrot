@@ -114,6 +114,7 @@ article, footer, header, aside, nav {
 body{
 	background-color: beige;
 	margin: 8px;
+	background-image:url(../IMAGES/background.jpg);
 }
 
 #container{
