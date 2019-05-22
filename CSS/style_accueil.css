@@ -1,5 +1,6 @@
 ﻿
 aside#sidebar {
+	text-align: center;
 	padding: 8px;
 	position: fixed;
 	top: 150px;
@@ -57,7 +58,6 @@ article aside {
 
 
 #hautheader {
-
 	height: 44px;
 	background: linear-gradient(0.25turn, #F5890B, orange);
 	border-radius: 5px 5px 0px 0px;
