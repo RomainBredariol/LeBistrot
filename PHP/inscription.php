@@ -5,7 +5,7 @@ if (isset($_SESSION['username']))
 {
 	header("Location:accueil.php");
 }
-	
+
 if(isset($_POST['password'])) {
     $password=$_POST['password'];
 }
