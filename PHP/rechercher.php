@@ -66,7 +66,7 @@
  						<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="textRecherche" name="texte">
  						<input type="submit" id="boutonRechercher" value="RECHERCHER">
  					</form>
-         
+
         </div>
 
 
@@ -101,7 +101,7 @@
 
                 echo '
                 <article>
-                  <a href="">
+                  <a href="./afficher_critique.php?id_critique='.$idcrit'">
                       <header>
                         <h2>'.$titre.'</h2>
                         <p>'.$date.' par '.$prenom.' '.$nom.'</p>
