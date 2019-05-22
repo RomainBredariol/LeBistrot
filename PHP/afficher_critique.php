@@ -116,7 +116,7 @@ function afficherCommentaire($dbcon)
 						<li><a href="#">Instagram</a></li>
 					</ul>
 				</nav>
-
+            </aside>
 
 					<!-- footer -->
 					<footer id="footer">
