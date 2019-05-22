@@ -105,8 +105,8 @@ if (isset($_SESSION['username'])) {
 					<!-- footer -->
 					<footer id="footer">
 						<div>
-                            <button> <a href="Contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
+                            <button> <a href="contact.php" class ="active">Contact</a> </button>
+                            <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
                     </footer>
 		</body>
 </html>
