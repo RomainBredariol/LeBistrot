@@ -11,7 +11,6 @@ if (isset($_SESSION['username'])) {
   $email="";
 }
 $dbcon = connexion_bd();
-echo $_SESSION['username'];
 $query = "SELECT * FROM utilisateur WHERE mail = '".$_SESSION['username']."';"; //requete qui recupère la ligne de l'utilisateur dans la bd
 $res = pg_query($dbcon, $query);
 $res = pg_fetch_row($res, 0); //on parse le resultat de la requete dans un tableau
