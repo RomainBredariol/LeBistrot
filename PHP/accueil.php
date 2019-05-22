@@ -1,5 +1,24 @@
 <?php
+  // On lance la session
+  session_start();
+  // On integre les fonctions de la base de données
+  include("connexionbd.php");
 
+  // On regarde si une modification a eu lieu
+  if (! empty($_GET['suppression'])){
+    $connexion = connexion_bd();
+    // On récupère la valeur administration du compte administrateur
+    $requete = pg_query($connexion,"delete from critique where id_critique = '".$_GET['suppression']."';");
+  }
+
+  // On regarde si une modification a eu lieu
+  if (! empty($_GET['acceptation'])){
+    $connexion = connexion_bd();
+    // On récupère la valeur administration du compte administrateur
+    $requete = pg_query($connexion,"update critique set valide = 'TRUE' where id_critique = '".$_GET['acceptation']."';");
+  }
+
+  // Définition des constantes
   define ("NBRE_CARACTERES","75");
   function afficherAccueil (){
     // On récupère le parametre du nombre de critiques à afficher
@@ -9,26 +28,63 @@
       $nbreCritiques=5;
     }
     // Connnexion à la base de données
-    include("connexionbd.php");
     $connexion = connexion_bd();
-    //On récupère les 5 dernières critiques
-    $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail order by date_publication desc limit ".$nbreCritiques.";");
+    // On récupère la valeur administration du compte administrateur
+    $requete = pg_query($connexion,"select admin from utilisateur where utilisateur.mail = '".$_SESSION['username']."'';");
     // Met toutes les reponses dans une liste
-    $liste = pg_fetch_all($requete);
-    $taille = count($liste);
-    // On parcours et on fait un afffichage
-    for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
-      echo '
-      <article>
-        <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
-            <header>
-              <h2>'.$liste[$cpt]['titre'].'</h2>
-              <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
-            </header>
-          </a>
-        <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
-      </article>';
+    $admin = pg_fetch_array($requete);
+    $admin=$admin['admin'];
+    // Si l'utilisateur est un administrateur on afffiche les pages avec la possibilité de suppriemr ou de les accepter
+    if ( $admin == "TRUE"){
+      //On récupère les 5 dernières critiques
+      $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.valide = 'FALSE' order by date_publication desc limit ".$nbreCritiques.";");
+      // Met toutes les reponses dans une liste
+      $liste = pg_fetch_all($requete);
+      $taille = count($liste);
+      // On parcours et on fait un afffichage
+      for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
+        echo '
+        <article>
+          <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
+              <header>
+                <h2>'.$liste[$cpt]['titre'].'</h2>
+                <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
+              </header>
+            </a>
+          <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
+        </article>';
+      }
+    }else{
+      //On récupère les 5 dernières critiques
+      $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.valide = 'FALSE' order by date_publication desc limit ".$nbreCritiques.";");
+      // Met toutes les reponses dans une liste
+      $liste = pg_fetch_all($requete);
+      $taille = count($liste);
+      // On parcours et on fait un afffichage
+      for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
+        if (empty($liste[$cpt]['id_critique']) && $taille == 1){
+          echo "</br>Aucune critique n'est à valider !";
+        } else {
+          echo '
+          <article>
+                <header>
+                  <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
+                    <h2>'.$liste[$cpt]['titre'].'</h2>
+                  </a>
+                  <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
+                </header>
+            <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
+            <a href="./accueil.php?suppression='.$liste[$cpt]['id_critique'].'">
+              <input type="submit" value="Supprimer la critique">
+            </a>
+            <a href="./accueil.php?acceptation='.$liste[$cpt]['id_critique'].'">
+              <input type="submit"value="Accepter la critique">
+            </a>
+          </article>';
+        }
+      }
     }
+
     echo '
       <form style="width:175px;border:1px;solid #f1f1f1;border-radius:5px;margin:1em;padding:1em;background:#fff" action="./accueil.php" method="POST">
         <input type="hidden" name="nbreCritiques" value="'.$nbreCritiques.'" />
