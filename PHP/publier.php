@@ -53,7 +53,7 @@ function publier($dbcon)
             $titre          = enleverCaracteresSpeciaux($_POST["areatitre"]);
             $corps          = enleverCaracteresSpeciaux($_POST["areacontenu"]);
             $date           = date("Y-m-d");
-            $valide         = "true";
+            $valide         = "false";
             $id_al          = (int) $id_album[0]["id_album"];
             $id_ti          = "NULL";
             $mail           = $_SESSION["username"];
@@ -75,7 +75,7 @@ function publier($dbcon)
             $titre          = enleverCaracteresSpeciaux($_POST["areatitre"]);
             $corps          = enleverCaracteresSpeciaux($_POST["areacontenu"]);
             $date           = date("Y-m-d");
-            $valide         = "true";
+            $valide         = "false";
             $id_al          = (int) $id[0]["id_album"];
             $id_ti          = (int) $id[0]["id_musique"];;
             $mail           = $_SESSION["username"];
