@@ -42,15 +42,13 @@
                   <h2>'.$liste[$cpt]['objet'].'</h2>
                 </header>
                 <p>'.$liste[$cpt]['message'].'</br> par '.$liste[$cpt]['mail'].'</p>
-                <a href="./Contact.php?suppression='.$liste[$cpt]['id_contact'].'">
+                <a href="./contact.php?suppression='.$liste[$cpt]['id_contact'].'">
                   <input type="submit" value="Supprimer le message">
                 </a>
           </article>';
         }
 
 
-        //on parse le resultat de la requete dans un tableau
-        $result = pg_fetch_row($result, 0);
       } else {
         $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'"; //requete qui recupère la ligne de l'utilisateur dans la bd
         $result = pg_query($connexion, $query);
@@ -78,11 +76,11 @@
             <form action="../PHP/EnvoyerContact.php" method="POST">
                         <h1>Nous contacter</h1>
                         <b>Email</b>
-                        <input type="text" placeholder="Votre E-mail" name="email"><br/>
+                        <input type="text" placeholder="Votre E-mail" name="email" required><br/>
                         <b>Objet</b>
-                        <input type="text" placeholder="Objet de votre demande" name="objet" >
+                        <input type="text" placeholder="Objet de votre demande" name="objet" required>
                         <b>Contenu</b><br/>
-                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message"></textarea>
+                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message" required></textarea>
                         <input type="submit" id="submit" value="Envoyer">
              </form>
      ';
