@@ -138,7 +138,7 @@ if($retour == 1){
   {
       include("connexionbd.php");
       $dbcon = connexion_bd();
-	  $requete = "SELECT count(mail) as id FROM utilisateur WHERE mail='$email';";
+	  $requete = "SELECT count(mail) as id FROM utilisateur WHERE mail='$email'";
 	  $resultat = pg_query($dbcon, $requete);
 	  $select = pg_fetch_array($resultat);
 	  
@@ -179,8 +179,9 @@ if($retour == 1){
 		{
 			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Funk')");
 		}
+		header("Location:connexion.php");
 	  }
-	  header("Location:connexion.php");
+	  
   }
   else
   {
