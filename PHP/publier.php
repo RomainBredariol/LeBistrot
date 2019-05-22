@@ -124,11 +124,11 @@ function publier($dbcon)
 								<?php
 								 if (isset($_SESSION['username']))
 								 {
-									echo '<a href="deconnexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+									echo '<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>';
 								 }
 								 else
 								 {
-									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="CONNEXION"></a>';
+									echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
 								 }
 								 ?>
 
