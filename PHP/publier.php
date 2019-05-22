@@ -124,11 +124,11 @@ function publier($dbcon)
 								<?php
 								 if (isset($_SESSION['username']))
 								 {
-									echo '<a href="deconnexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+									echo '<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>';
 								 }
 								 else
 								 {
-									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="CONNEXION"></a>';
+									echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
 								 }
 								 ?>
 
@@ -143,7 +143,7 @@ function publier($dbcon)
 						 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 						 <li><a href="rechercher.php">RECHERCHER</a></li>
 						 <li><a href="publier.php">PUBLIER</a></li>
-						 <li><a href="Contact.php">CONTACT</a></li>
+						 <li><a href="contact.php">CONTACT</a></li>
 								 
 						 <!-- affiche le menu profil  -->
 						 <?php
@@ -236,8 +236,8 @@ function publier($dbcon)
 <!-- footer -->
 <footer id="footer">
     <div>
-        <button> <a href="Contact.php" class ="active">Contact</a> </button>
-        <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
+        <button> <a href="contact.php" class ="active">Contact</a> </button>
+        <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
 </footer>
 
 </body>

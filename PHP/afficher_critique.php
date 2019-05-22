@@ -13,9 +13,18 @@
 				<header id="header">
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
-						<a href="view_connexion.php.old">
-							<input type="button" id='btnConnexion' value='CONNEXION'>
-						</a>
+						<!-- affiche le bouton connexion ou deconnexion en fonction de si on est connecté ou pas -->
+								<?php
+								 session_start();
+								 if (isset($_SESSION['username']))
+								 {
+									echo '<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>';
+								 }
+								 else
+								 {
+									echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
+								 }
+								 ?>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
 					</div>
 
@@ -25,8 +34,17 @@
 	 			     <div class="container">
 	 			       <ul class="links">
 								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
-								 <li><a href="view_rechercher_connecte.php">RECHERCHER</a></li>
+								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
+								 <li><a href="contact.php">CONTACT</a></li>
+
+								 <!-- affiche le menu profil  -->
+								 <?php
+								 if (isset($_SESSION['username']))
+								 {
+									echo '<li><a href="profil.php">PROFIL</a></li>';
+								 }
+								 ?>
 	 			       </ul>
 	 			     </div>
  			     </nav>
@@ -126,8 +144,8 @@
 					<!-- footer -->
 					<footer id="footer">
 						<div>
-                            <button> <a href="Contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
+                            <button> <a href="contact.php" class ="active">Contact</a> </button>
+                            <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
 					</footer>
 		</body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+include("fonctions.php");
 //verification si deja connecté
 session_start();
 if (isset($_SESSION['username']))
@@ -7,21 +8,21 @@ if (isset($_SESSION['username']))
 }
 
 if(isset($_POST['password'])) {
-    $password=$_POST['password'];
+    $password=enleverCaracteresSpeciaux($_POST['password']);
 }
 else {
     $password="";
 }
 
 if(isset($_POST['password_confirm'])) {
-    $password_confirm=$_POST['password_confirm'];
+    $password_confirm=enleverCaracteresSpeciaux($_POST['password_confirm']);
 }
 else {
     $password_confirm="";
 }
 
 if(isset($_POST['email'])) {
-    $email=$_POST['email'];
+    $email=enleverCaracteresSpeciaux($_POST['email']);
 }
 else {
     $email="";
@@ -35,35 +36,35 @@ else {
 }
 
 if(isset($_POST['nom'])) {
-    $nom=$_POST['nom'];
+    $nom=enleverCaracteresSpeciaux($_POST['nom']);
 }
 else {
     $nom="";
 }
 
 if(isset($_POST['prenom'])) {
-    $prenom=$_POST['prenom'];
+    $prenom=enleverCaracteresSpeciaux($_POST['prenom']);
 }
 else {
     $prenom="";
 }
 
 if(isset($_POST['adresse'])) {
-    $adresse=$_POST['adresse'];
+    $adresse=enleverCaracteresSpeciaux($_POST['adresse']);
 }
 else {
     $adresse = "";
 }
 
 if(isset($_POST['cp'])) {
-    $cp=$_POST['cp'];
+    $cp=enleverCaracteresSpeciaux($_POST['cp']);
 }
 else {
     $cp="";
 }
 
 if(isset($_POST['ville'])) {
-    $ville=$_POST['ville'];
+    $ville=enleverCaracteresSpeciaux($_POST['ville']);
 }
 else {
     $ville="";
@@ -118,7 +119,7 @@ $funk = $_POST['funk'];
                     <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 					<li><a href="rechercher.php">RECHERCHER</a></li>
 					<li><a href="publier.php">PUBLIER</a></li>
-					<li><a href="Contact.php">CONTACT</a></li>
+					<li><a href="contact.php">CONTACT</a></li>
                 </ul>
             </div>
         </nav>
