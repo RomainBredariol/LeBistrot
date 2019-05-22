@@ -176,6 +176,7 @@ if($retour == 1){
 			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Funk')");
 		}
 	  }
+	  header("Location:connexion.php");
   }
   else
   {
