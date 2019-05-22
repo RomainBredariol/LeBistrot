@@ -6,3 +6,5 @@
 *.zip
 
 *.meta
+
+PHP/test\.php
