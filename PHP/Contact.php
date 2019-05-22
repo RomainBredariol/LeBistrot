@@ -149,6 +149,7 @@
 			<!-- Main -->
 			<section id="main">
         <!-- On met les critiques générées -->
+                <br>
         <?php  afficherContact();?>
         <!-- On met un bouton pour afficher plus de critiques -->
 			</section>

@@ -137,9 +137,7 @@ function afficherCommentaire($dbcon)
 <div id="wrapper">
     <!-- Main -->
     <section class="critique">
-        <br>
-        <br>
-        <br>
+
         <!-- On affiche la critique avec toutes les infos correspondantes -->
         <?php
             afficherCritique($dbcon);
