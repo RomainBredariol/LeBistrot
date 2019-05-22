@@ -38,8 +38,8 @@
 								 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 								 <li><a href="rechercher.php">RECHERCHER</a></li>
 								 <li><a href="publier.php">PUBLIER</a></li>
-								 <li><a href="contact.php">CONTACT</a></li>
-
+								 <li><a href="Contact.php">CONTACT</a></li>
+                                <li><a href="Conditions.php">CONDITIONS</a></li>
 								 <!-- affiche le menu profil  -->
 								 <?php
 								 if (isset($_SESSION['username']))

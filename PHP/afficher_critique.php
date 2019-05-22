@@ -96,9 +96,16 @@ function afficherCommentaire($dbcon)
 <header id="header">
     <div id="hautheader">
         <img src="..//IMAGES/favicon.png" id="favicon"/>
-        <a href="connexion.php">
-            <input type="button" id='btnConnexion' value='CONNEXION'>
-        </a>
+        <?php
+        if (isset($_SESSION['username']))
+        {
+            echo '<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>';
+        }
+        else
+        {
+            echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
+        }
+        ?>
         <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
     </div>
 
@@ -107,9 +114,18 @@ function afficherCommentaire($dbcon)
         <nav id="sitenav">
             <div class="container">
                 <ul class="links">
-                    <li><a href="accueil.php" class="active">ACCUEIL</a></li>
-                    <li><a href="view_rechercher_connecte.php">RECHERCHER</a></li>
+                    <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
+                    <li><a href="rechercher.php">RECHERCHER</a></li>
                     <li><a href="publier.php">PUBLIER</a></li>
+                    <li><a href="Contact.php">CONTACT</a></li>
+                    <li><a href="Conditions.php">CONDITIONS</a></li>
+                    <!-- affiche le menu profil  -->
+                    <?php
+                    if (isset($_SESSION['username']))
+                    {
+                        echo '<li><a href="profil.php">PROFIL</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </nav>

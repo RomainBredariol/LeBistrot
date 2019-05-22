@@ -121,7 +121,8 @@ $funk = $_POST['funk'];
                     <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 					<li><a href="rechercher.php">RECHERCHER</a></li>
 					<li><a href="publier.php">PUBLIER</a></li>
-					<li><a href="contact.php">CONTACT</a></li>
+                    <li><a href="Contact.php">CONTACT</a></li>
+                    <li><a href="Conditions.php">CONDITIONS</a></li>
                 </ul>
             </div>
         </nav>
@@ -238,10 +239,5 @@ if($retour == 1){
             <input type="submit" id='submit' value='Inscription' >
     </form>
 </div>
-<footer id="footer">
-    <div>
-        <button> <a href="Contact.php" class ="active">Contact</a> </button>
-        <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
-</footer>
 </body>
 </html>

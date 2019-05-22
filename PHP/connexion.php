@@ -43,7 +43,8 @@
 					<li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 				    <li><a href="rechercher.php">RECHERCHER</a></li>
 					<li><a href="publier.php">PUBLIER</a></li>
-					<li><a href="contact.php">CONTACT</a></li>
+                    <li><a href="Contact.php">CONTACT</a></li>
+                    <li><a href="Conditions.php">CONDITIONS</a></li>
                 </ul>
             </div>
         </nav>
@@ -95,12 +96,6 @@
         <a href="inscription.php" class ="active">S'enregistrer</a>
     </form>
 </div>
-
-<footer id="footer">
-    <div>
-        <button> <a href="contact.php" class ="active">Contact</a> </button>
-        <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
-</footer>
 
 </body>
 
