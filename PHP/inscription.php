@@ -75,8 +75,18 @@ if(isset($_POST['prof'])) {
 else {
     $profes="";
 }
-
+//verifie si le formulaire à deja été validé ou non
 $retour = $_POST['retour'];
+
+//récupération des variables de style
+$classique = $_POST['classique'];
+$pop = $_POST['pop'];
+$rap = $_POST['rap'];
+$electro = $_POST['electro'];
+$rock = $_POST['rock'];
+$jazz = $_POST['jazz'];
+$funk = $_POST['funk'];
+
 ?>
 
 <html>
@@ -118,7 +128,7 @@ $retour = $_POST['retour'];
 <div id="container">
 <form action="../PHP/inscription.php" method="POST">
 <?php
-
+//verification que le mail n'existe pas
 if($retour == 1){
   if($password == $password_confirm)
   {
@@ -134,8 +144,37 @@ if($retour == 1){
 	  }
 	  else
 	  {
+		  //insertion categorie aimé par les utilisateur
 		$insert = pg_query("INSERT INTO utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville, admin) VALUES ('$email', '$prenom', '$nom', '$profes', '$cp', '$adresse', '$password', '$datenaissance', '$ville', 'FALSE')");
-		//$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '')");
+		if(isset($pop)) 
+		{
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$pop')");
+		}
+		
+		if(isset($rock)) 
+		{
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$rock')");
+		}
+		
+		if(isset($classique)) 
+		{
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$classique')");
+		}
+		
+		if(isset($rap)) 
+		{
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$rap')");
+		}
+		
+		if(isset($jazz)) 
+		{
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$jazz')");
+		}
+		
+		if(isset($funk)) 
+		{
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$funk')");
+		}
 	  }
   }
   else

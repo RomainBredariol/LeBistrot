@@ -20,11 +20,11 @@
 								 session_start();
 								 if (isset($_SESSION['username']))
 								 {
-									echo '<a href="deconnexion.php"><input type="button" id="btnConnexion" value="DECONNEXION"></a>';
+									echo '<a href="deconnexion.php"><input type="submit" id="btnConnexion" value="DECONNEXION"></a>';
 								 }
 								 else
 								 {
-									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="CONNEXION"></a>';
+									echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
 								 }
 								 ?>
  						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
@@ -209,8 +209,8 @@
  					<!-- footer -->
  					<footer id="footer">
  						<div>
-                            <button> <a href="Contact.php" class ="active">Contact</a> </button>
-                            <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
+                            <button> <a href="contact.php" class ="active">Contact</a> </button>
+                            <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
                         </div>
  					</footer>
 
