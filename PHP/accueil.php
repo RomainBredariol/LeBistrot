@@ -35,26 +35,7 @@
     $admin = pg_fetch_array($requete);
     $admin=$admin['admin'];
     // Si l'utilisateur est un administrateur on afffiche les pages avec la possibilité de suppriemr ou de les accepter
-    if ( $admin == "TRUE"){
-      //On récupère les 5 dernières critiques
-      $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.valide = 'FALSE' order by date_publication desc limit ".$nbreCritiques.";");
-      // Met toutes les reponses dans une liste
-      $liste = pg_fetch_all($requete);
-      $taille = count($liste);
-      // On parcours et on fait un afffichage
-      for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
-        echo '
-        <article>
-          <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
-              <header>
-                <h2>'.$liste[$cpt]['titre'].'</h2>
-                <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
-              </header>
-            </a>
-          <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
-        </article>';
-      }
-    }else{
+    if ( $admin == "t"){
       //On récupère les 5 dernières critiques
       $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.valide = 'FALSE' order by date_publication desc limit ".$nbreCritiques.";");
       // Met toutes les reponses dans une liste
@@ -82,6 +63,25 @@
             </a>
           </article>';
         }
+      }
+    }else{
+      //On récupère les 5 dernières critiques
+      $requete = pg_query($connexion,"select critique.id_critique, critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.valide = 'TRUE' order by date_publication desc limit ".$nbreCritiques.";");
+      // Met toutes les reponses dans une liste
+      $liste = pg_fetch_all($requete);
+      $taille = count($liste);
+      // On parcours et on fait un afffichage
+      for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
+        echo '
+        <article>
+          <a href="./afficher_critique.php?id_critique='.$liste[$cpt]['id_critique'].'">
+              <header>
+                <h2>'.$liste[$cpt]['titre'].'</h2>
+                <p>'.$liste[$cpt]['date_publication'].' par '.$liste[$cpt]['prenom'].' '.$liste[$cpt]['nom'].'</p>
+              </header>
+            </a>
+          <p>'.substr($liste[$cpt]['corps'],0,NBRE_CARACTERES).'[...] </p>
+        </article>';
       }
     }
 
