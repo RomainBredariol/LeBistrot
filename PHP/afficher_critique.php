@@ -103,7 +103,7 @@ function afficherCommentaire($dbcon)
 					<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
 					<button>RECHERCHER</button>
 				</div>
-				<h3>Statistiques du site</h3>
+                <h3>Nombre de pages visités</h3>
 				<hr />
 				<p> Il y a eu X visites sur le site</p>
 				<br>

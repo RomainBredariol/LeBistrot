@@ -171,7 +171,7 @@
           		</form>
         	</div>
 	        <br>
-		<h3>Statistiques du site</h3>
+		<h3>Nombre de pages visités</h3>
 				<hr />
 				<?php
 				include("compteur.php");
