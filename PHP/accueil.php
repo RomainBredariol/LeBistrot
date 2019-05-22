@@ -194,34 +194,6 @@
 					</ul>
 				</nav>
 
-      			<section class = "rr">
-			        <aside id="sidebar">
-                    <h3>Recherche rapide </h3>
-                    <hr />
-                    <div>
-                        <form name="rechercher" action="rechercher.php" method="post">
-                            <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide" name="texte">
-                            <input type="submit" id="boutonRechercher" value="RECHERCHER">
-                        </form>
-                    </div>
-	                <br>
-		            <h3>Nombre de pages visités</h3>
-                    <hr />
-                        <?php
-                            include("compteur.php");
-                            $vue=compteur();
-                            echo "<p>Il y a eu $vue visites sur le site</p>";
-                        ?>
-                    <br>
-                    <h3>Nous suivre sur les réseaux</h3>
-                    <hr />
-                        <nav>
-                            <ul>
-                                <li><a href="#">Facebook</a></li>
-                                <li><a href="#">Snapchat</a></li>
-                                <li><a href="#">Instagram</a></li>
-                            </ul>
-                        </nav>
 			        </aside>
 			    </section>
 		</body>

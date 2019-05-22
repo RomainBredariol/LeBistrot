@@ -63,6 +63,21 @@ nav ul li {
 	color: #F5890B;
 }
 
+/* sidebar on right */
+aside#sidebar {
+	padding: 8px;
+	position: fixed;
+	top: 150px;
+	right : 45px;
+	width:auto;
+	margin-left:74%;
+	margin-top:1em;
+	border: 1px solid #f1f1f1;
+	background: #fff;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-radius: 5px;
+}
+
 #wrapper {
 	width:1080px;
 	margin: 0 auto 0 auto;
@@ -228,21 +243,8 @@ textarea {
 	resize: none;
 }
 
-/*
-sidebar {
-	padding: 8px;
-	position: fixed;
-	right : 45px;
-	width:22%;
-	margin-left:1%;
-	margin-top:1em;
-	border: 1px solid #f1f1f1;
-	background: #fff;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	border-radius: 5px;
-}
 
-*/
+
 
 button {
 	background-color: #F5890B;

@@ -1,6 +1,5 @@
 ﻿
 aside#sidebar {
-	text-align: center;
 	padding: 8px;
 	position: fixed;
 	top: 150px;
@@ -145,10 +144,6 @@ border-radius: 15px;
 }
 
 /* Marquage spécifique */
-
-article {
-}
-
 
 #container h1{
     width: 38%;
