@@ -118,7 +118,7 @@ if(sha1($oldPassword) == $res[6]) {
         $query = "UPDATE utilisateur SET  ville='{$newVille}'  WHERE mail='{$email}'";
         pg_query($dbcon, $query);
     }
-    if($newPassword == $newPassword_confirm) {
+    if($newPassword == $newPassword_confirm and !empty($newPassword)) {
         $newPassword = sha1($newPassword);
         $query = "UPDATE utilisateur SET  mdp='{$newPassword}'  WHERE mail='{$email}'";
         pg_query($dbcon, $query);

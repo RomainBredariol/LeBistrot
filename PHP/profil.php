@@ -59,9 +59,9 @@ echo '
                         <b>E-mail</b>
                         <input type="email" value="'.$res[0].'" name="email"><br/>
                         <b>Mot de passe</b>
-                        <input type="password" value="'.$res[6].'" name="password" >
+                        <input type="password"  name="password" >
                         <b>Confirmation du mot de passe</b>
-                        <input type="password" value="'.$res[6].'" name="password_confirm" >
+                        <input type="password"  name="password_confirm" >
                         <b>Nom</b>
                         <input type="text" value="'.$res[2].'" name="nom" >
                         <b>Prenom</b>
