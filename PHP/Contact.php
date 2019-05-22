@@ -53,7 +53,8 @@
         $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'"; //requete qui recupère la ligne de l'utilisateur dans la bd
         $result = pg_query($connexion, $query);
         //on parse le resultat de la requete dans un tableau
-        $result = pg_fetch_row($result, 0);
+
+        $res = pg_fetch_row($result, 0);
         //recupère le contenu de la variable de session
         echo '
         <form action="../PHP/EnvoyerContact.php" method="POST">
