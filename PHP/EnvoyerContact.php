@@ -15,22 +15,29 @@ else {
 }
 
 if(isset($_POST['objet'])) {
-    $objet=$_POST['oldPassword'];
+    $objet=$_POST['objet'];
 }
 else {
     $objet="";
 }
 
-if(isset($_POST['requeteContact'])) {
-    $contenu=$_POST['requeteContact'];
+if(isset($_POST['message'])) {
+    $message=$_POST['message'];
 }
 else {
-    $contenu="";
+    $message="";
 }
-
 include("connexionbd.php");
 $dbcon = connexion_bd();
-$query = "INSERT INTO requete (origine, objet, contenu) VALUES ('{$email}', '{$objet}', '{$contenu}')";
+
+//on recupere le max des id_contact dans la table contact
+$nb = pg_query($dbcon, "SELECT max(id_contact) AS nb FROM contact;");
+$nb_contact = pg_fetch_all($nb);
+
+//On défini l'id du formulaire de contact
+$id_contact = ((int)$nb_contact[0]["nb"]) + 1;
+
+$query = "INSERT INTO contact (id_contact, email, objet, message) VALUES ('{$id_contact}', '{$email}', '{$objet}', '{$message}')";
 if (pg_query($dbcon, $query)) {
     echo "Votre demande a été prise en compte";
 } else echo "erreur lors de l'envoie de votre demande";

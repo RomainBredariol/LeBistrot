@@ -18,7 +18,7 @@ if (isset($_SESSION['username'])) {
                         <b>Objet</b>
                         <input type="text" value="' . $res[6] . '" name="objet" >
                         <b>Contenu</b>
-                        <input type="text" placeholder="Décrivez votre problème" name="requeteContact" >
+                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message"></textarea>
                         <input type="submit" id="submit" value="Envoyer">
              </form>
      ';
@@ -31,7 +31,7 @@ if (isset($_SESSION['username'])) {
                         <b>Objet</b>
                         <input type="text" placeholder="Objet de votre demande" name="objet" >
                         <b>Contenu</b><br/> 
-                        <textarea placeholder="Quel est votre problème ?" id="areacontenu"></textarea>
+                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message"></textarea>
                         <input type="submit" id="submit" value="Envoyer">
              </form>
      ';

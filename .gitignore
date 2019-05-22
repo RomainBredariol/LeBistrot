@@ -8,3 +8,5 @@
 *.meta
 
 PHP/test\.php
+
+PHP/cpt\.txt
