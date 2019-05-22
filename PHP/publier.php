@@ -3,6 +3,8 @@ include "connexionbd.php";
 session_start();
 $dbcon = connexion_bd();
 
+$_SESSION["username"] = "toto@tata.fr";
+
 //on recupere l'ensemble des titres de musique et d'album
 $resultat_titre = pg_query($dbcon, "SELECT nom_musique FROM titre_musical ORDER BY nom_musique;");
 $titre = pg_fetch_all($resultat_titre);
@@ -10,7 +12,7 @@ $titre = pg_fetch_all($resultat_titre);
 $resultat_album = pg_query($dbcon, "SELECT nom FROM album ORDER BY nom;");
 $album = pg_fetch_all($resultat_album);
 
-
+//met les titres dans le select
 function setSelectTitre($titre)
 {
     for ($row = 0; $row < sizeof($titre); $row++) {
@@ -19,6 +21,7 @@ function setSelectTitre($titre)
     }
 }
 
+//met les albums dans le select
 function setSelectAlbum($album)
 {
     for ($row = 0; $row < sizeof($album); $row++) {
@@ -27,37 +30,67 @@ function setSelectAlbum($album)
     }
 }
 
-function publier($dbconn){
-    if(isset($_POST["areatitre"]) && isset($_POST["areacontenu"]) && $_POST["album"] != "Default"){
-        
-        $requete = "Insert Into ;";
-        pg_query_params($dbconn, $requete);
+//publie un article
+function publier($dbcon)
+{
+
+    //si le titre et le contenu ne sont pas vides
+    if (isset($_POST["areatitre"]) && isset($_POST["areacontenu"]) && isset($_POST["type"])) {
+
+        //on recupere le max des id_critique dans la table critique
+        $nb = pg_query($dbcon, "Select max(id_critique) as nb from critique;");
+        $nb_critique = pg_fetch_all($nb);
+
+        //si le bouton album est selectionné et que le select n'est pas a default
+        if ($_POST["type"] == "btnAlbum" && $_POST["album"] != "Default") {
+
+            //on recupere l'id de l'album selectionné
+            $requete = "Select id_album from album where nom=$1";
+            $res = pg_query_params($dbcon, $requete, array($_POST['album']));
+            $id_album = pg_fetch_all($res);
+
+            //affectation des variables
+            $id_critique    = ((int)$nb_critique[0]["nb"]) + 1;
+            $titre          = $_POST["areatitre"];
+            $corps          = $_POST["areacontenu"];
+            $date           = date("Y-m-d");
+            $valide         = "true";
+            $id_al          = (int) $id_album[0]["id_album"];
+            $id_ti          = "NULL";
+            $mail           = $_SESSION["username"];
+
+            //on insere dans la table la critique
+            pg_query($dbcon, "INSERT INTO critique 
+                VALUES ($id_critique, '$titre', '$corps', '$date', $valide, $id_al, $id_ti, '$mail');");
+        }
+        //si le bouton titre est selectionné et que le select n'est pas a default
+        elseif ($_POST["type"] == "btnTitre" && $_POST["titre"] != "Default"){
+
+            //on recupere l'id du titre selectionné et de l'album correspondant
+            $requete = "Select id_musique, id_album from titre_musical where nom_musique=$1";
+            $res = pg_query_params($dbcon, $requete, array($_POST['titre']));
+            $id = pg_fetch_all($res);
+
+            //affectation des variables
+            $id_critique    = ((int)$nb_critique[0]["nb"]) + 1;
+            $titre          = $_POST["areatitre"];
+            $corps          = $_POST["areacontenu"];
+            $date           = date("Y-m-d");
+            $valide         = "true";
+            $id_al          = (int) $id[0]["id_album"];
+            $id_ti          = (int) $id[0]["id_musique"];;
+            $mail           = $_SESSION["username"];
+
+            //on insere dans la table la critique
+            pg_query($dbcon, "INSERT INTO critique 
+                VALUES ($id_critique, '$titre', '$corps', '$date', $valide, $id_al, $id_ti, '$mail');");
+
+        }
+
     }
+
 }
-
 ?>
-<script type="text/javascript">
-    function selectTitre() {
-        $btn = document.getElementById("btnTitre");
-        $select = document.getElementById("titre");
-        if($btn.checked.valueOf() == true){
-            $select.disabled = false;
-
-        }else{
-            $select.disabled = true;
-        }
-    }
-
-    function selectAlbum() {
-        $btn = document.getElementById("btnAlbum");
-        $select = document.getElementById("album");
-        if($btn.checked.valueOf() == true){
-            $select.disabled = false;
-        }else{
-            $select.disabled = true;
-        }
-    }
-</script>
 
 
 <html>
@@ -83,7 +116,7 @@ function publier($dbconn){
 									echo '<a href="connexion.php"><input type="button" id="btnConnexion" value="CONNEXION"></a>';
 								 }
 								 ?>
-								 
+
         <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
     </div>
 
@@ -114,27 +147,27 @@ function publier($dbconn){
     <!-- Main -->
     <section id="main">
         <!-- php associe -->
-        <form action="/PHP/publier.php" method="POST">
+        <form action="test.php" method="POST">
             <b> Publier une critique</b>
             <article>
                 <header>
-                    <textarea maxlength="50" placeholder="Titre de votre critique" id="areatitre"></textarea>
+                    <textarea maxlength="50" placeholder="Titre de votre critique" id="areatitre" name="areatitre" required></textarea>
                     <fieldset id="fieldtype">
                         <legend>Objet de la critique</legend>
 
 
-                        <input type="radio" id="btnTitre" onchange="selectTitre()" name="type">
+                        <input type="radio" onchange="selectTitre()" name="type" value="btnTitre">
                         <label>Titre</label><br/>
-                        <select id="titre" disabled>
+                        <select name="titre">
                             <option>Default</option>
                             <?php
                                 setSelectTitre($titre);
                             ?>
                         </select><br>
 
-                        <input type="radio" id="btnAlbum" onclick="selectAlbum()" name="type">
+                        <input type="radio" onclick="selectAlbum()" name="type" value="btnAlbum">
                         <label>Album</label><br/>
-                        <select id="album" disabled>
+                        <select name="album">
                             <option>Default</option>
                             <?php
                                 setSelectAlbum($album);
@@ -145,8 +178,13 @@ function publier($dbconn){
 
                 </header>
 
-                <textarea placeholder="contenu de votre critique" id="areacontenu"></textarea>
-                <input type="button" value="PUBLIER" id="btnPublier">
+                <textarea placeholder="contenu de votre critique" id="areacontenu" name="areacontenu" required></textarea>
+                <input type="submit" value="PUBLIER" id="btnPublier">
+                <?php
+                    if(isset($_POST["btnPublier"])){
+                        publier($dbcon);
+                    }
+                ?>
             </article>
         </form>
     </section>
