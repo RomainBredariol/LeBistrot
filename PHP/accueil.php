@@ -93,7 +93,7 @@
     echo '
       <form action="./accueil.php" method="POST">
         <input type="hidden" name="nbreCritiques" value="'.$nbreCritiques.'" />
-        <input type="submit" name="generer" value="Générer plus de critiques">
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="generer" value="Générer plus de critiques">
       </form>';
   }
   ?>
@@ -167,7 +167,7 @@
 				<div>
           			<form name="rechercher" action="rechercher.php" method="post">
                 		<input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide" name="texte">
-                		<input type="submit" id="boutonRechercher" value="RECHERCHER">
+                		<input type="image" src="../IMAGES/loupe.png" width="3%" id="boutonRechercher" value="RECHERCHER">
           		</form>
         	</div>
 	        <br>
@@ -183,9 +183,11 @@
 				<hr />
 				<nav>
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Snapchat</a></li>
-						<li><a href="#">Instagram</a></li>
+						<li>
+							<a href="https://facebook.com"><img src="../IMAGES/fb.png" id="facebook" width="10%"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://instagram.com"><img src="../IMAGES/ins.png" id="instagram" width="10%"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://twitter.com"><img src="../IMAGES/tw.png" id="twitter" width="12%" /></a>							
+						</li>
 					</ul>
 				</nav>
 

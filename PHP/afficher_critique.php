@@ -134,7 +134,7 @@ function afficherCommentaire($dbcon)
 
 <div id="wrapper">
     <!-- Main -->
-    <section>
+    <section class="critique">
         <br>
         <br>
         <br>
@@ -182,9 +182,9 @@ function afficherCommentaire($dbcon)
         <hr/>
         <nav>
             <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Snapchat</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="https://facebook.com"><img src="../IMAGES/fb.png" id="facebook" width="10%"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://instagram.com"><img src="../IMAGES/ins.png" id="instagram" width="10%"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="https://twitter.com"><img src="../IMAGES/tw.png" id="twitter" width="12%" /></a></li>
             </ul>
         </nav>
     </aside>
