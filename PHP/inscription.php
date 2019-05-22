@@ -227,12 +227,12 @@ if($retour == 1){
 			</br>
             <b>Choisissez vos styles :</b> </br></br>
             <input type="checkbox" name="classique" id="classique" /><label for="classique">Classique</label>&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="Rock" id="Rock" /><label for="Rock">Rock</label>&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="Pop" id="Pop" /><label for="Pop">Pop</label>&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="Electro" id="Electro" /><label for="Electro">Electro</label>&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="Rap" id="Rap" /><label for="Rap">Rap</label>&nbsp;&nbsp;&nbsp;</br></br>
-			<input type="checkbox" name="Jazz" id="Jazz" /><label for="Jazz">Jazz</label>&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="Funk" id="Funk" /><label for="Funk">Funk</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="rock" id="rock" /><label for="rock">Rock</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="pop" id="pop" /><label for="pop">Pop</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="electro" id="electro" /><label for="electro">Electro</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="rap" id="rap" /><label for="rap">Rap</label>&nbsp;&nbsp;&nbsp;</br></br>
+			<input type="checkbox" name="jazz" id="jazz" /><label for="jazz">Jazz</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="funk" id="funk" /><label for="funk">Funk</label>&nbsp;&nbsp;&nbsp;
 			<input type="hidden" name="retour" value="1" >
 			</br>
 			</br>
