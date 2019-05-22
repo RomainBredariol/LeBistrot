@@ -87,21 +87,12 @@
                 $arr2 = pg_fetch_array ($aut);
                 $nom = $arr2[2];
                 $prenom=$arr2[1];
-                $com = pg_query("SELECT * FROM commenter WHERE id_critique = '$idcrit'");
-                $arr3 = pg_fetch_array ($com);
-
-                // $index = pg_query("SELECT * FROM Critique WHERE mail='".$_POST['username']."' AND mdp='".$_POST['password']."'");
-                // //si pas de résultat
-                // if(pg_num_rows($index) == 0)
-                // {
-                //   echo 'Mauvais nom d utilisateur ou mot de passe!';
-                // }
 
 
 
                 echo '
                 <article>
-                  <a href="./afficher_critique.php?id_critique='.$idcrit'">
+                  <a href="./afficher_critique.php?id_critique='.$idcrit.'">
                       <header>
                         <h2>'.$titre.'</h2>
                         <p>'.$date.' par '.$prenom.' '.$nom.'</p>
