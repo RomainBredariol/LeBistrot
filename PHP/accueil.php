@@ -30,7 +30,7 @@
     // Connnexion à la base de données
     $connexion = connexion_bd();
     // On récupère la valeur administration du compte administrateur
-    $requete = pg_query($connexion,"select admin from utilisateur where utilisateur.mail = '".$_SESSION['username']."'';");
+    $requete = pg_query($connexion,"select admin from utilisateur where utilisateur.mail = '".$_SESSION['username']."';");
     // Met toutes les reponses dans une liste
     $admin = pg_fetch_array($requete);
     $admin=$admin['admin'];
@@ -154,7 +154,7 @@
         <!-- On met les critiques générées -->
         <?php  afficherAccueil();?>
       </section>
-            			
+
       			<section class = "rr">
 			<!-- sidebar -->
 			<aside id="sidebar">
@@ -166,7 +166,7 @@
                 		<input type="submit" id="boutonRechercher" value="RECHERCHER">
           		</form>
         	</div>
-	        <br>				
+	        <br>
 		<h3>Statistiques du site</h3>
 				<hr />
 				<?php
