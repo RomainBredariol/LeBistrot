@@ -84,8 +84,7 @@ else {
     $newProfes=FALSE;
 }
 
-$email = "toto@tata.fr";
-    //$_SESSION['username']; //recupère le contenu de la variable de session
+$email = $_SESSION['username']; //recupère le contenu de la variable de session
 include("connexionbd.php");
 $dbcon = connexion_bd();
 $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'";
