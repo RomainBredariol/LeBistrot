@@ -25,7 +25,9 @@ echo '
 					<!--	<span class="elem">header</span> -->
 					<div id="hautheader">
 						<img src="..//IMAGES/favicon.png" id="favicon" />
+						<a href="connexion.php">
 						<input type="submit" id=\'btnDeconnexion\' value=\'DECONNEXION\'>
+						</a>
 						<h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
 					</div>
 
@@ -37,7 +39,7 @@ echo '
                            <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
                            <li><a href="rechercher.php">RECHERCHER</a></li>
                            <li><a href="publier.php">PUBLIER</a></li>
-						   <li><a href="Contact.php">CONTACT</a></li>
+						   <li><a href="contact.php">CONTACT</a></li>
 	 			           <li><a href="profil.php">PROFIL</a></li>
 	 			       </ul>
 	 			     </div>
