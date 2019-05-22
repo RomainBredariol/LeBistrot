@@ -5,7 +5,7 @@
 	{
 		header("Location:accueil.php");
 	}
-								 
+
 		include("connexionbd.php");
 		connexion_bd();
     //On selectionne les données
@@ -63,17 +63,17 @@
 			if($retour == 1)
 			{
 			echo "<center><h3><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mauvais nom d'utilisateur ou mot de passe !</font></h3></center>";
-			
+
 			}
 		}
- //si résultat
+ 		//si résultat
 		else
 		{
-             //on créer la session
+      //on créer la session
 			session_start();
 			$username = $_POST['username'];
 			$_SESSION['username'] = $_POST['username'];
-                    //on redirige
+      //on redirige
 			echo 'Vous êtes connecté en tant que :';
 			echo $username;
 			header("Location:accueil.php");
@@ -82,7 +82,7 @@
 ?>
 
     <!-- zone de connexion -->
-    
+
         <h1>Connexion</h1>
 
         <b>Nom d'utilisateur</b>
@@ -100,4 +100,3 @@
 </body>
 
 </html>
-

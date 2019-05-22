@@ -1,19 +1,24 @@
 <?php
 
+include("connexionbd.php");
+
+// Lancement de la session
+session_start();
+
 if (isset($_SESSION['username'])) {
     $email = $_SESSION['username']; //recupère le contenu de la variable de session
-} else $email="";
-echo $email;
-
-include("connexionbd.php");
+} else {
+  $email="";
+}
 $dbcon = connexion_bd();
-$query = "SELECT * FROM utilisateur WHERE mail = '{$email}'"; //requete qui recupère la ligne de l'utilisateur dans la bd
+echo $_SESSION['username'];
+$query = "SELECT * FROM utilisateur WHERE mail = '".$_SESSION['username']."';"; //requete qui recupère la ligne de l'utilisateur dans la bd
 $res = pg_query($dbcon, $query);
 $res = pg_fetch_row($res, 0); //on parse le resultat de la requete dans un tableau
 
 //On complete les champs avec le contenu récupéré dans la BD en fonction de ce que contient la variable de session
 echo '
-                      
+
 <html lang="fr">
 
 		<head>
@@ -53,7 +58,7 @@ echo '
                     <form action="../PHP/modification_profil.php" method="POST">
                         <h1>Modification du profil</h1>
                         <b>E-mail</b>
-                        <input type="email" value="'.$res[0].'" name="email"><br/> 
+                        <input type="email" value="'.$res[0].'" name="email"><br/>
                         <b>Mot de passe</b>
                         <input type="password" value="'.$res[6].'" name="password" >
                         <b>Confirmation du mot de passe</b>
@@ -72,7 +77,7 @@ echo '
                         <input type="text" value="'.$res[4].'" name="cp" >
                         <br/>
                         <b>Ville</b>
-                        <input type="text" value="'. $res[8].'" name="ville" >                        
+                        <input type="text" value="'. $res[8].'" name="ville" >
                         <b>Mot de passe</b>
                         <input type="password" placeholder="Entrer votre ancien mot de passe" name="oldPassword" >
                         <input type="submit" id=\'submit\' value=\'Modifier\' >
@@ -83,5 +88,3 @@ echo '
 </html>';
 
 ?>
-
-

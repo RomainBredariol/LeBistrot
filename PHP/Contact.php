@@ -50,7 +50,7 @@
 
 
       } else {
-        $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'"; //requete qui recupère la ligne de l'utilisateur dans la bd
+        $query = "SELECT * FROM utilisateur WHERE mail = '".$_SESSION['username']."';"; //requete qui recupère la ligne de l'utilisateur dans la bd
         $result = pg_query($connexion, $query);
         //on parse le resultat de la requete dans un tableau
 
