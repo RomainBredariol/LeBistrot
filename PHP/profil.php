@@ -1,6 +1,10 @@
 <?php
 
-$email = $_SESSION['username']; //recupère le contenu de la variable de session
+if (isset($_SESSION['username'])) {
+    $email = $_SESSION['username']; //recupère le contenu de la variable de session
+} else $email="";
+echo $email;
+
 include("connexionbd.php");
 $dbcon = connexion_bd();
 $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'"; //requete qui recupère la ligne de l'utilisateur dans la bd
