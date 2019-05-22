@@ -48,7 +48,6 @@ if (pg_query($dbcon, $query)) {
 <head>
     <?php
     session_start();
-    session_destroy();
     ?>
     <script type="text/javascript">
         function RedirectionJavascript()

@@ -42,7 +42,7 @@
                   <h2>'.$liste[$cpt]['objet'].'</h2>
                 </header>
                 <p>'.$liste[$cpt]['message'].'</br> par '.$liste[$cpt]['mail'].'</p>
-                <a href="./contact.php?suppression='.$liste[$cpt]['id_contact'].'">
+                <a href="./Contact.php?suppression='.$liste[$cpt]['id_contact'].'">
                   <input type="submit" value="Supprimer le message">
                 </a>
           </article>';
