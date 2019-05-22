@@ -76,26 +76,7 @@ else {
     $profes="";
 }
 
-
-  if($password == $password_confirm)
-  {
-      include("connexionbd.php");
-      connexion_bd();
-	  $query = "SELECT mail FROM utilisateur WHERE mail = :email;";
-	  $count= count($select);
-	  if ($select > 0)
-	  {
-		  echo "Le mail existe deja";
-	  }
-	  else
-	  {
-		$insert = pg_query("INSERT INTO utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) VALUES ('$email', '$prenom', '$nom', '$profes', '$cp', '$adresse', '$password', '$datenaissance', '$ville')");
-	  }
-  }
-  else
-  {
-	  echo "Les mots de passes ne correspondent pas";//mauvais mot de passe
-  }
+$retour = $_POST['retour'];
 ?>
 
 <html>
@@ -135,8 +116,38 @@ else {
 </header>
 
 <div id="container">
+<form action="../PHP/inscription.php" method="POST">
+<?php
+
+if($retour == 1){
+  if($password == $password_confirm)
+  {
+      include("connexionbd.php");
+      $dbcon = connexion_bd();
+	  $requete = "SELECT count(mail) as id FROM utilisateur WHERE mail='$email';";
+	  $resultat = pg_query($dbcon, $requete);
+	  $select = pg_fetch_array($resultat);
+	  
+	  if ($select["id"] > 0)
+	  {
+		  echo "<center><h4><font color='red'>L'adresse mail entrée est deja enregistré sur le site</font></h4></center>";
+	  }
+	  else
+	  {
+		$insert = pg_query("INSERT INTO utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville, admin) VALUES ('$email', '$prenom', '$nom', '$profes', '$cp', '$adresse', '$password', '$datenaissance', '$ville', 'FALSE')");
+		//$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '')");
+	  }
+  }
+  else
+  {
+	  echo "<center><h4><font color='red'>Les mots de passes ne correspondent pas</font></h4></center>";//mauvais mot de passe
+  }
+}
+
+?>
     <!-- zone de connexion -->
-    <form action="../PHP/verification.php" method="POST">
+    
+	
         <h1>Inscription</h1>
 
         <b>E-mail</b>
@@ -150,8 +161,8 @@ else {
         <b>Prenom</b>
         <input type="text" placeholder="Entrer votre prénom" name="prenom" required>
         <br/>
-        <b>Date de naissance</b>
-        <input type="text" placeholder="Entrer votre date de naissance" name="datenaissance" required>
+        <b>Date de naissance</b></br>
+        <input type="date" placeholder="Entrer votre date de naissance" name="datenaissance" required>
         <br/>
         <b>Adresse</b>
         <input type="text" placeholder="Entrer votre adresse" name="adresse" required>
@@ -161,17 +172,26 @@ else {
         <br/>
         <b>Ville</b>
         <input type="text" placeholder="Entrer votre ville" name="ville" required>
-        Etes-vous un profesionnel ? :<br/>
+		</br>
+		</br>
+        <b>Etes-vous un profesionnel ? :</b><br/>
         <select name="prof" id="prof">
-            <option value="false">non</option>
-            <option value="true">oui</option>
-            <p>Choisissez vos styles<br></p>
-            <select multiple size = 2 id=select>
-                <option value="Classique">Classique</option>
-                <option value="Rock">Rock</option>
-                <option value="Pop">Pop</option>
-                <option value="Techno">Techno</option>
-            </select>
+            <option value='FALSE'>non</option>
+            <option value='TRUE'>oui</option>
+		</select>
+			</br>
+			</br>
+            <b>Choisissez vos styles :</b> </br></br>
+            <input type="checkbox" name="classique" id="classique" /><label for="classique">Classique</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="Rock" id="Rock" /><label for="Rock">Rock</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="Pop" id="Pop" /><label for="Pop">Pop</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="Electro" id="Electro" /><label for="Electro">Electro</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="Rap" id="Rap" /><label for="Rap">Rap</label>&nbsp;&nbsp;&nbsp;</br></br>
+			<input type="checkbox" name="Jazz" id="Jazz" /><label for="Jazz">Jazz</label>&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="Funk" id="Funk" /><label for="Funk">Funk</label>&nbsp;&nbsp;&nbsp;
+			<input type="hidden" name="retour" value="1" >
+			</br>
+			</br>
             <input type="submit" id='submit' value='Inscription' >
     </form>
 </div>

@@ -49,7 +49,7 @@
 </header>
 
 <div id="container">
-
+<form action="../PHP/connexion.php" method="POST">
 
 <?php
 //partie connexion
@@ -79,7 +79,7 @@
 ?>
 
     <!-- zone de connexion -->
-    <form action="../PHP/connexion.php" method="POST">
+    
         <h1>Connexion</h1>
 
         <b>Nom d'utilisateur</b>

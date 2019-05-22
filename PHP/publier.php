@@ -2,6 +2,13 @@
 include "connexionbd.php";
 include "fonctions.php";
 session_start();
+if (isset($_SESSION['username']))
+	{
+	}
+else
+	{
+		header("Location:connexion.php");
+	}
 $dbcon = connexion_bd();
 
 //on recupere l'ensemble des titres de musique et d'album
