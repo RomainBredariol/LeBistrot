@@ -37,17 +37,18 @@
         // On parcours et on fait un afffichage
         for ( $cpt = 0 ; $cpt < $taille ; $cpt ++){
           echo '
-            <form action="../PHP/EnvoyerContact.php" method="POST">
-                        <h1>Nous contacter</h1>
-                        <b>Email</b><br/> 
-                        <input type="text" value="' . $res[0] . '" name="email"><br/> 
-                        <b>Objet</b>
-                        <input type="text" value="' . $res[6] . '" name="objet" >
-                        <b>Contenu</b>
-                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message"></textarea>
-                        <input type="submit" id="submit" value="Envoyer">
-             </form>
-     ';
+          <article>
+                <header>
+                  <h2>'.$liste[$cpt]['objet'].'</h2>
+                </header>
+                <p>'.$liste[$cpt]['message'].'</br> par '.$liste[$cpt]['mail'].'</p>
+                <a href="./contact.php?suppression='.$liste[$cpt]['id_contact'].'">
+                  <input type="submit" value="Supprimer le message">
+                </a>
+          </article>';
+        }
+
+
       } else {
         $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'"; //requete qui recupère la ligne de l'utilisateur dans la bd
         $result = pg_query($connexion, $query);
@@ -75,11 +76,11 @@
             <form action="../PHP/EnvoyerContact.php" method="POST">
                         <h1>Nous contacter</h1>
                         <b>Email</b>
-                        <input type="text" placeholder="Votre E-mail" name="email"><br/>
+                        <input type="text" placeholder="Votre E-mail" name="email" required><br/>
                         <b>Objet</b>
-                        <input type="text" placeholder="Objet de votre demande" name="objet" >
+                        <input type="text" placeholder="Objet de votre demande" name="objet" required>
                         <b>Contenu</b><br/>
-                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message"></textarea>
+                        <textarea placeholder="Quel est votre problème ?" id="areacontenu" name="message" required></textarea>
                         <input type="submit" id="submit" value="Envoyer">
              </form>
      ';
