@@ -6,14 +6,25 @@ insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, dat
 insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('fiona@courtial.fr', 'Fiona', 'Courtial', FALSE, '85410', '6, Boulevard Voltaire', 'FiFi85', '1963-06-25', 'Thouarsais Bouildroux');
 insert into utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville) values ('jacques-solange@noel.fr', 'Jacques-Solange', 'Noel', FALSE, '63850', '23, Place du fort', 'JaJa63', '1943-08-12', 'La Godivelle');
 
-INSERT INTO categorie values ('Jazz');
-INSERT INTO categorie VALUES ('Classique');
-INSERT INTO categorie VALUES ('Rap');
-INSERT INTO categorie VALUES ('Métal');
-INSERT INTO categorie VALUES ('Blues');
-INSERT INTO categorie VALUES ('Hard Rock');
-INSERT INTO categorie VALUES ('Pop');
-INSERT INTO Categorie VALUES ('Variété française');
+INSERT INTO categorie values ('jazz');
+INSERT INTO categorie VALUES ('classique');
+INSERT INTO categorie VALUES ('rap');
+INSERT INTO categorie VALUES ('metal');
+INSERT INTO categorie VALUES ('blues');
+INSERT INTO categorie VALUES ('hard hock');
+INSERT INTO categorie VALUES ('pop');
+INSERT INTO Categorie VALUES ('variete française');
+INSERT INTO Categorie VALUES ('techno');
+INSERT INTO Categorie VALUES ('electro');
+INSERT INTO Categorie VALUES ('hip hop');
+INSERT INTO Categorie VALUES ('disco');
+INSERT INTO Categorie VALUES ('folk');
+INSERT INTO Categorie VALUES ('funk');
+INSERT INTO Categorie VALUES ('reggae');
+INSERT INTO Categorie VALUES ('rock');
+INSERT INTO Categorie VALUES ('salsa');
+INSERT INTO Categorie VALUES ('samba');
+INSERT INTO Categorie VALUES ('Contemporain');
 
 INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('01', 'Guns n Roses', '1985-05-03', 'Guns n Roses est un groupe de HardRock américain originaire de Los Angeles, formé en 1985');
 INSERT INTO artiste (id_artiste, nom_artiste, date_naissance_artiste, bio)Values ('02', 'Renaud', '1952-05-11', 'Renaud Séchan, est un auteur-compositeur-interprète français');
@@ -173,5 +184,8 @@ INSERT into noter (id_critique, id_note, mail, note) values ('04', '05', 'caroli
 
 
 INSERT Into commenter ( mail, id_commentaire, id_critique, contenu, date_commentaire) VALUES ('jean@lassalle.fr', '01', '01', 'Cette critique est bonne, je suis tout à fait d''accord', '2019-05-06');
+INSERT Into commenter ( mail, id_commentaire, id_critique, contenu, date_commentaire) VALUES ('toto@tata.fr', '02', '01', 'Je ne suis pas du tout d''accord', '2019-05-22');
+INSERT Into commenter ( mail, id_commentaire, id_critique, contenu, date_commentaire) VALUES ('caroline@chirac.fr', '03', '02', 'J''aime beaucoup votre façon de penser', '2019-05-22');
+
 
 
