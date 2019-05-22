@@ -1,29 +1,29 @@
 <?php
-include "connexionbd.php";
-include "fonctions.php";
-session_start();
+    include "connexionbd.php";
+    include "fonctions.php";
+    session_start();
 
-if (isset($_SESSION['username']))
-	{
-	}
-else
-	{
-		header("Location:connexion.php");
-	}
-$dbcon = connexion_bd();
+    if (isset($_SESSION['username']))
+        {
+        }
+    else
+        {
+            header("Location:connexion.php");
+        }
+    $dbcon = connexion_bd();
 
-//si le bouton publier est presse
-if (isset($_POST['btnPublier'])) {
-    publier($dbcon);
-    header("Location:accueil.php");
-}
+    //si le bouton publier est presse
+    if (isset($_POST['btnPublier'])) {
+        publier($dbcon);
+        header("Location:accueil.php");
+    }
 
-//on recupere l'ensemble des titres de musique et d'album
-$resultat_titre = pg_query($dbcon, "SELECT nom_musique FROM titre_musical ORDER BY nom_musique;");
-$titre = pg_fetch_all($resultat_titre);
+    //on recupere l'ensemble des titres de musique et d'album
+    $resultat_titre = pg_query($dbcon, "SELECT nom_musique FROM titre_musical ORDER BY nom_musique;");
+    $titre = pg_fetch_all($resultat_titre);
 
-$resultat_album = pg_query($dbcon, "SELECT nom FROM album ORDER BY nom;");
-$album = pg_fetch_all($resultat_album);
+    $resultat_album = pg_query($dbcon, "SELECT nom FROM album ORDER BY nom;");
+    $album = pg_fetch_all($resultat_album);
 
 //met les titres dans le select
 function setSelectTitre($titre)
@@ -143,9 +143,10 @@ function publier($dbcon)
 						 <li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 						 <li><a href="rechercher.php">RECHERCHER</a></li>
 						 <li><a href="publier.php">PUBLIER</a></li>
-						 <li><a href="contact.php">CONTACT</a></li>
-								 
-						 <!-- affiche le menu profil  -->
+						 <li><a href="Contact.php">CONTACT</a></li>
+                         <li><a href="Conditions.php">CONDITIONS</a></li>
+
+                    <!-- affiche le menu profil  -->
 						 <?php
 								 if (isset($_SESSION['username']))
 								 {

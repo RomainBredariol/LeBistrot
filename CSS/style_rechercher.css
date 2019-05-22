@@ -138,16 +138,10 @@ article, footer, header, aside, nav {
 }
 
 body{
-	background-color: beige;
 	margin: 8px;
 	background-image:url(../IMAGES/background.jpg);
 }
 
-#container{
-    width:400px;
-    margin:0 auto;
-    margin-top:9%;
-}
 /* Bordered form */
 section.main {
     width:90%;
@@ -171,18 +165,13 @@ section.main {
 }
 
 #rechercheRapide{
-	width: 125px;
+	width: 250px;
 	display: inline-block;
 }
 
-#container h1{
-    width: 38%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -220,20 +209,6 @@ input[type=submit]:hover {
 	bottom:0;
 }
 
-#btnCommenter {
-	vertical-align: top;
-	margin-left: 30px;
-	height: 43px;
-	width: 109px;
-}
-
-#btnNoter {
-	vertical-align: top;
-	margin-left: 30px;
-	height: 43px;
-	width: 109px;
-}
-
 textarea {
 	width: 550px;
 	padding: 12px;
@@ -242,8 +217,6 @@ textarea {
 	box-sizing: border-box;
 	resize: none;
 }
-
-
 
 
 button {
@@ -263,7 +236,6 @@ button:hover {
 
 a:link, a:visited, a:active
 {
-
 	color: inherit;
 	text-decoration:none;
 }

@@ -13,9 +13,6 @@ aside#sidebar {
 	border-radius: 5px;
 }
 
-section.critique{
-	margin-top: 20px;
-}
 /*article*/
 article {
 	border: 1px solid #f1f1f1;
@@ -24,6 +21,10 @@ article {
 	padding:1em;
 	background:#fff;
 	width: auto;
+}
+
+section.critique{
+	margin-top: 20px;
 }
 
 article h2 {
@@ -113,16 +114,17 @@ nav ul li {
 /*CORPS*/
 
 body{
-	background-color: #FCFAF3;
 	background-image:url(../IMAGES/background.jpg);
 	margin: 8px;
 }
 
 #wrapper{
-margin-right: 30%;
-margin-left: 20%;
-background-color: #D2E7FA;
-border-radius: 15px;
+	margin-top: 15px;
+	padding: 8px;
+	margin-right: 30%;
+	margin-left: 15%;
+	background-color: #D2E7FA;
+	border-radius: 15px;
 }
 
 /* footer */
@@ -139,7 +141,7 @@ border-radius: 15px;
 
 
 #rechercheRapide{
-	width: 125px;
+	width: 250px;
 	display: inline-block;
 }
 
@@ -159,21 +161,6 @@ input[type=text], input[type=password]{
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-}
-
-
-#btnCommenter {
-	vertical-align: top;
-	margin-left: 30px;
-	height: 43px;
-	width: 109px;
-}
-
-#btnNoter {
-	vertical-align: top;
-	margin-left: 30px;
-	height: 43px;
-	width: 109px;
 }
 
 textarea {
