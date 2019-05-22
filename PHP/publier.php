@@ -147,11 +147,13 @@ function publier($dbcon)
 								 
 						 <!-- affiche le menu profil  -->
 						 <?php
-						 if (isset($_SESSION['username']))
-						{
-							echo '<li><a href="profil.php">PROFIL</a></li>';
-						}
-						?>
+								 if (isset($_SESSION['username']))
+								 {
+									echo '<li><a href="profil.php">PROFIL</a></li>';
+									$user= $_SESSION['username'];
+									echo "<div align='right'><h3>vous êtes connecté en tant : <font color='red'>$user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h3></div>";
+								 }
+								 ?>
                 </ul>
             </div>
         </nav>
