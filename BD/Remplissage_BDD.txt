@@ -73,15 +73,15 @@ INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie,
 INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('38', 'La Menthe à l''eau', '1975-04-03', 'Variété française', '04');
 INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('39', 'Greta', '1975-04-03', 'Variété française', '04');
 
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('40', 'Motherless Children', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('41', 'Give Me Strength', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('42', 'Willie and the Hand Jive', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('43', 'Get Ready', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('44', 'I Shot the Sheriff', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('45', 'I Can''t Hold Out', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('46', 'Let It Grow', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('47', 'Steady Rollin'' Man', '1974-07-01', 'Blues', '06');
-INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('48', 'Mainline Florida', '1974-07-01', 'Blues', '06');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('40', 'Motherless Children', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('41', 'Give Me Strength', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('42', 'Willie and the Hand Jive', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('43', 'Get Ready', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('44', 'I Shot the Sheriff', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('45', 'I Can''t Hold Out', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('46', 'Let It Grow', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('47', 'Steady Rollin'' Man', '1974-07-01', 'Blues', '08');
+INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('48', 'Mainline Florida', '1974-07-01', 'Blues', '08');
 
 INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('49', 'Right Next Door to Hell', '1991-09-17', 'Hard Rock', '02');
 INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie, id_album)Values ('50', 'Dust N'' Bones', '1991-09-17', 'Hard Rock', '02');
@@ -142,7 +142,7 @@ INSERT INTO titre_musical (id_musique, nom_musique, date_musique, nom_categorie,
 insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('01', 'Critique sur Appetite for Destruction', 'Je trouve que c''est album est le plus beau de tous les temps, je pourrais l''écouter en boucle jusqu''à la fin de mes jours', '2019-05-04', TRUE, '01', NULL, 'toto@tata.fr');
 insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('02', 'Critique sur Sweet Child o'' Mine', 'Cette chanson est la meilleure de l''album', '2019-05-04', TRUE, '01', '09', 'toto@tata.fr');
 insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('03', 'Critique sur l''album Hit Sale', 'Cette album est un peu bizarre mais j''adore ça !!!', '2019-05-09', TRUE, '05', NULL, 'herve@dupont.fr');
-insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('04', 'Critique sur I Shot the Sheriff', 'Cette chanson n''est pas une reprise de Bob Marley ?', '2019-05-09', TRUE, NULL, '44', 'jacques-solange@noel.fr');
+insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('04', 'Critique sur I Shot the Sheriff', 'Cette chanson n''est pas une reprise de Bob Marley ?', '2019-05-09', TRUE, '08', '44', 'jacques-solange@noel.fr');
 insert into critique (id_critique, titre, corps, date_publication, valide, id_album, id_musique, mail) values ('05', 'Critique sur l''album Bob Dylan', 'Cet album me rappelle ma jeunesse !! Je me sens tout chose !', '2019-05-09', TRUE, '06', NULL, 'jean@lassalle.fr');
 
 Insert into composer (id_artiste, id_musique) Values ('01', '01'), ('01', '02'), ('01', '03'), ('01', '04'), ('01', '05'), ('01', '06'), ('01', '07'), ('01', '08'), ('01', '09'), ('01', '10'), ('01', '11'), ('01', '12');

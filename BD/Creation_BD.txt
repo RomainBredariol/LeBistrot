@@ -43,7 +43,7 @@ CREATE TABLE critique(
    corps TEXT,
    date_publication DATE,
    valide BOOLEAN,
-   id_album INT REFERENCES album(id_album),
+   id_album INT REFERENCES album(id_album) NOT NULL,
    id_musique INT REFERENCES titre_musical(id_musique),
    mail VARCHAR(50) REFERENCES utilisateur(mail) NOT NULL
 );
