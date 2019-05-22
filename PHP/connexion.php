@@ -9,7 +9,9 @@
 		include("connexionbd.php");
 		connexion_bd();
     //On selectionne les données
-		$index = pg_query("SELECT * FROM utilisateur WHERE mail='".$_POST['username']."' AND mdp='".$_POST['password']."'");
+		$password= $_POST['password'];
+		$password= sha1($password);
+		$index = pg_query("SELECT * FROM utilisateur WHERE mail='".$_POST['username']."' AND mdp='".$password."'");
 ?>
 
 <html>
@@ -59,7 +61,7 @@
 		{
 			if($retour == 1)
 			{
-			echo "<center><h3><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mauvais nom d'utilisateur ou mot de passe !</font></h3></center>";
+			echo "<center><h3><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mauvais nom d'utilisateur ou mot de passe !</font></h3></center>";
 			
 			}
 		}

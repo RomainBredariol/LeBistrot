@@ -9,6 +9,7 @@ if (isset($_SESSION['username']))
 
 if(isset($_POST['password'])) {
     $password=enleverCaracteresSpeciaux($_POST['password']);
+	$password= sha1($password);
 }
 else {
     $password="";
@@ -16,6 +17,7 @@ else {
 
 if(isset($_POST['password_confirm'])) {
     $password_confirm=enleverCaracteresSpeciaux($_POST['password_confirm']);
+	$password_confirm= sha1($password_confirm);
 }
 else {
     $password_confirm="";
