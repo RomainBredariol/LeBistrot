@@ -1,5 +1,6 @@
 <?php
 include "connexionbd.php";
+include "fonctions.php";
 session_start();
 $dbcon = connexion_bd();
 
@@ -49,8 +50,8 @@ function publier($dbcon)
 
             //affectation des variables
             $id_critique    = ((int)$nb_critique[0]["nb"]) + 1;
-            $titre          = $_POST["areatitre"];
-            $corps          = $_POST["areacontenu"];
+            $titre          = enleverCaracteresSpeciaux($_POST["areatitre"]);
+            $corps          = enleverCaracteresSpeciaux($_POST["areacontenu"]);
             $date           = date("Y-m-d");
             $valide         = "true";
             $id_al          = (int) $id_album[0]["id_album"];
@@ -71,8 +72,8 @@ function publier($dbcon)
 
             //affectation des variables
             $id_critique    = ((int)$nb_critique[0]["nb"]) + 1;
-            $titre          = $_POST["areatitre"];
-            $corps          = $_POST["areacontenu"];
+            $titre          = enleverCaracteresSpeciaux($_POST["areatitre"]);
+            $corps          = enleverCaracteresSpeciaux($_POST["areacontenu"]);
             $date           = date("Y-m-d");
             $valide         = "true";
             $id_al          = (int) $id[0]["id_album"];
