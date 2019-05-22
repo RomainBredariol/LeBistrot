@@ -148,32 +148,32 @@ if($retour == 1){
 		$insert = pg_query("INSERT INTO utilisateur (mail, prenom, nom, professionnel, cp, adresse, mdp, date_de_naissance, ville, admin) VALUES ('$email', '$prenom', '$nom', '$profes', '$cp', '$adresse', '$password', '$datenaissance', '$ville', 'FALSE')");
 		if(isset($pop)) 
 		{
-			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$pop')");
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Pop')");
 		}
 		
 		if(isset($rock)) 
 		{
-			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$rock')");
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Rock')");
 		}
 		
 		if(isset($classique)) 
 		{
-			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$classique')");
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Classique')");
 		}
 		
 		if(isset($rap)) 
 		{
-			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$rap')");
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Rap')");
 		}
 		
 		if(isset($jazz)) 
 		{
-			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$jazz')");
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Jazz')");
 		}
 		
 		if(isset($funk)) 
 		{
-			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', '$funk')");
+			$insert = pg_query("INSERT INTO aimer (mail, nom_categorie) VALUES ('$email', 'Funk')");
 		}
 	  }
   }
