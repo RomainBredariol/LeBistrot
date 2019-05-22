@@ -170,9 +170,13 @@ function afficherCommentaire($dbcon)
             <input type="search" placeholder="Artiste, album, titre, date, auteur..." id="rechercheRapide">
             <button>RECHERCHER</button>
         </div>
-        <h3>Statistiques du site</h3>
-        <hr/>
-        <p> Il y a eu X visites sur le site</p>
+        <h3>Nombre de pages visités</h3>
+        <hr />
+        <?php
+        include("compteur.php");
+        $vue=compteur();
+        echo "<p>Il y a eu $vue visites sur le site</p>";
+        ?>
         <br>
         <h3>Nous suivre sur les réseaux</h3>
         <hr/>

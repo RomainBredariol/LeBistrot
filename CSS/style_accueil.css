@@ -1,9 +1,10 @@
-﻿aside#sidebar {
+﻿
+aside#sidebar {
 	padding: 8px;
 	position: fixed;
 	top: 150px;
 	right : 45px;
-	width:15%;
+	width:auto;
 	margin-left:1%;
 	margin-top:1em;
 	border: 1px solid #f1f1f1;
@@ -20,6 +21,7 @@ article {
 	margin:1em;
 	padding:1em;
 	background:#fff;
+	width: auto;
 }
 
 article h2 {
@@ -115,16 +117,10 @@ body{
 	margin: 8px;
 }
 
-#wrapper {
-	width:60%;
-	margin-left: 115px;
-	display: inline-block;
-}
-
-#main {
+#wrapper{
 	float:left;
-	width:75%;
-	margin: 0 0 50px 0;
+	width: auto;
+	margin: 0 0 50px 65px;
 }
 
 /* footer */
@@ -148,7 +144,6 @@ body{
 /* Marquage spécifique */
 
 article {
-	position:relative;
 }
 
 

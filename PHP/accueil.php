@@ -91,7 +91,7 @@
     }
 
     echo '
-      <form style="width:175px;border:1px;solid #f1f1f1;border-radius:5px;margin:1em;padding:1em;background:#fff" action="./accueil.php" method="POST">
+      <form action="./accueil.php" method="POST">
         <input type="hidden" name="nbreCritiques" value="'.$nbreCritiques.'" />
         <input type="submit" name="generer" value="Générer plus de critiques">
       </form>';
