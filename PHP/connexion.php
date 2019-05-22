@@ -32,7 +32,7 @@
 		<a href="inscription.php">
         <input type="submit" id='btnInscription' value='INSCRIPTION'>
 		</a>
-        <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
+        <h1 id="titre">Le bistrot musical, la référence en critique musicale</h1>
     </div>
 
     <div>

@@ -106,7 +106,7 @@ function afficherCommentaire($dbcon)
             echo '<a href="connexion.php"><input type="submit" id="btnConnexion" value="CONNEXION"></a>';
         }
         ?>
-        <h1 id="titre">Le bistrot musical, la référence en critique musciale</h1>
+        <h1 id="titre">Le bistrot musical, la référence en critique musicale</h1>
     </div>
 
     <div>
