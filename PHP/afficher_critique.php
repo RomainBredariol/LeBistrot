@@ -49,7 +49,7 @@
             $connexion = connexion_bd();
             //On récupère les 5 dernières critiques
             $requete = pg_query($connexion,"select critique.titre, critique.corps, critique.date_publication, utilisateur.nom, utilisateur.prenom from critique, utilisateur where utilisateur.mail = critique.mail and critique.id_critique = ".$_GET['id_critique'].";");
-            // Met toutes les reponses dans une liste
+						// Met toutes les reponses dans une liste
             $liste = pg_fetch_array($requete);
             echo "<fieldset id='fieldtype'>
                       <legend>".$liste['titre']."</legend>
@@ -57,12 +57,42 @@
                   </fieldset>";
 
             echo "</br>Ecrit par ".$liste['prenom']." ".$liste['nom']."</br>";
+						echo "<br><br><h2> Commentaires </h2><br>";
+						//On récupère les commentaires sur cette critique
+						//$comm = pg_query($connexion,"select * from commenter where id_critique = ".$_GET['id_critique'].";");
+						$comm = pg_query("SELECT * FROM commenter WHERE id_critique = '".$_GET['id_critique']."'");
+						//Met toutes les réponses dans une liste
+						$nbrow = pg_num_rows($comm);
+						for ($i=0; $i<$nbrow; $i++) {
+								//On récupère chaque ligne des commentaires
+								$listecom = pg_fetch_array ($comm, $i, PGSQL_NUM);
+								//On récupère le contenu de la critique
+								$contenu = $listecom[3];
+								//Requête pour l'auteur du commentaire
+							  $aut = pg_query("SELECT * FROM utilisateur WHERE mail = (SELECT mail FROM Critique WHERE id_critique = '".$_GET['id_critique']."')");
+								//On récupère la ligne
+								$arr2 = pg_fetch_array ($aut);
+								//nom
+								$nom = $arr2[2];
+								//prenom
+                $prenom=$arr2[1];
+								//On affiche le commentaire
+            		echo "<fieldset id='fieldtype'>
+                      	<article>".$contenu."</article>
+												</br>Ecrit par ".$prenom." ".$nom."</br>
+                  		</fieldset><br>";
+						}
 
           }
-
         }
 
+
+
+
+
+
         afficherCritique($_GET['id_critique']);
+
         ?>
       <!-- On met un bouton pour afficher plus de critiques -->
 			</section>
