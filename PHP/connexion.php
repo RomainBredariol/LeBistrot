@@ -41,7 +41,7 @@
 					<li><a href="accueil.php" class ="active">ACCUEIL</a></li>
 				    <li><a href="rechercher.php">RECHERCHER</a></li>
 					<li><a href="publier.php">PUBLIER</a></li>
-					<li><a href="Contact.php">CONTACT</a></li>
+					<li><a href="contact.php">CONTACT</a></li>
                 </ul>
             </div>
         </nav>
@@ -59,7 +59,7 @@
 		{
 			if($retour == 1)
 			{
-			echo "<center><h3><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mauvais nom d'utilisateur ou mot de passe !</font></h3></center>";
+			echo "<center><h3><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mauvais nom d'utilisateur ou mot de passe !</font></h3></center>";
 			
 			}
 		}
@@ -96,8 +96,8 @@
 
 <footer id="footer">
     <div>
-        <button> <a href="Contact.php" class ="active">Contact</a> </button>
-        <button> <a href="Conditions.php" class ="active">Nos conditons</a> </button>
+        <button> <a href="contact.php" class ="active">Contact</a> </button>
+        <button> <a href="conditions.php" class ="active">Nos conditons</a> </button>
 </footer>
 
 </body>
