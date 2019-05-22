@@ -84,7 +84,7 @@ $dbcon = connexion_bd();
 $query = "SELECT * FROM utilisateur WHERE mail = '{$email}'";
 $res = pg_query($dbcon, $query);
 $res = pg_fetch_row($res);
-if($oldPassword == $res[6]) {
+if(sha1($oldPassword) == $res[6]) {
 
     if ($newEmail !="" and $newEmail != $res[0] ){
         $query = "UPDATE utilisateur SET  mail='{$newEmail}'  WHERE mail='{$email}'";
@@ -119,10 +119,12 @@ if($oldPassword == $res[6]) {
         pg_query($dbcon, $query);
     }
     if($newPassword == $newPassword_confirm) {
+        $newPassword = sha1($newPassword);
         $query = "UPDATE utilisateur SET  mdp='{$newPassword}'  WHERE mail='{$email}'";
         pg_query($dbcon, $query);
     }
     //REDIRECTION PAGE PROFIL
+    header("Location:profil.php");
 } else  echo "
 	 <center><h2><font color='red'>Le mot de passe est incorrect ou aucun champs n'a été modifié</font></h2></center>
 	 <center><a href='profil.php'>retourner sur votre Profil</a></center>";
