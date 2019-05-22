@@ -124,4 +124,4 @@ if($oldPassword == $res[6]) {
     //REDIRECTION PAGE PROFIL
 } else  echo "
 	 <center><h2><font color='red'>Le mot de passe est incorrect ou aucun champs n'a été modifié</font></h2></center>
-	 <a href='profil.html'>retourner sur votre Profil</a>;
+	 <a href='profil.html'>retourner sur votre Profil</a>";
